@@ -85,7 +85,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_ONLINE_UPDATER,
-   "Baxa complementos, componentes y conteníu pa RetroArch."
+   "Baxa complementos, componentes y conteníu pa KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_NETPLAY,
@@ -124,19 +124,19 @@ MSG_HASH(
    "Deprendi más tocante a cómo funciona'l programa."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
-   "Reaniciar Retroarch"
+   MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
+   "Reaniciar KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
    "Reanicia'l programa."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
-   "Colar de RetroArch"
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
+   "Colar de KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
    "Cola del programa."
    )
 
@@ -860,7 +860,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_MAX_USERS,
-   "El númberu máximu d'usuarios sofitaos por RetroArch."
+   "El númberu máximu d'usuarios sofitaos por KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_AUTODETECT_ENABLE,
@@ -909,7 +909,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_QUIT_PRESS_TWICE,
-   "Rique que l'atayu Colar se prima dos vegaes pa colar de RetroArch."
+   "Rique que l'atayu Colar se prima dos vegaes pa colar de KingStation."
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_META_SAVE_STATE_KEY,
@@ -921,7 +921,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_QUIT_KEY,
-   "Colar de RetroArch"
+   "Colar de KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_SHADER_NEXT,
@@ -974,7 +974,7 @@ MSG_HASH(
 
 MSG_HASH(
    MENU_ENUM_SUBLABEL_DUMMY_ON_CORE_SHUTDOWN,
-   "Dalgunos nucleos tienen una carauterística d'apagáu, la carga d'un maniquín va evitar que RetroArch cole."
+   "Dalgunos nucleos tienen una carauterística d'apagáu, la carga d'un maniquín va evitar que KingStation cole."
    )
 #ifndef HAVE_DYNAMIC
 #endif
@@ -995,7 +995,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_GLOBAL_CORE_OPTIONS,
-   "Guarda les opciones de tolos nucleos nun ficheru d'axustes común (retroarch-core-options.cfg). Al desactivar esta opción, les opciones de cada nucleu van guardase en ficheros/carpetes separtaos dientro del direutoriu «Config» de RetroArch."
+   "Guarda les opciones de tolos nucleos nun ficheru d'axustes común (KingStation-core-options.cfg). Al desactivar esta opción, les opciones de cada nucleu van guardase en ficheros/carpetes separtaos dientro del direutoriu «Config» de KingStation."
    )
 
 /* Settings > Saving */
@@ -1129,7 +1129,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_MENU_VIEWS_SETTINGS,
-   "Alterna la visibilidá de los elementos del menú de RetroArch."
+   "Alterna la visibilidá de los elementos del menú de KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_MENU_SETTINGS,
@@ -1149,7 +1149,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_PAUSE_LIBRETRO,
-   "Si se desactiva esta opción, el conteníu va siguir executándose de fondu cuando s'alterne'l menú de RetroArch."
+   "Si se desactiva esta opción, el conteníu va siguir executándose de fondu cuando s'alterne'l menú de KingStation."
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_MENU_SAVESTATE_RESUME,
@@ -1207,12 +1207,12 @@ MSG_HASH(
    "Amuesa la llingüeta «Ayuda» dientro del menú principal."
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_RETROARCH,
-   "Amuesa la llingüeta «Colar de Retroarch» dientro del menú principal."
+   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_KingStation,
+   "Amuesa la llingüeta «Colar de KingStation» dientro del menú principal."
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_MENU_SHOW_RESTART_RETROARCH,
-   "Amuesa la llingüeta «Reaniciar RetroArch» dientro del menú principal."
+   MENU_ENUM_SUBLABEL_MENU_SHOW_RESTART_KingStation,
+   "Amuesa la llingüeta «Reaniciar KingStation» dientro del menú principal."
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_CONTENT_SHOW_SETTINGS,
@@ -2410,7 +2410,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_MENU_HELP_ABOUT,
-   "Tocante a RetroArch"
+   "Tocante a KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_MENU_HELP_DOCUMENTATION,
@@ -2625,12 +2625,12 @@ MSG_HASH(
    "Amiestu d'una carpeta"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_NIGHTLY,
-   "Anovar RetroArch (nightly)"
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_NIGHTLY,
+   "Anovar KingStation (nightly)"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_FINISHED,
-   "RetroArch anovóse con ésitu. Reanicia l'aplicación pa que los cambeos faigan efeutu, por favor."
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_FINISHED,
+   "KingStation anovóse con ésitu. Reanicia l'aplicación pa que los cambeos faigan efeutu, por favor."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_MENU_HELP_ABOUT_CONTRIBUTORS,

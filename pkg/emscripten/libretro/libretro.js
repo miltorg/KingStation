@@ -1,7 +1,7 @@
 /**
- * RetroArch Web Player
+ * KingStation Web Player
  *
- * This provides the basic JavaScript for the RetroArch web player.
+ * This provides the basic JavaScript for the KingStation web player.
  */
 var BrowserFS = BrowserFS;
 var afs;
@@ -11,7 +11,7 @@ function cleanupStorage()
    localStorage.clear();
    if (BrowserFS.FileSystem.IndexedDB.isAvailable())
    {
-      var req = indexedDB.deleteDatabase("RetroArch");
+      var req = indexedDB.deleteDatabase("KingStation");
       req.onsuccess = function () {
          console.log("Deleted database successfully");
       };
@@ -63,7 +63,7 @@ function idbfsInit()
             });
          }
       },
-      "RetroArch"));
+      "KingStation"));
    }
 }
 
@@ -79,9 +79,9 @@ function idbfsSyncComplete()
 
 function preLoadingComplete()
 {
-   /* Make the Preview image clickable to start RetroArch. */
+   /* Make the Preview image clickable to start KingStation. */
    $('.webplayer-preview').addClass('loaded').click(function () {
-      startRetroArch();
+      startKingStation();
       return false;
   });
   document.getElementById("btnRun").disabled = false;
@@ -102,10 +102,10 @@ function setupFileSystem(backend)
       (".index-xhr", "/assets/cores/");
 
    console.log("WEBPLAYER: initializing filesystem: " + backend);
-   mfs.mount('/home/web_user/retroarch/userdata', afs);
+   mfs.mount('/home/web_user/KingStation/userdata', afs);
 
-   mfs.mount('/home/web_user/retroarch/bundle', xfs1);
-   mfs.mount('/home/web_user/retroarch/userdata/content/downloads', xfs2);
+   mfs.mount('/home/web_user/KingStation/bundle', xfs1);
+   mfs.mount('/home/web_user/KingStation/userdata/content/downloads', xfs2);
    BrowserFS.initialize(mfs);
    var BFS = new BrowserFS.EmscriptenFS();
    FS.mount(BFS, {root: '/home'}, '/home');
@@ -122,7 +122,7 @@ function getParam(name) {
   }
 }
 
-function startRetroArch()
+function startKingStation()
 {
    $('.webplayer').show();
    $('.webplayer-preview').hide();
@@ -174,7 +174,7 @@ function uploadData(data,name)
    FS.createDataFile('/', name, dataView, true, false);
 
    var data = FS.readFile(name,{ encoding: 'binary' });
-   FS.writeFile('/home/web_user/retroarch/userdata/content/' + name, data ,{ encoding: 'binary' });
+   FS.writeFile('/home/web_user/KingStation/userdata/content/' + name, data ,{ encoding: 'binary' });
    FS.unlink(name);
 }
 

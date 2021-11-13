@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "retroarch_logo_back.png",
+      "filename" : "KingStation_logo_back.png",
       "idiom" : "tv",
       "scale" : "1x"
     },
     {
-      "filename" : "retroarch_logo_back-1.png",
+      "filename" : "KingStation_logo_back-1.png",
       "idiom" : "tv",
       "scale" : "2x"
     }

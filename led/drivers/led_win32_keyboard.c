@@ -3,7 +3,7 @@
 #include "../led_defines.h"
 
 #include "../../configuration.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 
 #undef MAX_LEDS
 #define MAX_LEDS 3

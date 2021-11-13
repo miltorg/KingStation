@@ -1,17 +1,17 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2016-2019 - Brad Parker
  *  Copyright (C) 2016-2019 - Andrés Suárez
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -70,7 +70,7 @@
 #include "../../input/input_remapping.h"
 #include "../../paths.h"
 #include "../../playlist.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 #include "../../verbosity.h"
 #include "../../lakka.h"
 #include "../../bluetooth/bluetooth_driver.h"
@@ -5616,9 +5616,9 @@ static void netplay_refresh_rooms_cb(retro_task_t *task,
                strlcpy(netplay_room_list[i].corename,
                      host->core,
                      sizeof(netplay_room_list[i].corename));
-               strlcpy(netplay_room_list[i].retroarch_version,
-                     host->retroarch_version,
-                     sizeof(netplay_room_list[i].retroarch_version));
+               strlcpy(netplay_room_list[i].KingStation_version,
+                     host->KingStation_version,
+                     sizeof(netplay_room_list[i].KingStation_version));
                strlcpy(netplay_room_list[i].coreversion,
                      host->core_version,
                      sizeof(netplay_room_list[i].coreversion));
@@ -6772,7 +6772,7 @@ static void action_ok_netplay_enable_client_hostname_cb(
    }
 
    menu_input_dialog_end();
-   retroarch_menu_running_finished(false);
+   KingStation_menu_running_finished(false);
 }
 #endif
 
@@ -7358,7 +7358,7 @@ static int menu_cbs_init_bind_ok_compare_label(menu_file_list_cbs_t *cbs,
          {MENU_ENUM_LABEL_MENU_DISABLE_KIOSK_MODE,             action_ok_disable_kiosk_mode},
          {MENU_ENUM_LABEL_XMB_MAIN_MENU_ENABLE_SETTINGS,       action_ok_enable_settings},
          {MENU_ENUM_LABEL_SHOW_WIMP,                           action_ok_show_wimp},
-         {MENU_ENUM_LABEL_QUIT_RETROARCH,                      action_ok_quit},
+         {MENU_ENUM_LABEL_QUIT_KingStation,                      action_ok_quit},
          {MENU_ENUM_LABEL_CLOSE_CONTENT,                       action_ok_close_content},
          {MENU_ENUM_LABEL_SAVE_NEW_CONFIG,                     action_ok_save_new_config},
          {MENU_ENUM_LABEL_HELP,                                action_ok_help},

@@ -5,7 +5,7 @@
 #include "../../input/input_overlay.h"
 
 #include "../../configuration.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 
 typedef struct
 {

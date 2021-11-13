@@ -1,19 +1,19 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2014-2017 - Jean-André Santoni
  *  Copyright (C) 2015-2019 - Andrés Suárez (input remapping + other things)
  *  Copyright (C) 2016-2019 - Brad Parker
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -43,7 +43,7 @@
 #include "defaults.h"
 #include "core.h"
 #include "paths.h"
-#include "retroarch.h"
+#include "KingStation.h"
 #include "verbosity.h"
 #include "lakka.h"
 
@@ -1640,8 +1640,8 @@ static struct config_bool_setting *populate_settings_bool(
    SETTING_BOOL("menu_show_video_layout",        &settings->bools.menu_show_video_layout, true, true, false);
 #endif
    SETTING_BOOL("menu_show_help",                &settings->bools.menu_show_help, true, menu_show_help, false);
-   SETTING_BOOL("menu_show_quit_retroarch",      &settings->bools.menu_show_quit_retroarch, true, menu_show_quit_retroarch, false);
-   SETTING_BOOL("menu_show_restart_retroarch",   &settings->bools.menu_show_restart_retroarch, true, menu_show_restart_retroarch, false);
+   SETTING_BOOL("menu_show_quit_KingStation",      &settings->bools.menu_show_quit_KingStation, true, menu_show_quit_KingStation, false);
+   SETTING_BOOL("menu_show_restart_KingStation",   &settings->bools.menu_show_restart_KingStation, true, menu_show_restart_KingStation, false);
    SETTING_BOOL("menu_show_reboot",              &settings->bools.menu_show_reboot, true, menu_show_reboot, false);
    SETTING_BOOL("menu_show_shutdown",            &settings->bools.menu_show_shutdown, true, menu_show_shutdown, false);
    SETTING_BOOL("menu_show_online_updater",      &settings->bools.menu_show_online_updater, true, menu_show_online_updater, false);
@@ -2387,9 +2387,9 @@ void config_set_defaults(void *data)
 
    /* Make sure settings from other configs carry over into defaults
     * for another config. */
-   if (!retroarch_override_setting_is_set(RARCH_OVERRIDE_SETTING_SAVE_PATH, NULL))
+   if (!KingStation_override_setting_is_set(RARCH_OVERRIDE_SETTING_SAVE_PATH, NULL))
       dir_clear(RARCH_DIR_SAVEFILE);
-   if (!retroarch_override_setting_is_set(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL))
+   if (!KingStation_override_setting_is_set(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL))
       dir_clear(RARCH_DIR_SAVESTATE);
 
    *settings->paths.path_libretro_info = '\0';
@@ -2841,7 +2841,7 @@ static config_file_t *open_default_config_file(void)
       conf = config_file_new_from_path_to_string(conf_path);
    }
 
-   /* Fallback to $HOME/.retroarch.cfg. */
+   /* Fallback to $HOME/.KingStation.cfg. */
    if (!conf && getenv("HOME"))
    {
       fill_pathname_join(conf_path, getenv("HOME"),
@@ -2872,7 +2872,7 @@ static config_file_t *open_default_config_file(void)
 
          skeleton_conf[0] = '\0';
 
-         /* Build a retroarch.cfg path from the
+         /* Build a KingStation.cfg path from the
           * global config directory (/etc). */
          fill_pathname_join(skeleton_conf, GLOBAL_CONFIG_DIR,
             FILE_PATH_MAIN_CONFIG, sizeof(skeleton_conf));
@@ -3095,7 +3095,7 @@ static bool config_load_file(global_t *global,
        * low values to what they were
        * intended to be based on the default value in config.def.h
        * If the value is less than 10000 then multiple by 1MB because if 
-       * the retroarch.cfg
+       * the KingStation.cfg
        * file contains rewind_buffer_size = "100",
        * then that ultimately gets interpreted as
        * 100MB, so ensure the internal values represent that.*/
@@ -3380,7 +3380,7 @@ static bool config_load_file(global_t *global,
          settings->bools.bluetooth_enable, filestream_exists(LAKKA_BLUETOOTH_PATH));
 #endif
 
-   if (!retroarch_override_setting_is_set(RARCH_OVERRIDE_SETTING_SAVE_PATH, NULL) &&
+   if (!KingStation_override_setting_is_set(RARCH_OVERRIDE_SETTING_SAVE_PATH, NULL) &&
          config_get_path(conf, "savefile_directory", tmp_str, sizeof(tmp_str)))
    {
       if (string_is_equal(tmp_str, "default"))
@@ -3404,7 +3404,7 @@ static bool config_load_file(global_t *global,
          RARCH_WARN("savefile_directory is not a directory, ignoring ...\n");
    }
 
-   if (!retroarch_override_setting_is_set(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL) &&
+   if (!KingStation_override_setting_is_set(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL) &&
          config_get_path(conf, "savestate_directory", tmp_str, sizeof(tmp_str)))
    {
       if (string_is_equal(tmp_str, "default"))
@@ -3452,7 +3452,7 @@ static bool config_load_file(global_t *global,
     * added, set the favourites limit according to the current
     * history playlist size limit. (Have to do this, otherwise
     * users with large custom history size limits may lose
-    * favourites entries when updating RetroArch...) */
+    * favourites entries when updating KingStation...) */
    if ( config_entry_exists(conf, "content_history_size") &&
        !config_entry_exists(conf, "content_favorites_size"))
    {
@@ -3629,8 +3629,8 @@ bool config_load_override(void *data)
     * that might have been found */
 
    /* Toggle has_save_path to false so it resets */
-   retroarch_override_setting_unset(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL);
-   retroarch_override_setting_unset(RARCH_OVERRIDE_SETTING_SAVE_PATH,  NULL);
+   KingStation_override_setting_unset(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL);
+   KingStation_override_setting_unset(RARCH_OVERRIDE_SETTING_SAVE_PATH,  NULL);
 
    if (!config_load_file(global_get_ptr(),
             path_get(RARCH_PATH_CONFIG), settings))
@@ -3642,8 +3642,8 @@ bool config_load_override(void *data)
             NULL, MESSAGE_QUEUE_ICON_DEFAULT, MESSAGE_QUEUE_CATEGORY_INFO);
 
    /* Reset save paths. */
-   retroarch_override_setting_set(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL);
-   retroarch_override_setting_set(RARCH_OVERRIDE_SETTING_SAVE_PATH, NULL);
+   KingStation_override_setting_set(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL);
+   KingStation_override_setting_set(RARCH_OVERRIDE_SETTING_SAVE_PATH, NULL);
 
    path_clear(RARCH_PATH_CONFIG_APPEND);
 
@@ -3663,8 +3663,8 @@ bool config_unload_override(void)
    path_clear(RARCH_PATH_CONFIG_APPEND);
 
    /* Toggle has_save_path to false so it resets */
-   retroarch_override_setting_unset(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL);
-   retroarch_override_setting_unset(RARCH_OVERRIDE_SETTING_SAVE_PATH,  NULL);
+   KingStation_override_setting_unset(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL);
+   KingStation_override_setting_unset(RARCH_OVERRIDE_SETTING_SAVE_PATH,  NULL);
 
    if (!config_load_file(global_get_ptr(),
             path_get(RARCH_PATH_CONFIG), config_get_ptr()))
@@ -3673,8 +3673,8 @@ bool config_unload_override(void)
    RARCH_LOG("[Overrides]: Configuration overrides unloaded, original configuration restored.\n");
 
    /* Reset save paths */
-   retroarch_override_setting_set(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL);
-   retroarch_override_setting_set(RARCH_OVERRIDE_SETTING_SAVE_PATH, NULL);
+   KingStation_override_setting_set(RARCH_OVERRIDE_SETTING_STATE_PATH, NULL);
+   KingStation_override_setting_set(RARCH_OVERRIDE_SETTING_SAVE_PATH, NULL);
 
    return true;
 }
@@ -3696,7 +3696,7 @@ bool config_load_remap(const char *directory_input_remapping,
       void *data)
 {
    char content_dir_name[PATH_MAX_LENGTH];
-   /* path to the directory containing retroarch.cfg (prefix)    */
+   /* path to the directory containing KingStation.cfg (prefix)    */
    char remap_directory[PATH_MAX_LENGTH];
    /* final path for core-specific configuration (prefix+suffix) */
    char core_path[PATH_MAX_LENGTH];
@@ -4060,7 +4060,7 @@ bool config_save_file(const char *path)
    {
       for (i = 0; i < (unsigned)array_settings_size; i++)
          if (!array_settings[i].override ||
-             !retroarch_override_setting_is_set(array_settings[i].override, NULL))
+             !KingStation_override_setting_is_set(array_settings[i].override, NULL))
             config_set_string(conf,
                   array_settings[i].ident,
                   array_settings[i].ptr);
@@ -4073,7 +4073,7 @@ bool config_save_file(const char *path)
    {
       for (i = 0; i < (unsigned)float_settings_size; i++)
          if (!float_settings[i].override ||
-             !retroarch_override_setting_is_set(float_settings[i].override, NULL))
+             !KingStation_override_setting_is_set(float_settings[i].override, NULL))
             config_set_float(conf,
                   float_settings[i].ident,
                   *float_settings[i].ptr);
@@ -4086,7 +4086,7 @@ bool config_save_file(const char *path)
    {
       for (i = 0; i < (unsigned)int_settings_size; i++)
          if (!int_settings[i].override ||
-             !retroarch_override_setting_is_set(int_settings[i].override, NULL))
+             !KingStation_override_setting_is_set(int_settings[i].override, NULL))
             config_set_int(conf,
                   int_settings[i].ident,
                   *int_settings[i].ptr);
@@ -4098,7 +4098,7 @@ bool config_save_file(const char *path)
    {
       for (i = 0; i < (unsigned)uint_settings_size; i++)
          if (!uint_settings[i].override ||
-             !retroarch_override_setting_is_set(uint_settings[i].override, NULL))
+             !KingStation_override_setting_is_set(uint_settings[i].override, NULL))
             config_set_int(conf,
                   uint_settings[i].ident,
                   *uint_settings[i].ptr);
@@ -4110,7 +4110,7 @@ bool config_save_file(const char *path)
    {
       for (i = 0; i < (unsigned)size_settings_size; i++)
          if (!size_settings[i].override ||
-             !retroarch_override_setting_is_set(size_settings[i].override, NULL))
+             !KingStation_override_setting_is_set(size_settings[i].override, NULL))
             config_set_int(conf,
                   size_settings[i].ident,
                   (int)*size_settings[i].ptr);
@@ -4141,7 +4141,7 @@ bool config_save_file(const char *path)
    {
       for (i = 0; i < (unsigned)bool_settings_size; i++)
          if (!bool_settings[i].override ||
-             !retroarch_override_setting_is_set(bool_settings[i].override, NULL))
+             !KingStation_override_setting_is_set(bool_settings[i].override, NULL))
             config_set_bool(conf, bool_settings[i].ident,
                   *bool_settings[i].ptr);
 
@@ -4161,7 +4161,7 @@ bool config_save_file(const char *path)
 #endif
 
    /* Verbosity isn't in bool_settings since it needs to be loaded differently */
-   if (!retroarch_override_setting_is_set(RARCH_OVERRIDE_SETTING_VERBOSITY, NULL))
+   if (!KingStation_override_setting_is_set(RARCH_OVERRIDE_SETTING_VERBOSITY, NULL))
       config_set_bool(conf, "log_verbosity",
             verbosity_is_enabled());
    config_set_bool(conf, "perfcnt_enable",

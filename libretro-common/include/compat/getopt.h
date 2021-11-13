@@ -1,4 +1,4 @@
-/* Copyright  (C) 2010-2020 The RetroArch team
+/* Copyright  (C) 2010-2020 The KingStation team
  *
  * ---------------------------------------------------------------------------------------
  * The following license statement only applies to this file (getopt.h).
@@ -29,7 +29,7 @@
 
 /* Custom implementation of the GNU getopt_long for portability.
  * Not designed to be fully compatible, but compatible with
- * the features RetroArch uses. */
+ * the features KingStation uses. */
 
 #ifdef HAVE_GETOPT_LONG
 #include <getopt.h>

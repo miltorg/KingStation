@@ -4,8 +4,8 @@ HAVE_THREADS       = 0
 MUTE_WARNINGS      = 1
 PS2_IP = 192.168.1.10
 
-TARGET = retroarchps2-debug.elf
-TARGET_RELEASE = retroarchps2.elf
+TARGET = KingStationps2-debug.elf
+TARGET_RELEASE = KingStationps2.elf
 
 # Compile the IRXs first
 IRX_DIR = ps2/irx

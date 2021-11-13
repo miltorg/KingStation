@@ -95,7 +95,7 @@ void view_sort_layers(view_t *view)
    layer_t *layer;
    unsigned i = 0;
 
-   /* retroarch frame *= screen's color */
+   /* KingStation frame *= screen's color */
    if ((layer = view_find_layer(view, "screen")))
    {
       layer->blend = VIDEO_LAYOUT_BLEND_MOD;

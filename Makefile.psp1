@@ -6,7 +6,7 @@ HAVE_THREADS       = 1
 BIG_STACK          = 0
 WHOLE_ARCHIVE_LINK = 0
 
-TARGET = retroarchpsp
+TARGET = KingStationpsp
 
 ifeq ($(DEBUG), 1)
    OPTIMIZE_LV	:= -O0 -g
@@ -44,7 +44,7 @@ endif
 CFLAGS += $(RARCH_DEFINES)
 
 EXTRA_TARGETS = EBOOT.PBP
-PSP_EBOOT_TITLE = RetroArch PSP1
+PSP_EBOOT_TITLE = KingStation PSP1
 
 PSP_OBJECTS = griffin/griffin.o bootstrap/psp1/kernel_functions.o
 
@@ -56,12 +56,12 @@ include $(PSPSDK)/lib/build.mak
 pspsh-debug:
 	pspsh -e reset
 	read -p "Start debugger in VSCode and press any key to continue... \n" -n1 -s
-	pspsh -e debug ./retroarchpsp.prx
+	pspsh -e debug ./KingStationpsp.prx
 	pspsh
 
 pspsh-run:
 	pspsh -e reset
-	pspsh -e ./retroarchpsp.prx
+	pspsh -e ./KingStationpsp.prx
 	pspsh
 
 debug: clean all pspsh-debug

@@ -1,17 +1,17 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2012-2015 - Michael Lelli
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -54,7 +54,7 @@
 #include "../../configuration.h"
 #include "../../dynamic.h"
 
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 #include "../../verbosity.h"
 #include "../common/gl_common.h"
 
@@ -2025,7 +2025,7 @@ static bool gl2_shader_init(gl_t *gl, const gfx_ctx_driver_t *ctx_driver,
 {
    video_shader_ctx_init_t init_data;
    bool ret                          = false;
-   const char *shader_path           = retroarch_get_shader_preset();
+   const char *shader_path           = KingStation_get_shader_preset();
    enum rarch_shader_type parse_type = video_shader_parse_type(shader_path);
    enum rarch_shader_type type;
 
@@ -3716,9 +3716,9 @@ static void *gl2_init(const video_info_t *video,
    if (string_is_equal(vendor, "Microsoft Corporation"))
       if (string_is_equal(renderer, "GDI Generic"))
 #ifdef HAVE_OPENGL1
-         retroarch_force_video_driver_fallback("gl1");
+         KingStation_force_video_driver_fallback("gl1");
 #else
-         retroarch_force_video_driver_fallback("gdi");
+         KingStation_force_video_driver_fallback("gdi");
 #endif
 #endif
 

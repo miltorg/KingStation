@@ -1,15 +1,15 @@
-﻿/*  RetroArch - A frontend for libretro.
+﻿/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -143,7 +143,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
             snprintf(s, len,
                   "鼠标捕获开关 \n"
                   " \n"
-                  "当鼠标捕获开启时，RetroArch将会隐藏鼠标指针，并 \n"
+                  "当鼠标捕获开启时，KingStation将会隐藏鼠标指针，并 \n"
                   "使之控制在窗口中。这使得一些依靠鼠标相对位置的程 \n"
                   "序能更好运行。");
             break;
@@ -160,9 +160,9 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
             break;
          case RARCH_QUIT_KEY:
             snprintf(s, len,
-                  "用于正常退出 RetroArch 的按键 \n"
+                  "用于正常退出 KingStation 的按键 \n"
                   " \n"
-                  "使用任何强制手段来退出RetroArch（如发送SIGKILL） \n"
+                  "使用任何强制手段来退出KingStation（如发送SIGKILL） \n"
                   "可能导致系统无法正确存储数据。"
 #ifdef __unix__
                   "\n在类Unix系统上，SIGINT/SIGTERM信号能够保证正常 \n"
@@ -214,7 +214,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
                "以获取一个免费账号。 \n"
                " \n"
                "在你注册以后, 你需要 \n"
-               "在RetroArch输入你的 \n"
+               "在KingStation输入你的 \n"
                "账号以及密码。");
          break;
       case MENU_ENUM_LABEL_CHEEVOS_USERNAME:
@@ -342,12 +342,12 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
                " \n"
                "If this option is left disabled, \n"
                "selecting the shutdown procedure \n"
-               "would trigger RetroArch being shut \n"
+               "would trigger KingStation being shut \n"
                "down. \n"
                " \n"
                "Enabling this option will load a \n"
                "dummy core instead so that we remain \n"
-               "inside the menu and RetroArch won't \n"
+               "inside the menu and KingStation won't \n"
                "shutdown.");
          break;
       case MENU_ENUM_LABEL_CHECK_FOR_MISSING_FIRMWARE:
@@ -425,7 +425,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
          snprintf(s, len,
                "Libretro 核心 \n"
                " \n"
-               "选择该文件使 RetroArch 加载该核心。");
+               "选择该文件使 KingStation 加载该核心。");
          break;
       case MENU_ENUM_LABEL_FILE_BROWSER_DIRECTORY:
          snprintf(s, len,
@@ -437,12 +437,12 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
          snprintf(s, len,
                "缓存文件夹 \n"
                " \n"
-               "被 RetroArch 解压的游戏内容会临时存放到这个文 \n"
+               "被 KingStation 解压的游戏内容会临时存放到这个文 \n"
                "件夹。");
          break;
       case MENU_ENUM_LABEL_HISTORY_LIST_ENABLE:
          snprintf(s, len,
-               "若开启，所有在 RetroArch 中加载过的文件 \n"
+               "若开启，所有在 KingStation 中加载过的文件 \n"
                "都会自动的放入最近使用历史列表中。");
          break;
       case MENU_ENUM_LABEL_RGUI_BROWSER_DIRECTORY:
@@ -453,7 +453,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
          break;
       case MENU_ENUM_LABEL_INPUT_POLL_TYPE_BEHAVIOR:
          snprintf(s, len,
-               "影响输入轮询过程在 RetroArch 中的执行方式。 \n"
+               "影响输入轮询过程在 KingStation 中的执行方式。 \n"
                " \n"
                "稍早 - 输入轮询过程将在帧生成之前执行。 \n"
                "正常 - 输入轮询过程将在被请求时执行。 \n"
@@ -600,9 +600,9 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
                " \n"
                );
          break;
-      case MENU_ENUM_LABEL_WELCOME_TO_RETROARCH:
+      case MENU_ENUM_LABEL_WELCOME_TO_KingStation:
          snprintf(s, len,
-               "欢迎来到 RetroArch\n"
+               "欢迎来到 KingStation\n"
                );
          break;
       case MENU_ENUM_LABEL_VALUE_HELP_AUDIO_VIDEO_TROUBLESHOOTING_DESC:
@@ -610,7 +610,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
             /* Work around C89 limitations */
             char u[501];
             const char * t =
-                  "RetroArch 依赖于一种独特的音频/视频同步形式，\n"
+                  "KingStation 依赖于一种独特的音频/视频同步形式，\n"
                   "需要根据显示器的刷新率对其进行校准，以获得最佳\n"
                   "性能。\n"
                   " \n"
@@ -655,7 +655,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
          break;
       case MENU_ENUM_LABEL_VALUE_EXTRACTING_PLEASE_WAIT:
          snprintf(s, len,
-               "欢迎使用 RetroArch\n"
+               "欢迎使用 KingStation\n"
                "\n"
                "正在解压必要文件, 请稍等。\n"
                "这可能需要一点时间……\n"
@@ -726,8 +726,8 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
                "每当你加载一个游戏时，它和所使用的核心 \n"
                "将被保存到历史记录中。 \n"
                " \n"
-               "历史记录文件和 RetroArch 设置文件在同一个 \n"
-               "文件夹中。如果 RetroArch 启动时没有找到 \n"
+               "历史记录文件和 KingStation 设置文件在同一个 \n"
+               "文件夹中。如果 KingStation 启动时没有找到 \n"
                "历史记录文件，主菜单中将不会显示历史记录。"
                );
          break;
@@ -888,7 +888,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
          snprintf(s, len,
                "Shader Passes. \n"
                " \n"
-               "RetroArch allows you to mix and match various \n"
+               "KingStation allows you to mix and match various \n"
                "shaders with arbitrary shader passes, with \n"
                "custom hardware filters and scale factors. \n"
                " \n"
@@ -1024,7 +1024,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
                "应用渲染器更改后，渲染器设置将被 \n"
                "保存到 Shader 文件夹下的文件中 \n"
                "（扩展名为 .cgp 或 .glslp）。 \n"
-               "即使退出 RetroArch，该文件也会被保留。"
+               "即使退出 KingStation，该文件也会被保留。"
                );
          break;
       case MENU_ENUM_LABEL_MENU_TOGGLE:
@@ -1035,7 +1035,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
          snprintf(s, len,
                "切换鼠标抓取。\n"
                " \n"
-               "When mouse is grabbed, RetroArch hides the \n"
+               "When mouse is grabbed, KingStation hides the \n"
                "mouse, and keeps the mouse pointer inside \n"
                "the window to allow relative mouse input to \n"
                "work better.");
@@ -1157,7 +1157,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
                " \n"
                "例如 60fps 的游戏开启 5 倍速 就是 300 fps。\n"
                " \n"
-               "RetroArch 会尽可能保证快进时不超过该速度，\n"
+               "KingStation 会尽可能保证快进时不超过该速度，\n"
                "但不会特别精确。");
          break;
       case MENU_ENUM_LABEL_VIDEO_MONITOR_INDEX:
@@ -1260,7 +1260,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
       case MENU_ENUM_LABEL_SAVESTATE_AUTO_SAVE:
       case MENU_ENUM_LABEL_SAVESTATE_AUTO_LOAD:
          snprintf(s, len,
-               "在 RetroArch 退出时 \n"
+               "在 KingStation 退出时 \n"
                "自动保存即时存档。\n"
                " \n"
                "如果自动读档选项已打开，\n"
@@ -1569,7 +1569,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
          break;
       case MENU_ENUM_LABEL_INPUT_MAX_USERS:
          snprintf(s, len,
-               "RetroArch 支持的最大用户数量。");
+               "KingStation 支持的最大用户数量。");
          break;
       case MENU_ENUM_LABEL_CORE_UPDATER_AUTO_EXTRACT_ARCHIVE:
          snprintf(s, len,
@@ -1582,7 +1582,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
          break;
       case MENU_ENUM_LABEL_NETPLAY_NICKNAME:
          snprintf(s, len,
-               "你的 RetroArch 用户名，用于联机游戏。");
+               "你的 KingStation 用户名，用于联机游戏。");
          break;
       case MENU_ENUM_LABEL_NETPLAY_TCP_UDP_PORT:
          snprintf(s, len,
@@ -1625,7 +1625,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
          snprintf(s, len,
                "启用自动配置按键。\n"
                " \n"
-               "RetroArch 将尝试自动配置手柄按键， \n"
+               "KingStation 将尝试自动配置手柄按键， \n"
                "和即插即用模式。");
          break;
       case MENU_ENUM_LABEL_CAMERA_ALLOW:
@@ -1664,7 +1664,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
          break;
       case MENU_ENUM_LABEL_EXIT_EMULATOR:
          snprintf(s, len,
-               "正常退出 RetroArch。"
+               "正常退出 KingStation。"
 #if !defined(RARCH_MOBILE) && !defined(RARCH_CONSOLE)
                "\nKilling it in any hard way (SIGKILL, \n"
                "etc) will terminate without saving\n"
@@ -1745,7 +1745,7 @@ int msg_hash_get_help_chs_enum(enum msg_hash_enums msg, char *s, size_t len)
          break;
       case MENU_ENUM_LABEL_VALUE_WHAT_IS_A_CORE_DESC:
          snprintf(s, len,
-               "RetroArch 本身并不能做什么事情。 \n"
+               "KingStation 本身并不能做什么事情。 \n"
                " \n"
                "如果想在上面干点什么，你需要向它加载 \n"
                "一个程序。\n"

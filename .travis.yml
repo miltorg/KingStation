@@ -73,7 +73,7 @@ matrix:
     - os: osx
       osx_image: xcode8
       script:
-        - xcodebuild -target RetroArch -configuration Release -project pkg/apple/RetroArch.xcodeproj
+        - xcodebuild -target KingStation -configuration Release -project pkg/apple/KingStation.xcodeproj
     - os: osx
       osx_image: xcode11.2
       script:
@@ -86,7 +86,7 @@ matrix:
         - security import dev.p12 -k build.keychain -P $OSX_CERT_PASS -T /usr/bin/codesign
         - rm dev.p12
         - security set-key-partition-list -S "apple-tool:,apple:,codesign:" -s -k travis build.keychain
-        - xcodebuild -target RetroArchQt -configuration Release -project pkg/apple/RetroArch_Metal.xcodeproj
+        - xcodebuild -target KingStationQt -configuration Release -project pkg/apple/KingStation_Metal.xcodeproj
       deploy:
         skip_cleanup: true
         provider: script
@@ -198,8 +198,8 @@ addons:
       - llvm-toolchain-xenial
   coverity_scan:
     project:
-      name: "RetroArch"
-      description: "RetroArch is the official reference frontend for the libretro API."
+      name: "KingStation"
+      description: "KingStation is the official reference frontend for the libretro API."
     notification_email: libretro@gmail.com
     build_command_prepend: "./configure; make clean"
     build_command:   "make"

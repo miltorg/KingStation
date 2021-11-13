@@ -172,19 +172,19 @@ MSG_HASH(
    "了解这个程序应该如何使用。"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
    "重启程序"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
    "重启程序。"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
    "退出程序"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
    "退出程序。"
    )
 
@@ -2871,7 +2871,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_GLOBAL_CORE_OPTIONS,
-   "将所有核心选项保存到一个通用设置文件 (retroarch-core-options.cfg)。当禁用时，每个核心的选项将被保存到全能模拟器的配置文件夹中一个独立的核心文件夹/文件。"
+   "将所有核心选项保存到一个通用设置文件 (KingStation-core-options.cfg)。当禁用时，每个核心的选项将被保存到全能模拟器的配置文件夹中一个独立的核心文件夹/文件。"
    )
 
 /* Settings > Saving */
@@ -4015,19 +4015,19 @@ MSG_HASH(
    "显示或隐藏「帮助文档」选项。"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_KingStation,
    "显示「退出程序」"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_KingStation,
    "显示或隐藏「退出程序」选项。"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_MENU_SHOW_RESTART_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_MENU_SHOW_RESTART_KingStation,
    "显示「重启程序」"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_MENU_SHOW_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_MENU_SHOW_RESTART_KingStation,
    "显示或隐藏「重启程序」选项。"
    )
 MSG_HASH(
@@ -8721,15 +8721,15 @@ MSG_HASH(
    "请填写所有必需字段。"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_NIGHTLY,
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_NIGHTLY,
    "更新全能模拟 (每日构建)"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_FINISHED,
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_FINISHED,
    "全能模拟器更新成功。请重启程序使更新生效。"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_FAILED,
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_FAILED,
    "更新失败。"
    )
 MSG_HASH(
@@ -9343,7 +9343,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_CONTENT_DIR,
-   "通常由 Libretro/RetroArch 的打包开发者设置，指向素材文件夹。"
+   "通常由 Libretro/KingStation 的打包开发者设置，指向素材文件夹。"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_ASK_ARCHIVE,
@@ -9536,7 +9536,7 @@ MSG_HASH(
    "「%.*s」已通过输入设备「%.*s」加入"
    )
 MSG_HASH(
-   MSG_NETPLAY_NOT_RETROARCH,
+   MSG_NETPLAY_NOT_KingStation,
    "联机尝试失败，因为对方没有运行全能模拟器，或者运行的版本太旧。"
    )
 MSG_HASH(
@@ -11282,6 +11282,6 @@ MSG_HASH(
 #ifdef HAVE_QT
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_SCAN_FINISHED,
-   "扫描完成。<br><br>\n为了是游戏被正确扫描，您必须：\n<ul><li>已下载了兼容的核心</li>\n<li>已更新了「核心信息文件」</li>\n<li>已更新了「Databases」</li>\n<li>更新后重启全能模拟器</li></ul>\n最后，游戏 ROM 必须匹配<a href=\"https://docs.libretro.com/guides/roms-playlists-thumbnails/#sources\">数据库</a>。如果仍然不行，<a href=\"https://www.github.com/libretro/RetroArch/issues\">请报告 BUG</a>。"
+   "扫描完成。<br><br>\n为了是游戏被正确扫描，您必须：\n<ul><li>已下载了兼容的核心</li>\n<li>已更新了「核心信息文件」</li>\n<li>已更新了「Databases」</li>\n<li>更新后重启全能模拟器</li></ul>\n最后，游戏 ROM 必须匹配<a href=\"https://docs.libretro.com/guides/roms-playlists-thumbnails/#sources\">数据库</a>。如果仍然不行，<a href=\"https://www.github.com/libretro/KingStation/issues\">请报告 BUG</a>。"
    )
 #endif

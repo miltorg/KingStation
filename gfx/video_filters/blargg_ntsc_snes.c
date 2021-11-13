@@ -1,16 +1,16 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -99,27 +99,27 @@ static void blargg_ntsc_snes_initialize(void *data,
    {
       if (memcmp(tvtype, "composite", 9) == 0)
       {
-         setup = retroarch_snes_ntsc_composite;
+         setup = KingStation_snes_ntsc_composite;
          setup.merge_fields = 1;
       }
       else if (memcmp(tvtype, "rf", 2) == 0)
       {
-         setup = retroarch_snes_ntsc_composite;
+         setup = KingStation_snes_ntsc_composite;
          setup.merge_fields = 0;
       }
       else if (memcmp(tvtype, "rgb", 3) == 0)
       {
-         setup = retroarch_snes_ntsc_rgb;
+         setup = KingStation_snes_ntsc_rgb;
          setup.merge_fields = 1;
       }
       else if (memcmp(tvtype, "svideo", 6) == 0)
       {
-         setup = retroarch_snes_ntsc_svideo;
+         setup = KingStation_snes_ntsc_svideo;
          setup.merge_fields = 1;
       }
       else if (memcmp(tvtype, "custom", 6) == 0)
       {
-         setup = retroarch_snes_ntsc_composite;
+         setup = KingStation_snes_ntsc_composite;
          setup.hue = custom_hue;
          setup.saturation = custom_saturation;
          setup.contrast = custom_contrast;
@@ -136,14 +136,14 @@ static void blargg_ntsc_snes_initialize(void *data,
    }
    else
    {
-      setup = retroarch_snes_ntsc_composite;
+      setup = KingStation_snes_ntsc_composite;
       setup.merge_fields = 1;
    }
 
    config->free(tvtype);
    tvtype = NULL;
 
-   retroarch_snes_ntsc_init(filt->ntsc, &setup);
+   KingStation_snes_ntsc_init(filt->ntsc, &setup);
 
    filt->burst = 0;
    filt->burst_toggle = (setup.merge_fields ? 0 : 1);
@@ -201,10 +201,10 @@ static void blargg_ntsc_snes_render_rgb565(void *data, int width, int height,
 {
    struct filter_data *filt = (struct filter_data*)data;
    if(width <= 256 || !hires_blit)
-      retroarch_snes_ntsc_blit(filt->ntsc, input, pitch, filt->burst,
+      KingStation_snes_ntsc_blit(filt->ntsc, input, pitch, filt->burst,
             width, height, output, outpitch * 2, first, last);
    else
-      retroarch_snes_ntsc_blit_hires(filt->ntsc, input, pitch, filt->burst,
+      KingStation_snes_ntsc_blit_hires(filt->ntsc, input, pitch, filt->burst,
             width, height, output, outpitch * 2, first, last);
 
    filt->burst ^= filt->burst_toggle;

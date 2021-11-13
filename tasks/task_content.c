@@ -1,17 +1,17 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2016-2019 - Brad Parker
  *  Copyright (C) 2016-2019 - Andrés Suárez
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -97,13 +97,13 @@
 #include "../frontend/frontend.h"
 #include "../playlist.h"
 #include "../paths.h"
-#include "../retroarch.h"
+#include "../KingStation.h"
 #include "../verbosity.h"
 
 #include "../msg_hash.h"
 #include "../content.h"
 #include "../dynamic.h"
-#include "../retroarch.h"
+#include "../KingStation.h"
 #include "../file_path_special.h"
 #include "../core.h"
 #include "../paths.h"
@@ -494,7 +494,7 @@ static void content_load_init_wrap(
       bool print_args)
 {
    *argc = 0;
-   argv[(*argc)++] = strdup("retroarch");
+   argv[(*argc)++] = strdup("KingStation");
 
    if (args->content_path)
    {
@@ -550,11 +550,11 @@ static void content_load_init_wrap(
 /**
  * content_load:
  *
- * Loads content file and starts up RetroArch.
- * If no content file can be loaded, will start up RetroArch
+ * Loads content file and starts up KingStation.
+ * If no content file can be loaded, will start up KingStation
  * as-is.
  *
- * Returns: false (0) if retroarch_main_init failed,
+ * Returns: false (0) if KingStation_main_init failed,
  * otherwise true (1).
  **/
 static bool content_load(content_ctx_info_t *info,
@@ -604,7 +604,7 @@ static bool content_load(content_ctx_info_t *info,
    wrap_args->argc = *rarch_argc_ptr;
    wrap_args->argv = rarch_argv_ptr;
 
-   success         = retroarch_main_init(wrap_args->argc, wrap_args->argv);
+   success         = KingStation_main_init(wrap_args->argc, wrap_args->argv);
 
    for (i = 0; i < ARRAY_SIZE(argv_copy); i++)
       free(argv_copy[i]);
@@ -620,7 +620,7 @@ static bool content_load(content_ctx_info_t *info,
    }
 
 #ifdef HAVE_GFX_WIDGETS
-   /* If retroarch_main_init() returned true, we
+   /* If KingStation_main_init() returned true, we
     * can safely trigger a load content animation */
    if (gfx_widgets_ready())
    {
@@ -1550,7 +1550,7 @@ bool task_push_start_dummy_core(content_ctx_info_t *content_info)
    sys_info->load_no_content = false;
    rarch_ctl(RARCH_CTL_STATE_FREE, NULL);
    task_queue_deinit();
-   retroarch_init_task_queue();
+   KingStation_init_task_queue();
 
    /* Loads content into currently selected core. */
    if ((ret = content_load(content_info, p_content)))
@@ -1699,7 +1699,7 @@ bool task_push_load_content_from_playlist_from_menu(
     * this point then a new instance has been
     * forked - have to shut down this one */
    rarch_ctl(RARCH_CTL_SET_SHUTDOWN, NULL);
-   retroarch_menu_running_finished(true);
+   KingStation_menu_running_finished(true);
 #endif
 
 end:
@@ -1713,7 +1713,7 @@ end:
          free(error_string);
       }
 
-      retroarch_menu_running();
+      KingStation_menu_running();
    }
 
    if (content_ctx.name_ips)
@@ -1786,7 +1786,7 @@ bool task_push_start_current_core(content_ctx_info_t *content_info)
 
    /* Preliminary stuff that has to be done before we
     * load the actual content. Can differ per mode. */
-   retroarch_set_current_core_type(CORE_TYPE_PLAIN, true);
+   KingStation_set_current_core_type(CORE_TYPE_PLAIN, true);
 
    /* Load content */
    if (firmware_update_status(&content_ctx))
@@ -1802,7 +1802,7 @@ bool task_push_start_current_core(content_ctx_info_t *content_info)
          free(error_string);
       }
 
-      retroarch_menu_running();
+      KingStation_menu_running();
       goto end;
    }
 
@@ -1847,7 +1847,7 @@ bool task_push_load_new_core(
 
    /* Preliminary stuff that has to be done before we
     * load the actual content. Can differ per mode. */
-   retroarch_set_current_core_type(type, true);
+   KingStation_set_current_core_type(type, true);
 
    return true;
 }
@@ -1944,7 +1944,7 @@ bool task_push_load_content_with_new_core_from_menu(
          free(error_string);
       }
 
-      retroarch_menu_running();
+      KingStation_menu_running();
       goto end;
    }
 
@@ -2173,12 +2173,12 @@ bool task_push_start_builtin_core(
 
    /* Preliminary stuff that has to be done before we
     * load the actual content. Can differ per mode. */
-   retroarch_set_current_core_type(type, true);
+   KingStation_set_current_core_type(type, true);
 
    /* Load content */
    if (!task_load_content_internal(content_info, true, false, false))
    {
-      retroarch_menu_running();
+      KingStation_menu_running();
       return false;
    }
 
@@ -2202,7 +2202,7 @@ bool task_push_load_content_with_core_from_menu(
    /* Load content */
    if (!task_load_content_internal(content_info, true, false, false))
    {
-      retroarch_menu_running();
+      KingStation_menu_running();
       return false;
    }
 
@@ -2252,7 +2252,7 @@ bool task_push_load_subsystem_with_core_from_menu(
    /* Load content */
    if (!task_load_content_internal(content_info, true, false, false))
    {
-      retroarch_menu_running();
+      KingStation_menu_running();
       return false;
    }
 

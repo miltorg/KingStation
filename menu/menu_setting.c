@@ -1,18 +1,18 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2014-2017 - Jean-André Santoni
  *  Copyright (C) 2016-2019 - Brad Parker
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -84,7 +84,7 @@
 #include "../performance_counters.h"
 #include "../setting_list.h"
 #include "../lakka.h"
-#include "../retroarch.h"
+#include "../KingStation.h"
 #include "../gfx/video_display_server.h"
 #ifdef HAVE_CHEATS
 #include "../cheat_manager.h"
@@ -4751,7 +4751,7 @@ static void setting_get_string_representation_uint_custom_viewport_width(rarch_s
 {
    struct retro_game_geometry  *geom    = NULL;
    struct retro_system_av_info *av_info = NULL;
-   unsigned int rotation                = retroarch_get_rotation();
+   unsigned int rotation                = KingStation_get_rotation();
    if (!setting)
       return;
 
@@ -4776,7 +4776,7 @@ static void setting_get_string_representation_uint_custom_viewport_height(rarch_
 {
    struct retro_game_geometry  *geom    = NULL;
    struct retro_system_av_info *av_info = NULL;
-   unsigned int rotation                = retroarch_get_rotation();
+   unsigned int rotation                = KingStation_get_rotation();
    if (!setting)
       return;
 
@@ -5358,7 +5358,7 @@ static int setting_uint_action_left_custom_viewport_width(
       custom->width = 1;
    else if (settings->bools.video_scale_integer)
    {
-      unsigned int rotation = retroarch_get_rotation();
+      unsigned int rotation = KingStation_get_rotation();
       if (rotation % 2)
       {
          if (custom->width > geom->base_height)
@@ -5398,7 +5398,7 @@ static int setting_uint_action_left_custom_viewport_height(
       custom->height = 1;
    else if (settings->bools.video_scale_integer)
    {
-      unsigned int rotation = retroarch_get_rotation();
+      unsigned int rotation = KingStation_get_rotation();
       if (rotation % 2)
       {
          if (custom->height > geom->base_width)
@@ -5639,7 +5639,7 @@ static int setting_uint_action_right_custom_viewport_width(
 
    if (settings->bools.video_scale_integer)
    {
-      unsigned int rotation = retroarch_get_rotation();
+      unsigned int rotation = KingStation_get_rotation();
       if (rotation % 2)
          custom->width += geom->base_height;
       else
@@ -5671,7 +5671,7 @@ static int setting_uint_action_right_custom_viewport_height(
 
    if (settings->bools.video_scale_integer)
    {
-      unsigned int rotation = retroarch_get_rotation();
+      unsigned int rotation = KingStation_get_rotation();
       if (rotation % 2)
          custom->height += geom->base_width;
       else
@@ -6695,7 +6695,7 @@ static int setting_action_start_custom_viewport_width(rarch_setting_t *setting)
 
    if (settings->bools.video_scale_integer)
    {
-      unsigned int rotation = retroarch_get_rotation();
+      unsigned int rotation = KingStation_get_rotation();
       if (rotation % 2)
          custom->width = ((custom->width + geom->base_height - 1) /
                geom->base_height) * geom->base_height;
@@ -6728,7 +6728,7 @@ static int setting_action_start_custom_viewport_height(rarch_setting_t *setting)
 
    if (settings->bools.video_scale_integer)
    {
-      unsigned int rotation = retroarch_get_rotation();
+      unsigned int rotation = KingStation_get_rotation();
       if (rotation % 2)
       {
          custom->height = ((custom->height + geom->base_width - 1) /
@@ -7094,7 +7094,7 @@ static void general_write_handler(rarch_setting_t *setting)
 
             if (*setting->value.target.boolean)
             {
-               unsigned int rotation = retroarch_get_rotation();
+               unsigned int rotation = KingStation_get_rotation();
 
                custom->x             = 0;
                custom->y             = 0;
@@ -7202,7 +7202,7 @@ static void general_write_handler(rarch_setting_t *setting)
             verbosity_disable();
             rarch_log_file_deinit();
          }
-         retroarch_override_setting_unset(RARCH_OVERRIDE_SETTING_VERBOSITY, NULL);
+         KingStation_override_setting_unset(RARCH_OVERRIDE_SETTING_VERBOSITY, NULL);
          break;
       case MENU_ENUM_LABEL_LOG_TO_FILE:
          if (verbosity_is_enabled())
@@ -7220,7 +7220,7 @@ static void general_write_handler(rarch_setting_t *setting)
             else if (!log_to_file && logging_to_file)
                rarch_log_file_deinit();
          }
-         retroarch_override_setting_unset(RARCH_OVERRIDE_SETTING_LOG_TO_FILE, NULL);
+         KingStation_override_setting_unset(RARCH_OVERRIDE_SETTING_LOG_TO_FILE, NULL);
          break;
       case MENU_ENUM_LABEL_LOG_DIR:
       case MENU_ENUM_LABEL_LOG_TO_FILE_TIMESTAMP:
@@ -7255,7 +7255,7 @@ static void general_write_handler(rarch_setting_t *setting)
 
             if (system)
             {
-               unsigned int rotation = retroarch_get_rotation();
+               unsigned int rotation = KingStation_get_rotation();
 
                video_driver_set_rotation(
                      (*setting->value.target.unsigned_integer +
@@ -8312,12 +8312,12 @@ static bool setting_append_list(
          {
             CONFIG_ACTION(
                   list, list_info,
-                  MENU_ENUM_LABEL_RESTART_RETROARCH,
-                  MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
+                  MENU_ENUM_LABEL_RESTART_KingStation,
+                  MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
                   &group_info,
                   &subgroup_info,
                   parent_group);
-            MENU_SETTINGS_LIST_CURRENT_ADD_CMD(list, list_info, CMD_EVENT_RESTART_RETROARCH);
+            MENU_SETTINGS_LIST_CURRENT_ADD_CMD(list, list_info, CMD_EVENT_RESTART_KingStation);
          }
 #endif
 
@@ -8422,16 +8422,16 @@ static bool setting_append_list(
 #ifdef HAVE_LAKKA
          CONFIG_ACTION(
                list, list_info,
-               MENU_ENUM_LABEL_QUIT_RETROARCH,
-               MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
+               MENU_ENUM_LABEL_QUIT_KingStation,
+               MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
                &group_info,
                &subgroup_info,
                parent_group);
 #else
          CONFIG_ACTION(
                list, list_info,
-               MENU_ENUM_LABEL_QUIT_RETROARCH,
-               MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
+               MENU_ENUM_LABEL_QUIT_KingStation,
+               MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
                &group_info,
                &subgroup_info,
                parent_group);
@@ -14889,10 +14889,10 @@ static bool setting_append_list(
 #ifdef HAVE_LAKKA
             CONFIG_BOOL(
                   list, list_info,
-                  &settings->bools.menu_show_quit_retroarch,
-                  MENU_ENUM_LABEL_MENU_SHOW_QUIT_RETROARCH,
-                  MENU_ENUM_LABEL_VALUE_MENU_SHOW_RESTART_RETROARCH,
-                  menu_show_quit_retroarch,
+                  &settings->bools.menu_show_quit_KingStation,
+                  MENU_ENUM_LABEL_MENU_SHOW_QUIT_KingStation,
+                  MENU_ENUM_LABEL_VALUE_MENU_SHOW_RESTART_KingStation,
+                  menu_show_quit_KingStation,
                   MENU_ENUM_LABEL_VALUE_OFF,
                   MENU_ENUM_LABEL_VALUE_ON,
                   &group_info,
@@ -14904,10 +14904,10 @@ static bool setting_append_list(
 #else
             CONFIG_BOOL(
                   list, list_info,
-                  &settings->bools.menu_show_quit_retroarch,
-                  MENU_ENUM_LABEL_MENU_SHOW_QUIT_RETROARCH,
-                  MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_RETROARCH,
-                  menu_show_quit_retroarch,
+                  &settings->bools.menu_show_quit_KingStation,
+                  MENU_ENUM_LABEL_MENU_SHOW_QUIT_KingStation,
+                  MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_KingStation,
+                  menu_show_quit_KingStation,
                   MENU_ENUM_LABEL_VALUE_OFF,
                   MENU_ENUM_LABEL_VALUE_ON,
                   &group_info,
@@ -14953,10 +14953,10 @@ static bool setting_append_list(
             if (frontend_driver_has_fork())
                CONFIG_BOOL(
                      list, list_info,
-                     &settings->bools.menu_show_restart_retroarch,
-                     MENU_ENUM_LABEL_MENU_SHOW_RESTART_RETROARCH,
-                     MENU_ENUM_LABEL_VALUE_MENU_SHOW_RESTART_RETROARCH,
-                     menu_show_restart_retroarch,
+                     &settings->bools.menu_show_restart_KingStation,
+                     MENU_ENUM_LABEL_MENU_SHOW_RESTART_KingStation,
+                     MENU_ENUM_LABEL_VALUE_MENU_SHOW_RESTART_KingStation,
+                     menu_show_restart_KingStation,
                      MENU_ENUM_LABEL_VALUE_OFF,
                      MENU_ENUM_LABEL_VALUE_ON,
                      &group_info,

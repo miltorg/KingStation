@@ -1,20 +1,20 @@
-# RetroArch Web Player
+# KingStation Web Player
 
-The RetroArch Web Player is RetroArch compiled through [Emscripten](http://kripken.github.io/emscripten-site/). The following outlines how to compile RetroArch using Emscripten, and running it in your browser.
+The KingStation Web Player is KingStation compiled through [Emscripten](http://kripken.github.io/emscripten-site/). The following outlines how to compile KingStation using Emscripten, and running it in your browser.
 
 ## Compiling
 
-To compile RetroArch with Emscripten, you'll first have to [download and install the Emscripten SDK](http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html). Once it's loaded in your shell, you'll run something like the following...
+To compile KingStation with Emscripten, you'll first have to [download and install the Emscripten SDK](http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html). Once it's loaded in your shell, you'll run something like the following...
 
 ```
-mkdir ~/retroarch
-cd ~/retroarch
+mkdir ~/KingStation
+cd ~/KingStation
 git clone https://github.com/libretro/libretro-fceumm.git
 cd libretro-fceumm
 emmake make -f Makefile.libretro platform=emscripten
-git clone https://github.com/libretro/RetroArch.git ~/retroarch/RetroArch
-cp ~/retroarch/libretro-fceumm/fceumm_libretro_emscripten.bc ~/retroarch/RetroArch/dist-scripts/fceumm_libretro_emscripten.bc
-cd ~/retroarch/RetroArch/dist-scripts
+git clone https://github.com/libretro/KingStation.git ~/KingStation/KingStation
+cp ~/KingStation/libretro-fceumm/fceumm_libretro_emscripten.bc ~/KingStation/KingStation/dist-scripts/fceumm_libretro_emscripten.bc
+cd ~/KingStation/KingStation/dist-scripts
 emmake ./dist-cores.sh emscripten
 ```
 

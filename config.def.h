@@ -1,17 +1,17 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2016 - Daniel De Matteis
  *  Copyright (C) 2016-2019 - Brad Parker
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -191,7 +191,7 @@
  * Dingux builds */
 #define DEFAULT_FULLSCREEN true
 #else
-#define DEFAULT_FULLSCREEN false
+#define DEFAULT_FULLSCREEN true
 #endif
 
 /* To use windowed mode or not when going fullscreen. */
@@ -236,7 +236,7 @@
 #define DEFAULT_CHECK_FIRMWARE_BEFORE_LOADING false
 
 /* Specifies whether to 'reload' (fork and quit)
- * RetroArch when launching content with the
+ * KingStation when launching content with the
  * currently loaded core
  * > Only relevant on platforms without dynamic core
  *   loading support
@@ -540,8 +540,8 @@ static const bool menu_show_dump_disc          = true;
 static const bool menu_show_information        = true;
 static const bool menu_show_configurations     = true;
 static const bool menu_show_help               = true;
-static const bool menu_show_quit_retroarch     = true;
-static const bool menu_show_restart_retroarch  = true;
+static const bool menu_show_quit_KingStation     = true;
+static const bool menu_show_restart_KingStation  = true;
 static const bool menu_show_reboot             = true;
 static const bool menu_show_shutdown           = true;
 #if defined(HAVE_LAKKA) || defined(VITA)
@@ -572,17 +572,17 @@ static const bool menu_savestate_resume     = false;
 static const bool content_show_settings     = true;
 static const bool content_show_favorites    = true;
 #ifdef HAVE_IMAGEVIEWER
-static const bool content_show_images       = true;
+static const bool content_show_images       = false;
 #endif
-static const bool content_show_music        = true;
+static const bool content_show_music        = false;
 #if defined(HAVE_FFMPEG) || defined(HAVE_MPV)
-static const bool content_show_video        = true;
+static const bool content_show_video        = false;
 #endif
 #if defined(HAVE_NETWORKING)
 #if defined(_3DS)
 static const bool content_show_netplay      = false;
 #else
-static const bool content_show_netplay      = true;
+static const bool content_show_netplay      = false;
 #endif
 #endif
 static const bool content_show_history      = true;
@@ -803,9 +803,9 @@ static const unsigned video_3ds_display_mode = CTR_VIDEO_MODE_3D;
 #define DEFAULT_AUDIO_ENABLE true
 
 /* Enable menu audio sounds. */
-static const bool audio_enable_menu        = false;
-static const bool audio_enable_menu_ok     = false;
-static const bool audio_enable_menu_cancel = false;
+static const bool audio_enable_menu        = true;
+static const bool audio_enable_menu_ok     = true;
+static const bool audio_enable_menu_cancel = true;
 static const bool audio_enable_menu_notice = false;
 static const bool audio_enable_menu_bgm    = false;
 
@@ -870,7 +870,7 @@ static const bool audio_enable_menu_bgm    = false;
 #elif defined(_3DS)
 #define DEFAULT_OUTPUT_RATE 32730
 #else
-#define DEFAULT_OUTPUT_RATE 48000
+#define DEFAULT_OUTPUT_RATE 22050
 #endif
 
 /* Audio device (e.g. hw:0,0 or /dev/audio). If NULL, will use defaults. */
@@ -882,7 +882,7 @@ static const bool audio_enable_menu_bgm    = false;
 /* For most Android devices, 64ms is way too low. */
 #define DEFAULT_OUT_LATENCY 128
 #else
-#define DEFAULT_OUT_LATENCY 64
+#define DEFAULT_OUT_LATENCY 128
 #endif
 
 /* Will sync audio. (recommended) */
@@ -897,11 +897,11 @@ static const bool audio_enable_menu_bgm    = false;
 
 /* Rate control delta. Defines how much rate_control
  * is allowed to adjust input rate. */
-#define DEFAULT_RATE_CONTROL_DELTA  0.005
+#define DEFAULT_RATE_CONTROL_DELTA  0.010
 
 /* Maximum timing skew. Defines how much adjust_system_rates
  * is allowed to adjust input rate. */
-#define DEFAULT_MAX_TIMING_SKEW  0.05
+#define DEFAULT_MAX_TIMING_SKEW  0.10
 
 /* Default audio volume in dB. (0.0 dB == unity gain). */
 #define DEFAULT_AUDIO_VOLUME 0.0
@@ -1032,9 +1032,9 @@ static const bool savestate_auto_index = false;
  *   savestates will be deleted in this case) */
 #define DEFAULT_SAVESTATE_MAX_KEEP 0
 
-/* Automatically saves a savestate at the end of RetroArch's lifetime.
+/* Automatically saves a savestate at the end of KingStation's lifetime.
  * The path is $SRAM_PATH.auto.
- * RetroArch will automatically load any savestate with this path on
+ * KingStation will automatically load any savestate with this path on
  * startup if savestate_auto_load is set. */
 static const bool savestate_auto_save = false;
 static const bool savestate_auto_load = false;
@@ -1080,7 +1080,7 @@ static const bool stdin_cmd_enable = false;
 static const uint16_t network_remote_base_port = 55400;
 
 #define DEFAULT_NETWORK_BUILDBOT_AUTO_EXTRACT_ARCHIVE true
-#define DEFAULT_NETWORK_BUILDBOT_SHOW_EXPERIMENTAL_CORES false
+#define DEFAULT_NETWORK_BUILDBOT_SHOW_EXPERIMENTAL_CORES true
 
 /* Automatically create a backup whenever a core is
  * updated via the online updater
@@ -1166,10 +1166,10 @@ static const int default_content_favorites_size = 200;
 #define DEFAULT_MENU_WIDGET_SCALE_FACTOR_WINDOWED 1.0f
 
 /* Log level for the frontend */
-#define DEFAULT_FRONTEND_LOG_LEVEL 1
+#define DEFAULT_FRONTEND_LOG_LEVEL 0
 
 /* Log level for libretro cores (GET_LOG_INTERFACE). */
-#define DEFAULT_LIBRETRO_LOG_LEVEL 1
+#define DEFAULT_LIBRETRO_LOG_LEVEL 0
 
 #ifndef RARCH_DEFAULT_PORT
 #define RARCH_DEFAULT_PORT 55435
@@ -1260,7 +1260,7 @@ static const bool ui_companion_enable = false;
 static const bool ui_companion_toggle = false;
 
 /* Only init the WIMP UI for this session if this is enabled */
-#define DEFAULT_DESKTOP_MENU_ENABLE true
+#define DEFAULT_DESKTOP_MENU_ENABLE false
 
 /* Keep track of how long each core+content has been running for over time */
 
@@ -1269,7 +1269,7 @@ static const bool ui_companion_toggle = false;
  * default */
 #define DEFAULT_CONTENT_RUNTIME_LOG false
 #else
-#define DEFAULT_CONTENT_RUNTIME_LOG true
+#define DEFAULT_CONTENT_RUNTIME_LOG false
 #endif
 
 /* Keep track of how long each content has been running 
@@ -1296,8 +1296,8 @@ static const unsigned midi_volume = 100;
 /* Only applies to Android 7.0 (API 24) and up */
 static const bool sustained_performance_mode = false;
 
-static const bool vibrate_on_keypress        = false;
-static const bool enable_device_vibration    = false;
+static const bool vibrate_on_keypress        = true;
+static const bool enable_device_vibration    = true;
 
 /* Defines the strength of rumble effects
  * on OpenDingux devices */
@@ -1419,11 +1419,11 @@ static const bool enable_device_vibration    = false;
 
 #define DEFAULT_AI_SERVICE_TARGET_LANG 0
 
-#define DEFAULT_AI_SERVICE_ENABLE true
+#define DEFAULT_AI_SERVICE_ENABLE false
 
 #define DEFAULT_AI_SERVICE_PAUSE false
 
-#define DEFAULT_AI_SERVICE_MODE 1
+#define DEFAULT_AI_SERVICE_MODE 0
 
 #define DEFAULT_AI_SERVICE_URL "http://localhost:4404/"
 

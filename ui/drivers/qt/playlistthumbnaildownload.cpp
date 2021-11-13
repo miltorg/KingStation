@@ -21,7 +21,7 @@ extern "C" {
 }
 #endif
 
-#define USER_AGENT "RetroArch-WIMP/" PACKAGE_VERSION
+#define USER_AGENT "KingStation-WIMP/" PACKAGE_VERSION
 #define PARTIAL_EXTENSION ".partial"
 #define THUMBNAIL_URL_HEADER "https://github.com/libretro-thumbnails/"
 #define THUMBNAIL_URL_BRANCH "/blob/master/"

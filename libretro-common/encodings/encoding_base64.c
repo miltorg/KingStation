@@ -21,7 +21,7 @@
   YWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz
 
 
-  Modified for RetroArch formatting, logging, and header files.
+  Modified for KingStation formatting, logging, and header files.
 */
 
 

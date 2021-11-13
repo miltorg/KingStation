@@ -1,4 +1,4 @@
-TARGET = retroarch.exe
+TARGET = KingStation.exe
 
 HAVE_SCREENSHOTS = 1
 HAVE_AUDIOMIXER = 1

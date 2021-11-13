@@ -1,17 +1,17 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2017-2019 - Andrés Suárez
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -65,7 +65,7 @@ extern "C" {
 }
 #endif
 
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 #include "../../verbosity.h"
 
 #ifndef AV_CODEC_FLAG_QSCALE
@@ -917,7 +917,7 @@ static bool ffmpeg_init_muxer_post(ffmpeg_t *handle)
    }
 
    av_dict_set(&handle->muxer.ctx->metadata, "title",
-         "RetroArch Video Dump", 0);
+         "KingStation Video Dump", 0);
 
    return avformat_write_header(handle->muxer.ctx, NULL) >= 0;
 }

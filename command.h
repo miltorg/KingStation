@@ -1,17 +1,17 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2016 - Daniel De Matteis
  *  Copyright (C) 2016-2019 - Brad Parker
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -32,7 +32,7 @@ RETRO_BEGIN_DECLS
 enum event_command
 {
    CMD_EVENT_NONE = 0,
-   /* Resets RetroArch. */
+   /* Resets KingStation. */
    CMD_EVENT_RESET,
    CMD_EVENT_SET_PER_GAME_RESOLUTION,
    CMD_EVENT_SET_FRAME_LIMIT,
@@ -51,7 +51,7 @@ enum event_command
    CMD_EVENT_SAVE_STATE_INCREMENT,
    /* Takes screenshot. */
    CMD_EVENT_TAKE_SCREENSHOT,
-   /* Quits RetroArch. */
+   /* Quits KingStation. */
    CMD_EVENT_QUIT,
    /* Reinitialize all drivers. */
    CMD_EVENT_REINIT_FROM_TOGGLE,
@@ -75,7 +75,7 @@ enum event_command
    CMD_EVENT_AUDIO_MUTE_TOGGLE,
    /* Toggles FPS counter. */
    CMD_EVENT_FPS_TOGGLE,
-   /* Gathers diagnostic info about the system and RetroArch configuration, then sends it to our servers. */
+   /* Gathers diagnostic info about the system and KingStation configuration, then sends it to our servers. */
    CMD_EVENT_SEND_DEBUG_INFO,
    /* Toggles netplay hosting. */
    CMD_EVENT_NETPLAY_HOST_TOGGLE,
@@ -113,13 +113,13 @@ enum event_command
    CMD_EVENT_VIDEO_SET_BLOCKING_STATE,
    /* Sets current aspect ratio index. */
    CMD_EVENT_VIDEO_SET_ASPECT_RATIO,
-   /* Restarts RetroArch. */
-   CMD_EVENT_RESTART_RETROARCH,
+   /* Restarts KingStation. */
+   CMD_EVENT_RESTART_KingStation,
    /* Shutdown the OS */
    CMD_EVENT_SHUTDOWN,
    /* Reboot the OS */
    CMD_EVENT_REBOOT,
-   /* Resume RetroArch when in menu. */
+   /* Resume KingStation when in menu. */
    CMD_EVENT_RESUME,
    /* Add a playlist entry to favorites. */
    CMD_EVENT_ADD_TO_FAVORITES,
@@ -127,9 +127,9 @@ enum event_command
    CMD_EVENT_RESET_CORE_ASSOCIATION,
    /* Toggles pause. */
    CMD_EVENT_PAUSE_TOGGLE,
-   /* Pauses RetroArch. */
+   /* Pauses KingStation. */
    CMD_EVENT_UNPAUSE,
-   /* Unpauses retroArch. */
+   /* Unpauses KingStation. */
    CMD_EVENT_PAUSE,
    CMD_EVENT_MENU_RESET_TO_DEFAULT_CONFIG,
    CMD_EVENT_MENU_SAVE_CURRENT_CONFIG,
@@ -220,7 +220,7 @@ typedef struct command_handle
  * command_event:
  * @cmd                  : Command index.
  *
- * Performs RetroArch command with index @cmd.
+ * Performs KingStation command with index @cmd.
  *
  * Returns: true (1) on success, otherwise false (0).
  **/

@@ -51,7 +51,7 @@
       "configuration.h": "c",
       "ozone_display.h": "c",
       "verbosity.h": "c",
-      "retroarch.h": "c",
+      "KingStation.h": "c",
       "gfx_animation.h": "c",
       "netplay.h": "c",
       "scaler.h": "c",

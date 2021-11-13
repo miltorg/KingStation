@@ -1,4 +1,4 @@
-/* Copyright  (C) 2010-2020 The RetroArch team
+/* Copyright  (C) 2010-2020 The KingStation team
  *
  * ---------------------------------------------------------------------------------------
  * The following license statement only applies to this file (file_path.h).
@@ -220,11 +220,11 @@ void fill_pathname(char *out_path, const char *in_path,
  * @ext                : extension of output filename
  * @size               : buffer size of output filename
  *
- * Creates a 'dated' filename prefixed by 'RetroArch', and
+ * Creates a 'dated' filename prefixed by 'KingStation', and
  * concatenates extension (@ext) to it.
  *
  * E.g.:
- * out_filename = "RetroArch-{month}{day}-{Hours}{Minutes}.{@ext}"
+ * out_filename = "KingStation-{month}{day}-{Hours}{Minutes}.{@ext}"
  **/
 size_t fill_dated_filename(char *out_filename,
       const char *ext, size_t size);
@@ -240,7 +240,7 @@ size_t fill_dated_filename(char *out_filename,
  * concatenates extension (@ext) to it.
  *
  * E.g.:
- * out_filename = "RetroArch-{year}{month}{day}-{Hour}{Minute}{Second}.{@ext}"
+ * out_filename = "KingStation-{year}{month}{day}-{Hour}{Minute}{Second}.{@ext}"
  **/
 void fill_str_dated_filename(char *out_filename,
       const char *in_str, const char *ext, size_t size);

@@ -251,7 +251,7 @@ void __system_initArgv(void)
    {
       __system_argc    = 1;
       __system_argv    = (char**) malloc(sizeof(char**) * 2);
-      __system_argv[0] = "sdmc:/retroarch/retroarch";
+      __system_argv[0] = "sdmc:/KingStation/KingStation";
    }
    __system_argv[__system_argc] = NULL;
 }

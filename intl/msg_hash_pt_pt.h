@@ -129,7 +129,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_ONLINE_UPDATER,
-   "Transferir complementos, componentes e conteúdos para o RetroArch."
+   "Transferir complementos, componentes e conteúdos para o KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_NETPLAY,
@@ -172,19 +172,19 @@ MSG_HASH(
    "Saiba mais sobre a aplicação."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
-   "Reiniciar RetroArch"
+   MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
+   "Reiniciar KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
    "Reinicie o programa."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
-   "Sair do RetroArch"
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
+   "Sair do KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
    "Sair do programa."
    )
 
@@ -1792,7 +1792,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_MAX_USERS,
-   "Número máximo de utilizadores suportados pelo RetroArch."
+   "Número máximo de utilizadores suportados pelo KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_AUTODETECT_ENABLE,
@@ -1873,7 +1873,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_QUIT_KEY,
-   "Sair do RetroArch"
+   "Sair do KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_STATE_SLOT_PLUS,
@@ -2146,7 +2146,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_SAVESTATE_AUTO_LOAD,
-   "Carregar automaticamente o último estado automático guardado no arranque do RetroArch."
+   "Carregar automaticamente o último estado automático guardado no arranque do KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_SAVESTATE_THUMBNAIL_ENABLE,
@@ -2381,7 +2381,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_PAUSE_LIBRETRO,
-   "Quando desativado, o conteúdo continuará a ser executado em segundo plano quando se apresenta ou se esconde o menu do RetroArch."
+   "Quando desativado, o conteúdo continuará a ser executado em segundo plano quando se apresenta ou se esconde o menu do KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_MOUSE_ENABLE,
@@ -2401,7 +2401,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_PAUSE_NONACTIVE,
-   "Pausar o jogo quando a janela do RetroArch não estiver ativa."
+   "Pausar o jogo quando a janela do KingStation não estiver ativa."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_VIDEO_DISABLE_COMPOSITION,
@@ -2475,12 +2475,12 @@ MSG_HASH(
    "Mostrar/esconder a opção 'Ajuda'."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_RETROARCH,
-   "Mostrar 'Sair do RetroArch'"
+   MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_KingStation,
+   "Mostrar 'Sair do KingStation'"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_RETROARCH,
-   "Mostrar/esconder a opção 'Sair do RetroArch'."
+   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_KingStation,
+   "Mostrar/esconder a opção 'Sair do KingStation'."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_CONTENT_SHOW_SETTINGS,
@@ -2564,7 +2564,7 @@ MSG_HASH( /* FIXME Not RGUI specific */
    )
 MSG_HASH( /* FIXME Not RGUI specific */
    MENU_ENUM_SUBLABEL_RGUI_SHOW_START_SCREEN,
-   "Mostrar o ecrã inicial no menu. Esta opção é desativada automaticamente após o primeiro arranque do RetroArch."
+   "Mostrar o ecrã inicial no menu. Esta opção é desativada automaticamente após o primeiro arranque do KingStation."
    )
 
 /* Settings > User Interface > Views > Quick Menu */
@@ -4515,7 +4515,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_CONTENT_DIR,
-   "Habitualmente, definido pelos estúdios de desenvolvimento que agrupam aplicações libretro/RetroArch, tendo como destino os recursos."
+   "Habitualmente, definido pelos estúdios de desenvolvimento que agrupam aplicações libretro/KingStation, tendo como destino os recursos."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_ASK_ARCHIVE,
@@ -5551,7 +5551,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_RESTART_KEY,
-   "Reiniciar RetroArch"
+   "Reiniciar KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_AUDIO_BLOCK_FRAMES,

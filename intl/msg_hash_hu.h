@@ -104,19 +104,19 @@ MSG_HASH(
    "Segítség"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
-   "RetroArch újraindítása"
+   MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
+   "KingStation újraindítása"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
    "Újraindítja a programot."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
-   "Kilépés a RetroArch-ból"
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
+   "Kilépés a KingStation-ból"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
    "Kilép a programból."
    )
 

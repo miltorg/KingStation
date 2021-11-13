@@ -172,19 +172,19 @@ MSG_HASH(
    "تعرف أكثر على كيفية عمل البرنامج."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
    "إعادة تشغيل رترو أرك"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
    "يعيد تشغيل البرنامج."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
    "مغادرة البرنامج"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
    "مغادرة البرنامج."
    )
 
@@ -1936,7 +1936,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_MAX_USERS,
-   "الحد الأقصى لعدد المستخدمين المدعومين من RetroArch."
+   "الحد الأقصى لعدد المستخدمين المدعومين من KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_POLL_TYPE_BEHAVIOR,
@@ -1944,7 +1944,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_POLL_TYPE_BEHAVIOR,
-   "التأثير على كيفية إجراء تصويت الإدخال داخل RetroArch. إعداده إلى 'سابق' أو 'متأخر' يمكن أن يؤدي إلى وقت أقل ، اعتمادا على الإعدادات الخاصة بك."
+   "التأثير على كيفية إجراء تصويت الإدخال داخل KingStation. إعداده إلى 'سابق' أو 'متأخر' يمكن أن يؤدي إلى وقت أقل ، اعتمادا على الإعدادات الخاصة بك."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_REMAP_BINDS_ENABLE,
@@ -2093,7 +2093,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_QUIT_PRESS_TWICE,
-   "اضغط على مفتاح الإقلاع الساخن مرتين للخروج من RetroArch."
+   "اضغط على مفتاح الإقلاع الساخن مرتين للخروج من KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_MENU_ENUM_TOGGLE_GAMEPAD_COMBO,
@@ -2169,11 +2169,11 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_QUIT_KEY,
-   "إنهاء RetroArch"
+   "إنهاء KingStation"
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_META_QUIT_KEY,
-   "يغلق RetroArch، يضمن حفظ كافة ملفات البيانات والتكوين إلى القرص."
+   "يغلق KingStation، يضمن حفظ كافة ملفات البيانات والتكوين إلى القرص."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_STATE_SLOT_PLUS,
@@ -2301,7 +2301,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_META_SEND_DEBUG_INFO,
-   "يرسل معلومات تشخيصية حول جهازك وتكوين RetroArch إلى خوادمنا للتحليل."
+   "يرسل معلومات تشخيصية حول جهازك وتكوين KingStation إلى خوادمنا للتحليل."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_NETPLAY_HOST_TOGGLE,
@@ -2381,7 +2381,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_META_GRAB_MOUSE_TOGGLE,
-   "التقط أو يطلق الماوس. عند الإمساك، يخفي مؤشر النظام وينحصر في نافذة العرض RetroArch، مما يؤدي إلى تحسين إدخال الماوس النسبي."
+   "التقط أو يطلق الماوس. عند الإمساك، يخفي مؤشر النظام وينحصر في نافذة العرض KingStation، مما يؤدي إلى تحسين إدخال الماوس النسبي."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_GAME_FOCUS_TOGGLE,
@@ -2587,7 +2587,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_RUN_AHEAD_SECONDARY_INSTANCE,
-   "استخدم مثيل ثان من قلب RetroArch للمضي قدما. يمنع مشاكل الصوت بسبب حالة التحميل."
+   "استخدم مثيل ثان من قلب KingStation للمضي قدما. يمنع مشاكل الصوت بسبب حالة التحميل."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_RUN_AHEAD_HIDE_WARNINGS,
@@ -2622,7 +2622,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_DUMMY_ON_CORE_SHUTDOWN,
-   "قد يكون لبعض النواة ميزة إيقاف التشغيل. إذا تم تمكينها، فإنها ستمنع النواة من إغلاق RetroArch لأسفل. بدلاً من ذلك، تقوم بتحميل النواة الدموية."
+   "قد يكون لبعض النواة ميزة إيقاف التشغيل. إذا تم تمكينها، فإنها ستمنع النواة من إغلاق KingStation لأسفل. بدلاً من ذلك، تقوم بتحميل النواة الدموية."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_CORE_SET_SUPPORTS_NO_CONTENT_ENABLE,
@@ -2643,7 +2643,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_ALWAYS_RELOAD_CORE_ON_RUN_CONTENT,
-   "إعادة تشغيل RetroArch عند تشغيل المحتوى، حتى عندما يتم تحميل النواة المطلوبة بالفعل. قد يؤدي ذلك إلى تحسين استقرار النظام، على حساب زيادة أوقات التحميل."
+   "إعادة تشغيل KingStation عند تشغيل المحتوى، حتى عندما يتم تحميل النواة المطلوبة بالفعل. قد يؤدي ذلك إلى تحسين استقرار النظام، على حساب زيادة أوقات التحميل."
    )
 #endif
 MSG_HASH(
@@ -2707,7 +2707,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_GLOBAL_CORE_OPTIONS,
-   "حفظ جميع الخيارات الأساسية في ملف الإعدادات الشائعة (retroarch-core-options.cfg). عند التعطيل، سيتم حفظ الخيارات لكل نواة في مجلد/ملف مخصص لأساسيات منفصلة في دليل 'تكوين' RetroArch."
+   "حفظ جميع الخيارات الأساسية في ملف الإعدادات الشائعة (KingStation-core-options.cfg). عند التعطيل، سيتم حفظ الخيارات لكل نواة في مجلد/ملف مخصص لأساسيات منفصلة في دليل 'تكوين' KingStation."
    )
 
 /* Settings > Saving */
@@ -2774,7 +2774,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_SAVESTATE_AUTO_SAVE,
-   "إجراء حفظ تلقائي في نهاية تشغيل RetroArch. سيحمل RetroArch هذه الحالة المحفوظة تلقائيًا إذا تم تمكين \"حالة التحميل التلقائي\"."
+   "إجراء حفظ تلقائي في نهاية تشغيل KingStation. سيحمل KingStation هذه الحالة المحفوظة تلقائيًا إذا تم تمكين \"حالة التحميل التلقائي\"."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_SAVESTATE_AUTO_LOAD,
@@ -2889,7 +2889,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_LOG_TO_FILE_TIMESTAMP,
-   "عند تسجيل الملف، إعادة توجيه الإخراج من كل جلسة RetroArch إلى ملف جديد متوقف زمنيا. إذا تم التعطيل، يتم استبدال السجل في كل مرة يتم فيها إعادة تشغيل RetroArch."
+   "عند تسجيل الملف، إعادة توجيه الإخراج من كل جلسة KingStation إلى ملف جديد متوقف زمنيا. إذا تم التعطيل، يتم استبدال السجل في كل مرة يتم فيها إعادة تشغيل KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_PERFCNT_ENABLE,
@@ -2897,7 +2897,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_PERFCNT_ENABLE,
-   "عدادات الأداء لـ RetroArch (والنماذج).\nيمكن أن تساعد بيانات العداد في تحديد اختناقات النظام وضبط أداء النظام والتطبيقات."
+   "عدادات الأداء لـ KingStation (والنماذج).\nيمكن أن تساعد بيانات العداد في تحديد اختناقات النظام وضبط أداء النظام والتطبيقات."
    )
 
 /* Settings > File Browser */
@@ -3453,7 +3453,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_MENU_VIEWS_SETTINGS,
-   "تبديل رؤية عناصر القائمة في RetroArch."
+   "تبديل رؤية عناصر القائمة في KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_MENU_SETTINGS,
@@ -3497,7 +3497,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_PAUSE_LIBRETRO,
-   "في حالة التعطيل، سيبقى المحتوى قيد التشغيل في الخلفية عند تبديل قائمة RetroArch."
+   "في حالة التعطيل، سيبقى المحتوى قيد التشغيل في الخلفية عند تبديل قائمة KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_MENU_SAVESTATE_RESUME,
@@ -3525,7 +3525,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_PAUSE_NONACTIVE,
-   "إيقاف تشغيل اللعبة عندما يكون RetroArch ليس هو النافذة النشطة."
+   "إيقاف تشغيل اللعبة عندما يكون KingStation ليس هو النافذة النشطة."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_VIDEO_DISABLE_COMPOSITION,
@@ -3639,20 +3639,20 @@ MSG_HASH(
    "إظهار أو إخفاء خيار \"المساعدة\"."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_RETROARCH,
-   "اظهار انهاء RetroArch"
+   MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_KingStation,
+   "اظهار انهاء KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_RETROARCH,
-   "إظهار أو إخفاء خيار \"إنهاء retroarch\"."
+   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_KingStation,
+   "إظهار أو إخفاء خيار \"إنهاء KingStation\"."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_MENU_SHOW_RESTART_RETROARCH,
-   "إظهار إعادة تشغيل RetroArch"
+   MENU_ENUM_LABEL_VALUE_MENU_SHOW_RESTART_KingStation,
+   "إظهار إعادة تشغيل KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_MENU_SHOW_RESTART_RETROARCH,
-   "إظهار أو إخفاء خيار \"إعادة تشغيل RetroArch\"."
+   MENU_ENUM_SUBLABEL_MENU_SHOW_RESTART_KingStation,
+   "إظهار أو إخفاء خيار \"إعادة تشغيل KingStation\"."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_CONTENT_SHOW_SETTINGS,
@@ -4780,7 +4780,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_ASSETS_DIRECTORY,
-   "يتم تخزين أصول القائمة المستخدمة بواسطة RetroArch في هذا الدليل."
+   "يتم تخزين أصول القائمة المستخدمة بواسطة KingStation في هذا الدليل."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_DYNAMIC_WALLPAPERS_DIRECTORY,
@@ -7079,7 +7079,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_XMB_THEME,
-   "حدد سمة أيقونة مختلفة لـ RetroArch."
+   "حدد سمة أيقونة مختلفة لـ KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_XMB_SHADOWS_ENABLE,
@@ -7666,7 +7666,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_MENU_HELP_ABOUT,
-   "حول RetroArch"
+   "حول KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_MENU_HELP_DOCUMENTATION,
@@ -7997,15 +7997,15 @@ MSG_HASH(
    "يرجى ملء جميع الحقول المطلوبة."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_NIGHTLY,
-   "تحديث RetroArch (في ليلة)"
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_NIGHTLY,
+   "تحديث KingStation (في ليلة)"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_FINISHED,
-   "تم تحديث RetroArch بنجاح. الرجاء إعادة تشغيل التطبيق لتفعيل التغييرات."
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_FINISHED,
+   "تم تحديث KingStation بنجاح. الرجاء إعادة تشغيل التطبيق لتفعيل التغييرات."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_FAILED,
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_FAILED,
    "فشل التحديث."
    )
 MSG_HASH(
@@ -8432,7 +8432,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_HELP_SEND_DEBUG_INFO,
-   "يرسل معلومات تشخيصية حول جهازك وتكوين RetroArch إلى خوادمنا للتحليل."
+   "يرسل معلومات تشخيصية حول جهازك وتكوين KingStation إلى خوادمنا للتحليل."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_MANAGEMENT,
@@ -8615,7 +8615,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_CONTENT_DIR,
-   "عادة ما يقوم المطورين بضم تطبيقات libretro/RetroArch للإشارة إلى الأصول."
+   "عادة ما يقوم المطورين بضم تطبيقات libretro/KingStation للإشارة إلى الأصول."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_ASK_ARCHIVE,
@@ -8689,7 +8689,7 @@ MSG_HASH( /* FIXME Should be MSG_ */
    )
 MSG_HASH( /* FIXME Should be MSG_ */
    MENU_ENUM_LABEL_VALUE_VIDEO_DRIVER_FALLBACK,
-   "مشغل الرسومات الخاص بك غير متوافق مع مشغل الفيديو الحالي في RetroArch، العودة إلى مشغل %s. يرجى إعادة تشغيل RetroArch حتى تصبح التغييرات سارية."
+   "مشغل الرسومات الخاص بك غير متوافق مع مشغل الفيديو الحالي في KingStation، العودة إلى مشغل %s. يرجى إعادة تشغيل KingStation حتى تصبح التغييرات سارية."
    )
 MSG_HASH( /* FIXME Should be MSG_ */
    MENU_ENUM_LABEL_VALUE_SIDELOAD_CORE_SUCCESS,
@@ -8721,11 +8721,11 @@ MSG_HASH(
    )
 MSG_HASH(
    MSG_PRESS_TWO_MORE_TIMES_TO_SEND_DEBUG_INFO,
-   "اضغط مرتين أخريين لتقديم معلومات تشخيصية لفريق RetroArch."
+   "اضغط مرتين أخريين لتقديم معلومات تشخيصية لفريق KingStation."
    )
 MSG_HASH(
    MSG_PRESS_ONE_MORE_TIME_TO_SEND_DEBUG_INFO,
-   "اضغط مرة أخرى لتقديم معلومات تشخيصية لفريق RetroArch."
+   "اضغط مرة أخرى لتقديم معلومات تشخيصية لفريق KingStation."
    )
 MSG_HASH(
    MSG_AUDIO_MIXER_VOLUME,
@@ -8808,16 +8808,16 @@ MSG_HASH(
    "%.*s انضم مع أجهزة الإدخال %.*s"
    )
 MSG_HASH(
-   MSG_NETPLAY_NOT_RETROARCH,
-   "فشلت محاولة الاتصال بالشبكة لأن النظير لا يقوم بتشغيل RetroArch، أو يقوم بتشغيل نسخة قديمة من RetroArch."
+   MSG_NETPLAY_NOT_KingStation,
+   "فشلت محاولة الاتصال بالشبكة لأن النظير لا يقوم بتشغيل KingStation، أو يقوم بتشغيل نسخة قديمة من KingStation."
    )
 MSG_HASH(
    MSG_NETPLAY_OUT_OF_DATE,
-   "يقوم ند الشبكة بتشغيل إصدار قديم من RetroArch. لا يمكن الاتصال."
+   "يقوم ند الشبكة بتشغيل إصدار قديم من KingStation. لا يمكن الاتصال."
    )
 MSG_HASH(
    MSG_NETPLAY_DIFFERENT_VERSIONS,
-   "تحذير: يقوم النظير في الشبكة بتشغيل إصدار مختلف من RetroArch. إذا حدثت مشاكل، استخدم نفس الإصدار."
+   "تحذير: يقوم النظير في الشبكة بتشغيل إصدار مختلف من KingStation. إذا حدثت مشاكل، استخدم نفس الإصدار."
    )
 MSG_HASH(
    MSG_NETPLAY_DIFFERENT_CORES,
@@ -10235,7 +10235,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_RESTART_KEY,
-   "إعادة تشغيل RetroArch"
+   "إعادة تشغيل KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_AUDIO_BLOCK_FRAMES,
@@ -10418,6 +10418,6 @@ MSG_HASH(
 #ifdef HAVE_QT
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_SCAN_FINISHED,
-   "انتهت عملية المسح.<br><br>\nلكي يتم مسح المحتوى بشكل صحيح، يجب عليك:\n<ul><li>أن تكون نواة متوافقة تم تنزيلها مسبقاً</li>\n<li>أن تكون \"ملفات معلومات أساسية\" محدثة عبر تحديثات الإنترنت</li>\n<li>لديها \"قواعد بيانات\" تم تحديثها عبر التحديث عبر الإنترنت</li>\n<li>إعادة تشغيل RetroArch إذا كان أي من المشار إليه أعلاه قد تم فقط</li></ul>\nأخيرًا. المحتوى يجب أن يتطابق مع قواعد البيانات الموجودة من <a href=\"https://docs.libretro.com/guides/roms-playlists-thumbnails/#sources\">هنا</a>. إذا كانت لا تزال عاجزة عن العمل، فكر في <a href=\"https://www.github.com/libretro/RetroArch/issues\">تقديم تقرير عن الأخطاء</a>."
+   "انتهت عملية المسح.<br><br>\nلكي يتم مسح المحتوى بشكل صحيح، يجب عليك:\n<ul><li>أن تكون نواة متوافقة تم تنزيلها مسبقاً</li>\n<li>أن تكون \"ملفات معلومات أساسية\" محدثة عبر تحديثات الإنترنت</li>\n<li>لديها \"قواعد بيانات\" تم تحديثها عبر التحديث عبر الإنترنت</li>\n<li>إعادة تشغيل KingStation إذا كان أي من المشار إليه أعلاه قد تم فقط</li></ul>\nأخيرًا. المحتوى يجب أن يتطابق مع قواعد البيانات الموجودة من <a href=\"https://docs.libretro.com/guides/roms-playlists-thumbnails/#sources\">هنا</a>. إذا كانت لا تزال عاجزة عن العمل، فكر في <a href=\"https://www.github.com/libretro/KingStation/issues\">تقديم تقرير عن الأخطاء</a>."
    )
 #endif

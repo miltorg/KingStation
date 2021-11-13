@@ -1,4 +1,4 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2014-2017 - Jean-André Santoni
  *  Copyright (C) 2016-2019 - Brad Parker
@@ -6,15 +6,15 @@
  *  Copyright (C) 2018-2020 - natinusala
  *  Copyright (C) 2019      - Patrick Scheurenbrand
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -33,7 +33,6 @@
 
 static const enum msg_hash_enums ozone_system_tabs_value[OZONE_SYSTEM_TAB_LAST] = {
    MENU_ENUM_LABEL_VALUE_MAIN_MENU,
-   MENU_ENUM_LABEL_VALUE_SETTINGS_TAB,
    MENU_ENUM_LABEL_VALUE_HISTORY_TAB,
    MENU_ENUM_LABEL_VALUE_FAVORITES_TAB,
    MENU_ENUM_LABEL_VALUE_MUSIC_TAB,
@@ -48,15 +47,14 @@ static const enum msg_hash_enums ozone_system_tabs_value[OZONE_SYSTEM_TAB_LAST] 
 #endif
 #ifdef HAVE_LIBRETRODB
    MENU_ENUM_LABEL_VALUE_ADD_TAB,
-   MENU_ENUM_LABEL_VALUE_EXPLORE_TAB
+   MENU_ENUM_LABEL_VALUE_EXPLORE_TAB,
 #else
-   MENU_ENUM_LABEL_VALUE_ADD_TAB
+   MENU_ENUM_LABEL_VALUE_ADD_TAB,
 #endif
+   MENU_ENUM_LABEL_VALUE_SETTINGS_TAB
 };
 
 static const enum menu_settings_type ozone_system_tabs_type[OZONE_SYSTEM_TAB_LAST] = {
-   MENU_SETTINGS,
-   MENU_SETTINGS_TAB,
    MENU_HISTORY_TAB,
    MENU_FAVORITES_TAB,
    MENU_MUSIC_TAB,
@@ -71,15 +69,16 @@ static const enum menu_settings_type ozone_system_tabs_type[OZONE_SYSTEM_TAB_LAS
 #endif
 #ifdef HAVE_LIBRETRODB
    MENU_ADD_TAB,
-   MENU_EXPLORE_TAB
+   MENU_EXPLORE_TAB,
 #else
-   MENU_ADD_TAB
+   MENU_ADD_TAB,
 #endif
+   MENU_SETTINGS,
+   MENU_SETTINGS_TAB
 };
 
 static const enum msg_hash_enums ozone_system_tabs_idx[OZONE_SYSTEM_TAB_LAST] = {
    MENU_ENUM_LABEL_MAIN_MENU,
-   MENU_ENUM_LABEL_SETTINGS_TAB,
    MENU_ENUM_LABEL_HISTORY_TAB,
    MENU_ENUM_LABEL_FAVORITES_TAB,
    MENU_ENUM_LABEL_MUSIC_TAB,
@@ -94,15 +93,15 @@ static const enum msg_hash_enums ozone_system_tabs_idx[OZONE_SYSTEM_TAB_LAST] = 
 #endif
 #ifdef HAVE_LIBRETRODB
    MENU_ENUM_LABEL_ADD_TAB,
-   MENU_ENUM_LABEL_EXPLORE_TAB
+   MENU_ENUM_LABEL_EXPLORE_TAB,
 #else
-   MENU_ENUM_LABEL_ADD_TAB
+   MENU_ENUM_LABEL_ADD_TAB,
 #endif
+   MENU_ENUM_LABEL_SETTINGS_TAB
 };
 
 static const unsigned ozone_system_tabs_icons[OZONE_SYSTEM_TAB_LAST] = {
    OZONE_TAB_TEXTURE_MAIN_MENU,
-   OZONE_TAB_TEXTURE_SETTINGS,
    OZONE_TAB_TEXTURE_HISTORY,
    OZONE_TAB_TEXTURE_FAVORITES,
    OZONE_TAB_TEXTURE_MUSIC,
@@ -115,7 +114,8 @@ static const unsigned ozone_system_tabs_icons[OZONE_SYSTEM_TAB_LAST] = {
 #ifdef HAVE_NETWORKING
    OZONE_TAB_TEXTURE_NETWORK,
 #endif
-   OZONE_TAB_TEXTURE_SCAN_CONTENT
+   OZONE_TAB_TEXTURE_SCAN_CONTENT,
+   OZONE_TAB_TEXTURE_SETTINGS
 };
 
 static void ozone_sidebar_collapse_end(void *userdata)

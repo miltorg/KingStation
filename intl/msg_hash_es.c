@@ -1,17 +1,17 @@
-﻿/*  RetroArch - A frontend for libretro.
+﻿/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2018 - Alfredo Monclus
  *  Copyright (C) 2019-2020 - Víctor González Fraile
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  *
  * CHARACTER/LINES HARD LIMIT (MEASURED BY THE LOWEST COMMON DENOMINATOR, THE RGUI INTERFACE):
@@ -130,7 +130,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
           case RARCH_SEND_DEBUG_INFO:
              snprintf(s, len,
                    "Envía información de diagnóstico de\n"
-                   "tu dispositivo y la configuración de RetroArch\n"
+                   "tu dispositivo y la configuración de KingStation\n"
                    "a nuestros servidores para su posterior\n"
                    "análisis.");
              break;
@@ -191,7 +191,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
              snprintf(s, len,
                    "Permite o no capturar el ratón.\n"
                    " \n"
-                   "Al capturar el ratón, RetroArch lo ocultará\n"
+                   "Al capturar el ratón, KingStation lo ocultará\n"
                    "y mantendrá el puntero del ratón dentro de\n"
                    "la ventana para que la entrada relativa\n"
                    "del ratón funcione mejor.");
@@ -200,7 +200,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
              snprintf(s, len,
                      "Activa o desactiva la prioridad al juego.\n"
                      " \n"
-                     "Cuando el juego tiene prioridad, RetroArch\n"
+                     "Cuando el juego tiene prioridad, KingStation\n"
                      "desactivará las teclas rápidas y mantendrá\n"
                      "el puntero del ratón en el interior de\n"
                      "la ventana.");
@@ -220,7 +220,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
              break;
           case RARCH_QUIT_KEY:
              snprintf(s, len,
-               "Asigna una tecla para abandonar RetroArch\n"
+               "Asigna una tecla para abandonar KingStation\n"
                "limpiamente.\n"
                " \n"
                "Si cierras el programa de cualquier forma\n"
@@ -281,7 +281,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
                     " \n"
                     "Una vez te hayas registrado, tendrás que\n"
                     "introducir tu nombre de usuario y tu\n"
-                    "contraseña en RetroArch.");
+                    "contraseña en KingStation.");
             break;
         case MENU_ENUM_LABEL_CHEEVOS_USERNAME:
             snprintf(s, len,
@@ -426,9 +426,9 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
                      "Algunos núcleos son capaces de apagarse.\n"
                      " \n"
                      "Si desactivas esta opción, al apagar el núcleo\n"
-                     "también se cerrará RetroArch.\n"
+                     "también se cerrará KingStation.\n"
                      " \n"
-                     "De lo contrario, en vez de cerrar RetroArch\n"
+                     "De lo contrario, en vez de cerrar KingStation\n"
                      "se cargará un núcleo vacío, lo que te permitirá\n"
                      "seguir en el menú.");
             break;
@@ -523,7 +523,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
             snprintf(s, len,
                      "Núcleo libretro.\n"
                      " \n"
-                     "Selecciona este archivo para que RetroArch\n"
+                     "Selecciona este archivo para que KingStation\n"
                      "cargue este núcleo.");
             break;
         case MENU_ENUM_LABEL_FILE_BROWSER_DIRECTORY:
@@ -536,13 +536,13 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
             snprintf(s, len,
                      "Carpeta de caché.\n"
                      " \n"
-                     "Los contenidos descomprimidos por RetroArch\n"
+                     "Los contenidos descomprimidos por KingStation\n"
                      "se guardarán temporalmente en esta carpeta.");
             break;
         case MENU_ENUM_LABEL_HISTORY_LIST_ENABLE:
             snprintf(s, len,
                      "Si esta opción está activada, todos los\n"
-                     "contenidos cargados en RetroArch se agregarán\n"
+                     "contenidos cargados en KingStation se agregarán\n"
                      "automáticamente al historial reciente.");
             break;
         case MENU_ENUM_LABEL_RGUI_BROWSER_DIRECTORY:
@@ -555,7 +555,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
         case MENU_ENUM_LABEL_INPUT_POLL_TYPE_BEHAVIOR:
             snprintf(s, len,
                      "Influencia la forma de sondear la entrada\n"
-                     "en RetroArch.\n"
+                     "en KingStation.\n"
                      " \n"
                      "Temprano: El sondeo se realizará antes\n"
                      "de procesar el fotograma.\n"
@@ -764,16 +764,16 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
                      "para controlar el menú:\n"
                      " \n");
             break;
-        case MENU_ENUM_LABEL_WELCOME_TO_RETROARCH:
+        case MENU_ENUM_LABEL_WELCOME_TO_KingStation:
             snprintf(s, len,
-                     "Te damos la bienvenida a RetroArch.\n");
+                     "Te damos la bienvenida a KingStation.\n");
             break;
         case MENU_ENUM_LABEL_VALUE_HELP_AUDIO_VIDEO_TROUBLESHOOTING_DESC: {
             /* Work around C89 limitations */
             /* Arreglo para saltarse la limitación de 509 caracteres por cadena. */
             char u[501];
             const char *t =
-                     "RetroArch utiliza un formato único para\n"
+                     "KingStation utiliza un formato único para\n"
                      "sincronizar el audio y el vídeo. Necesita\n"
                      "calibrarse con la frecuencia de actualización\n"
                      "del monitor para obtener los mejores resultados.\n"
@@ -829,7 +829,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
             break;
         case MENU_ENUM_LABEL_VALUE_EXTRACTING_PLEASE_WAIT:
             snprintf(s, len,
-                     "Te damos la bienvenida a RetroArch.\n"
+                     "Te damos la bienvenida a KingStation.\n"
                      " \n"
                      "Extrayendo recursos. Espera, por favor.\n"
                      "Este proceso puede llevar un tiempo...\n"
@@ -908,8 +908,8 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
                      " \n"
                      "El historial se guarda en un archivo de la\n"
                      "carpeta donde está el archivo de configuración\n"
-                     "de RetroArch. Si no se ha cargado un archivo\n"
-                     "al iniciar RetroArch, no se guardará ni cargará\n"
+                     "de KingStation. Si no se ha cargado un archivo\n"
+                     "al iniciar KingStation, no se guardará ni cargará\n"
                      "el historial, y la opción desaparecerá del\n"
                      "menú principal."
             );
@@ -1062,7 +1062,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
             snprintf(s, len,
                "Pases de shaders.\n"
                " \n"
-               "RetroArch permite combinar diversos shaders\n"
+               "KingStation permite combinar diversos shaders\n"
                "con pasadas arbitrarias, filtros personales\n"
                "de hardware y factores de escala.\n"
                " \n"
@@ -1208,7 +1208,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
                "Al aplicar shaders, se guarda su configuración\n"
                "en un archivo temporal (menu.cgp o menu.glslp)\n"
                "y se cargan. El archivo persistirá al abandonar\n"
-               "RetroArch y se guardará en la carpeta Shader."
+               "KingStation y se guardará en la carpeta Shader."
             );
             break;
         case MENU_ENUM_LABEL_SHADER_WATCH_FOR_CHANGES:
@@ -1229,7 +1229,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
             snprintf(s, len,
                "Permite o no capturar el ratón.\n"
                " \n"
-               "Al capturar el ratón, RetroArch lo ocultará\n"
+               "Al capturar el ratón, KingStation lo ocultará\n"
                "y mantendrá el puntero del ratón dentro\n"
                "de la ventana para que la entrada relativa\n"
                "del ratón funcione mejor.");
@@ -1238,7 +1238,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
             snprintf(s, len,
                "Activa o desactiva la prioridad al juego.\n"
                " \n"
-               "Cuando el juego tiene prioridad, RetroArch\n"
+               "Cuando el juego tiene prioridad, KingStation\n"
                "desactivará las teclas rápidas y mantendrá\n"
                "el puntero del ratón en el interior\n"
                "de la ventana.");
@@ -1397,7 +1397,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
                      "(Por ejemplo, 5.0 para un contenido a 60 FPS =>\n"
                      "máximo de 300 FPS).\n"
                      " \n"
-                     "RetroArch pasará a segundo plano para asegurarse\n"
+                     "KingStation pasará a segundo plano para asegurarse\n"
                      "de que no se supere la velocidad máxima.\n"
                      "Este límite no es completamente preciso.");
             break;
@@ -1418,7 +1418,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
                      "0 (predeterminado) significa que no hay\n"
                      "preferencia alguna y de 1 en adelante\n"
                      "(siendo 1 el primer monitor) sugiere\n"
-                     "a RetroArch que utilice ese monitor específico.");
+                     "a KingStation que utilice ese monitor específico.");
             break;
         case MENU_ENUM_LABEL_VIDEO_CROP_OVERSCAN:
             snprintf(s, len,
@@ -1519,9 +1519,9 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
         case MENU_ENUM_LABEL_SAVESTATE_AUTO_LOAD:
             snprintf(s, len,
                      "Guarda automáticamente un guardado rápido\n"
-                     "al cerrar RetroArch.\n"
+                     "al cerrar KingStation.\n"
                      " \n"
-                     "RetroArch cargará al arrancar cualquier\n"
+                     "KingStation cargará al arrancar cualquier\n"
                      "guardado rápido que se encuentre en esa ruta\n"
                      "si la opción «Cargar guardado rápido\n"
                      "automáticamente» está activada.");
@@ -2037,7 +2037,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
         case MENU_ENUM_LABEL_INPUT_MAX_USERS:
             snprintf(s, len,
                      "Indica el número máximo de usuarios\n"
-                     "que puede alojar RetroArch.");
+                     "que puede alojar KingStation.");
             break;
         case MENU_ENUM_LABEL_CORE_UPDATER_AUTO_EXTRACT_ARCHIVE:
             snprintf(s, len,
@@ -2053,7 +2053,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
         case MENU_ENUM_LABEL_NETPLAY_NICKNAME:
             snprintf(s, len,
                      "El nombre de usuario de la persona que esté\n"
-                     "utilizando RetroArch. Este nombre se utilizará\n"
+                     "utilizando KingStation. Este nombre se utilizará\n"
                      "en las partidas de juego en red.");
             break;
         case MENU_ENUM_LABEL_NETPLAY_TCP_UDP_PORT:
@@ -2163,7 +2163,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
         case MENU_ENUM_LABEL_EXIT_EMULATOR:
             snprintf(s, len,
                "Asigna una tecla para abandonar\n"
-               "RetroArch limpiamente."
+               "KingStation limpiamente."
 #if !defined(RARCH_MOBILE) && !defined(RARCH_CONSOLE)
                "\nSi cierras el programa de cualquier\n"
                "forma brusca (SIGKILL, etc.) no se guardarán\n"
@@ -2361,7 +2361,7 @@ int msg_hash_get_help_es_enum(enum msg_hash_enums msg, char *s, size_t len)
             break;
         case MENU_ENUM_LABEL_VALUE_WHAT_IS_A_CORE_DESC:
             snprintf(s, len,
-                     "RetroArch, por sí solo, no hace nada.\n"
+                     "KingStation, por sí solo, no hace nada.\n"
                      " \n"
                      "Para que haga algo necesitas cargar\n"
                      "programas que llamamos «núcleos libretro»,\n"

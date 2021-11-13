@@ -1,18 +1,18 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2014-2017 - Jean-André Santoni
  *  Copyright (C) 2016-2019 - Brad Parker
  *  Copyright (C) 2018 - Alfredo Monclús
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -54,7 +54,7 @@
 #include "../../verbosity.h"
 #include "../../configuration.h"
 #include "../../playlist.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 
 #include "../../tasks/tasks_internal.h"
 
@@ -3506,7 +3506,7 @@ static const char *stripes_texture_path(unsigned id)
 #if defined(HAVE_LAKKA)
          return "lakka.png";
 #else
-         return "retroarch.png";
+         return "KingStation.png";
 #endif
       case STRIPES_TEXTURE_SETTINGS:
          return "settings.png";
@@ -4271,9 +4271,9 @@ static int stripes_list_push(void *data, void *userdata,
             }
 
 #ifndef HAVE_DYNAMIC
-            if (settings->bools.menu_show_restart_retroarch)
+            if (settings->bools.menu_show_restart_KingStation)
             {
-               entry.enum_idx      = MENU_ENUM_LABEL_RESTART_RETROARCH;
+               entry.enum_idx      = MENU_ENUM_LABEL_RESTART_KingStation;
                menu_displaylist_setting(&entry);
             }
 #endif
@@ -4291,9 +4291,9 @@ static int stripes_list_push(void *data, void *userdata,
             }
 
 #if !defined(IOS)
-            if (settings->bools.menu_show_quit_retroarch)
+            if (settings->bools.menu_show_quit_KingStation)
             {
-               entry.enum_idx      = MENU_ENUM_LABEL_QUIT_RETROARCH;
+               entry.enum_idx      = MENU_ENUM_LABEL_QUIT_KingStation;
                menu_displaylist_setting(&entry);
             }
 #endif

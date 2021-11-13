@@ -1,18 +1,18 @@
-/* RetroArch - A frontend for libretro.
+/* KingStation - A frontend for libretro.
  * Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  * Copyright (C) 2011-2017 - Daniel De Matteis
  * Copyright (C) 2012-2015 - Jason Fetters
  * Copyright (C) 2012-2015 - Michael Lelli
  * Copyright (C) 2016-2019 - Andrés Suárez
  *
- * RetroArch is free software: you can redistribute it and/or modify it under the terms
+ * KingStation is free software: you can redistribute it and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Found-
  * ation, either version 3 of the License, or (at your option) any later version.
  *
- * RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  * PURPOSE. See the GNU General Public License for more details.
- * * You should have received a copy of the GNU General Public License along with RetroArch.
+ * * You should have received a copy of the GNU General Public License along with KingStation.
  * If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -76,7 +76,7 @@
 #include "../frontend.h"
 #include "../frontend_driver.h"
 #include "../../defaults.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 #include "../../verbosity.h"
 #include "../../paths.h"
 #include "../../msg_hash.h"
@@ -294,7 +294,7 @@ static void android_app_free(struct android_app* android_app)
    slock_lock(android_app->mutex);
 
    sthread_join(android_app->thread);
-   RARCH_LOG("Joined with RetroArch native thread.\n");
+   RARCH_LOG("Joined with KingStation native thread.\n");
 
    slock_unlock(android_app->mutex);
 
@@ -467,7 +467,7 @@ static void jni_thread_destruct(void *value)
 
 static void android_app_entry(void *data)
 {
-   char arguments[]  = "retroarch";
+   char arguments[]  = "KingStation";
    char      *argv[] = {arguments,   NULL};
    int          argc = 1;
 
@@ -646,13 +646,13 @@ bool test_permissions(const char *path)
    char buf[PATH_MAX_LENGTH] = {0};
 
    __android_log_print(ANDROID_LOG_INFO,
-      "RetroArch", "Testing permissions for %s\n",path);
+      "KingStation", "Testing permissions for %s\n",path);
 
-   fill_pathname_join(buf, path, ".retroarch", sizeof(buf));
+   fill_pathname_join(buf, path, ".KingStation", sizeof(buf));
    ret = path_mkdir(buf);
 
    __android_log_print(ANDROID_LOG_INFO,
-      "RetroArch", "Create %s in %s %s\n", buf, path,
+      "KingStation", "Create %s in %s %s\n", buf, path,
       ret ? "true" : "false");
 
    if (ret)
@@ -1380,13 +1380,13 @@ static void frontend_unix_get_env(int *argc,
    frontend_android_get_version(&major, &minor, &rel);
 
    __android_log_print(ANDROID_LOG_INFO,
-      "RetroArch", "[ENV] Android version (major : %d, minor : %d, rel : %d)\n",
+      "KingStation", "[ENV] Android version (major : %d, minor : %d, rel : %d)\n",
          major, minor, rel);
 
    CALL_OBJ_METHOD(env, obj, android_app->activity->clazz,
          android_app->getIntent);
    __android_log_print(ANDROID_LOG_INFO,
-      "RetroArch", "[ENV] Checking arguments passed from intent ...\n");
+      "KingStation", "[ENV] Checking arguments passed from intent ...\n");
 
    /* Config file. */
    CALL_OBJ_METHOD_PARAM(env, jstr, obj, android_app->getStringExtra,
@@ -1402,7 +1402,7 @@ static void frontend_unix_get_env(int *argc,
       (*env)->ReleaseStringUTFChars(env, jstr, argv);
 
       __android_log_print(ANDROID_LOG_INFO,
-         "RetroArch", "[ENV]: config file: [%s]\n", config_path);
+         "KingStation", "[ENV]: config file: [%s]\n", config_path);
       if (args && *config_path)
          args->config_path = config_path;
    }
@@ -1420,7 +1420,7 @@ static void frontend_unix_get_env(int *argc,
       (*env)->ReleaseStringUTFChars(env, jstr, argv);
 
       __android_log_print(ANDROID_LOG_INFO,
-         "RetroArch", "[ENV]: current IME: [%s]\n", android_app->current_ime);
+         "KingStation", "[ENV]: current IME: [%s]\n", android_app->current_ime);
    }
 
    CALL_OBJ_METHOD_PARAM(env, jstr, obj, android_app->getStringExtra,
@@ -1434,7 +1434,7 @@ static void frontend_unix_get_env(int *argc,
       (*env)->ReleaseStringUTFChars(env, jstr, argv);
 
       __android_log_print(ANDROID_LOG_INFO,
-         "RetroArch", "[ENV]: used: [%s].\n", used ? "true" : "false");
+         "KingStation", "[ENV]: used: [%s].\n", used ? "true" : "false");
    }
 
    /* LIBRETRO. */
@@ -1452,7 +1452,7 @@ static void frontend_unix_get_env(int *argc,
       (*env)->ReleaseStringUTFChars(env, jstr, argv);
 
       __android_log_print(ANDROID_LOG_INFO,
-         "RetroArch", "[ENV]: libretro path: [%s]\n", core_path);
+         "KingStation", "[ENV]: libretro path: [%s]\n", core_path);
       if (args && *core_path)
          args->libretro_path = core_path;
    }
@@ -1475,7 +1475,7 @@ static void frontend_unix_get_env(int *argc,
       if (!string_is_empty(path))
       {
          __android_log_print(ANDROID_LOG_INFO,
-            "RetroArch", "[ENV]: auto-start game [%s]\n", path);
+            "KingStation", "[ENV]: auto-start game [%s]\n", path);
          if (args && *path)
             args->content_path = path;
       }
@@ -1500,7 +1500,7 @@ static void frontend_unix_get_env(int *argc,
       if (!string_is_empty(internal_storage_path))
       {
          __android_log_print(ANDROID_LOG_INFO,
-            "RetroArch", "[ENV]: android internal storage location: [%s]\n",
+            "KingStation", "[ENV]: android internal storage location: [%s]\n",
             internal_storage_path);
       }
    }
@@ -1521,7 +1521,7 @@ static void frontend_unix_get_env(int *argc,
       if (!string_is_empty(apk_dir))
       {
          __android_log_print(ANDROID_LOG_INFO,
-            "RetroArch", "[ENV]: APK location [%s]\n", apk_dir);
+            "KingStation", "[ENV]: APK location [%s]\n", apk_dir);
       }
    }
 
@@ -1543,7 +1543,7 @@ static void frontend_unix_get_env(int *argc,
       if (!string_is_empty(internal_storage_app_path))
       {
          __android_log_print(ANDROID_LOG_INFO,
-            "RetroArch", "[ENV]: android external files location [%s]\n",
+            "KingStation", "[ENV]: android external files location [%s]\n",
             internal_storage_app_path);
       }
    }
@@ -1563,7 +1563,7 @@ static void frontend_unix_get_env(int *argc,
       (*env)->ReleaseStringUTFChars(env, jstr, argv);
 
       __android_log_print(ANDROID_LOG_INFO,
-         "RetroArch", "[ENV]: app dir: [%s]\n", app_dir);
+         "KingStation", "[ENV]: app dir: [%s]\n", app_dir);
 
       /* set paths depending on the ability to write
        * to internal_storage_path */
@@ -1585,7 +1585,7 @@ static void frontend_unix_get_env(int *argc,
       if (!string_is_empty(app_dir))
       {
          __android_log_print(ANDROID_LOG_INFO,
-            "RetroArch", "[ENV]: application location: [%s]\n", app_dir);
+            "KingStation", "[ENV]: application location: [%s]\n", app_dir);
          if (args && *app_dir)
          {
 
@@ -1632,7 +1632,7 @@ static void frontend_unix_get_env(int *argc,
 
             switch (storage_permissions)
             {
-               /* only /sdcard/Android/data/com.retroarch is writable */
+               /* only /sdcard/Android/data/com.KingStation is writable */
                case INTERNAL_STORAGE_APPDIR_WRITABLE:
                   strlcpy(parent_path, internal_storage_app_path, sizeof(parent_path));
                   break;
@@ -1644,7 +1644,7 @@ static void frontend_unix_get_env(int *argc,
                /* sdcard is writable, this should be the case most of the time*/
                case INTERNAL_STORAGE_WRITABLE:
                   fill_pathname_join(parent_path,
-                        internal_storage_path, "RetroArch",
+                        internal_storage_path, "KingStation",
                         sizeof(parent_path));
                   break;
             }
@@ -1696,16 +1696,16 @@ static void frontend_unix_get_env(int *argc,
                   sizeof(g_defaults.dirs[DEFAULT_DIR_CACHE]));
 
             __android_log_print(ANDROID_LOG_INFO,
-               "RetroArch", "[ENV]: default savefile folder: [%s]",
+               "KingStation", "[ENV]: default savefile folder: [%s]",
                g_defaults.dirs[DEFAULT_DIR_SRAM]);
             __android_log_print(ANDROID_LOG_INFO,
-               "RetroArch", "[ENV]: default savestate folder: [%s]",
+               "KingStation", "[ENV]: default savestate folder: [%s]",
                g_defaults.dirs[DEFAULT_DIR_SAVESTATE]);
             __android_log_print(ANDROID_LOG_INFO,
-               "RetroArch", "[ENV]: default system folder: [%s]",
+               "KingStation", "[ENV]: default system folder: [%s]",
                g_defaults.dirs[DEFAULT_DIR_SYSTEM]);
             __android_log_print(ANDROID_LOG_INFO,
-               "RetroArch", "[ENV]: default screenshot folder: [%s]",
+               "KingStation", "[ENV]: default screenshot folder: [%s]",
                g_defaults.dirs[DEFAULT_DIR_SCREENSHOT]);
          }
       }
@@ -1771,19 +1771,19 @@ static void frontend_unix_get_env(int *argc,
    if (xdg)
    {
       strlcpy(base_path, xdg, sizeof(base_path));
-      strlcat(base_path, "/retroarch", sizeof(base_path));
+      strlcat(base_path, "/KingStation", sizeof(base_path));
    }
    else if (home)
    {
       strlcpy(base_path, home, sizeof(base_path));
 #if defined(DINGUX)
-      strlcat(base_path, "/.retroarch", sizeof(base_path));
+      strlcat(base_path, "/.KingStation", sizeof(base_path));
 #else
-      strlcat(base_path, "/.config/retroarch", sizeof(base_path));
+      strlcat(base_path, "/.config/KingStation", sizeof(base_path));
 #endif
    }
    else
-      strcpy_literal(base_path, "retroarch");
+      strcpy_literal(base_path, "KingStation");
 
    fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_CORE], base_path,
          "cores", sizeof(g_defaults.dirs[DEFAULT_DIR_CORE]));
@@ -1801,21 +1801,21 @@ static void frontend_unix_get_env(int *argc,
    fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_AUTOCONFIG], base_path,
          "autoconfig", sizeof(g_defaults.dirs[DEFAULT_DIR_AUTOCONFIG]));
 
-   if (path_is_directory("/usr/local/share/retroarch/assets"))
+   if (path_is_directory("/usr/local/share/KingStation/assets"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_ASSETS],
-            "/usr/local/share/retroarch",
+            "/usr/local/share/KingStation",
             "assets", sizeof(g_defaults.dirs[DEFAULT_DIR_ASSETS]));
-   else if (path_is_directory("/usr/share/retroarch/assets"))
+   else if (path_is_directory("/usr/share/KingStation/assets"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_ASSETS],
-            "/usr/share/retroarch",
+            "/usr/share/KingStation",
             "assets", sizeof(g_defaults.dirs[DEFAULT_DIR_ASSETS]));
-   else if (path_is_directory("/usr/local/share/games/retroarch/assets"))
+   else if (path_is_directory("/usr/local/share/games/KingStation/assets"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_ASSETS],
-            "/usr/local/share/games/retroarch",
+            "/usr/local/share/games/KingStation",
             "assets", sizeof(g_defaults.dirs[DEFAULT_DIR_ASSETS]));
-   else if (path_is_directory("/usr/share/games/retroarch/assets"))
+   else if (path_is_directory("/usr/share/games/KingStation/assets"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_ASSETS],
-            "/usr/share/games/retroarch",
+            "/usr/share/games/KingStation",
             "assets", sizeof(g_defaults.dirs[DEFAULT_DIR_ASSETS]));
    else
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_ASSETS], base_path,
@@ -1827,41 +1827,41 @@ static void frontend_unix_get_env(int *argc,
    fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER], base_path,
          "filters/video", sizeof(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER]));
 #else
-   if (path_is_directory("/usr/local/share/retroarch/filters/audio"))
+   if (path_is_directory("/usr/local/share/KingStation/filters/audio"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER],
-            "/usr/local/share/retroarch",
+            "/usr/local/share/KingStation",
             "filters/audio", sizeof(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER]));
-   else if (path_is_directory("/usr/share/retroarch/filters/audio"))
+   else if (path_is_directory("/usr/share/KingStation/filters/audio"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER],
-            "/usr/share/retroarch",
+            "/usr/share/KingStation",
             "filters/audio", sizeof(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER]));
-   else if (path_is_directory("/usr/local/share/games/retroarch/filters/audio"))
+   else if (path_is_directory("/usr/local/share/games/KingStation/filters/audio"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER],
-            "/usr/local/share/games/retroarch",
+            "/usr/local/share/games/KingStation",
             "filters/audio", sizeof(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER]));
-   else if (path_is_directory("/usr/share/games/retroarch/filters/audio"))
+   else if (path_is_directory("/usr/share/games/KingStation/filters/audio"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER],
-            "/usr/share/games/retroarch",
+            "/usr/share/games/KingStation",
             "filters/audio", sizeof(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER]));
    else
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER], base_path,
             "filters/audio", sizeof(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER]));
 
-   if (path_is_directory("/usr/local/share/retroarch/filters/video"))
+   if (path_is_directory("/usr/local/share/KingStation/filters/video"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER],
-            "/usr/local/share/retroarch",
+            "/usr/local/share/KingStation",
             "filters/video", sizeof(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER]));
-   else if (path_is_directory("/usr/share/retroarch/filters/video"))
+   else if (path_is_directory("/usr/share/KingStation/filters/video"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER],
-            "/usr/share/retroarch",
+            "/usr/share/KingStation",
             "filters/video", sizeof(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER]));
-   else if (path_is_directory("/usr/local/share/games/retroarch/filters/video"))
+   else if (path_is_directory("/usr/local/share/games/KingStation/filters/video"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER],
-            "/usr/local/share/games/retroarch",
+            "/usr/local/share/games/KingStation",
             "filters/video", sizeof(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER]));
-   else if (path_is_directory("/usr/share/games/retroarch/filters/video"))
+   else if (path_is_directory("/usr/share/games/KingStation/filters/video"))
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER],
-            "/usr/share/games/retroarch",
+            "/usr/share/games/KingStation",
             "filters/video", sizeof(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER]));
    else
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER], base_path,
@@ -1944,9 +1944,9 @@ static void android_app_destroy(struct android_app *android_app)
 
    env = jni_thread_getenv();
 
-   if (env && android_app->onRetroArchExit)
+   if (env && android_app->onKingStationExit)
       CALL_VOID_METHOD(env, android_app->activity->clazz,
-            android_app->onRetroArchExit);
+            android_app->onKingStationExit);
 
    if (android_app->inputQueue)
       AInputQueue_detachLooper(android_app->inputQueue);
@@ -2028,8 +2028,8 @@ static void frontend_unix_init(void *data)
    GET_OBJECT_CLASS(env, class, android_app->activity->clazz);
    GET_METHOD_ID(env, android_app->getIntent, class,
          "getIntent", "()Landroid/content/Intent;");
-   GET_METHOD_ID(env, android_app->onRetroArchExit, class,
-         "onRetroArchExit", "()V");
+   GET_METHOD_ID(env, android_app->onKingStationExit, class,
+         "onKingStationExit", "()V");
    GET_METHOD_ID(env, android_app->isAndroidTV, class,
          "isAndroidTV", "()Z");
    GET_METHOD_ID(env, android_app->getPowerstate, class,
@@ -2079,7 +2079,7 @@ static int frontend_unix_parse_drive_list(void *data, bool load_content)
       {
          char user_data_path[PATH_MAX_LENGTH];
          fill_pathname_join(user_data_path,
-               internal_storage_path, "RetroArch",
+               internal_storage_path, "KingStation",
                sizeof(user_data_path));
 
          menu_entries_append_enum(list,
@@ -2134,15 +2134,15 @@ static int frontend_unix_parse_drive_list(void *data, bool load_content)
    if (xdg)
    {
       strlcpy(base_path, xdg, sizeof(base_path));
-      strlcat(base_path, "/retroarch", sizeof(base_path));
+      strlcat(base_path, "/KingStation", sizeof(base_path));
    }
    else if (home)
    {
       strlcpy(base_path, home, sizeof(base_path));
 #if defined(DINGUX)
-      strlcat(base_path, "/.retroarch", sizeof(base_path));
+      strlcat(base_path, "/.KingStation", sizeof(base_path));
 #else
-      strlcat(base_path, "/.config/retroarch", sizeof(base_path));
+      strlcat(base_path, "/.config/KingStation", sizeof(base_path));
 #endif
    }
 

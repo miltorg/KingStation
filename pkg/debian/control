@@ -1,4 +1,4 @@
-Source: retroarch
+Source: KingStation
 Section: otherosfs
 Priority: extra
 Maintainer: Hunter Kaller (hizzlekizzle) <hunter_kaller@yahoo.com>
@@ -35,10 +35,10 @@ Build-Depends:	debhelper (>= 9),
 				nvidia-cg-dev [!armhf]
 Standards-Version: 3.9.5
 Homepage: https://www.libretro.com/
-Vcs-Git: git://github.com/libretro/RetroArch.git
-Vcs-Browser: https://github.com/libretro/RetroArch
+Vcs-Git: git://github.com/libretro/KingStation.git
+Vcs-Browser: https://github.com/libretro/KingStation
 
-Package: retroarch
+Package: KingStation
 Architecture: any
 Depends:		${shlibs:Depends},
 				${misc:Depends},
@@ -47,9 +47,9 @@ Depends:		${shlibs:Depends},
 				libqt5waylandclient5,
 				nvidia-cg-toolkit [!armhf]
 Replaces: ssnes
-Suggests: retroarch-joypad-autoconfig, libretro-common-shaders, libretro-common-overlays, retroarch-assets
+Suggests: KingStation-joypad-autoconfig, libretro-common-shaders, libretro-common-overlays, KingStation-assets
 Description: Simple frontend for the libretro library
- RetroArch is an open source, multi-platform frontend for the libretro API.
+ KingStation is an open source, multi-platform frontend for the libretro API.
  It can be used as a modular multi emulator system, game engine, media player
  and 3D technical demonstration. These features are available through
  libretro cores.

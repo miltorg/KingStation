@@ -37,7 +37,7 @@ static const char *const video_layout_internal_device_params[] =
 {
    "devicetag"            , ":",
    "devicebasetag"        , "root",
-   "devicename"           , "RetroArch",
+   "devicename"           , "KingStation",
    "deviceshortname"      , "libretro"
 };
 

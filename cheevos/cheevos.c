@@ -1,15 +1,15 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2015-2016 - Andre Leiradella
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -67,7 +67,7 @@
 #include "../configuration.h"
 #include "../performance_counters.h"
 #include "../msg_hash.h"
-#include "../retroarch.h"
+#include "../KingStation.h"
 #include "../core.h"
 #include "../core_option_manager.h"
 #include "../version.h"
@@ -211,7 +211,7 @@ static void rcheevos_get_user_agent(
       int major, minor;
       char tmp[64];
 
-      ptr = locals->user_agent_prefix + snprintf(locals->user_agent_prefix, sizeof(locals->user_agent_prefix), "RetroArch/%s", PACKAGE_VERSION);
+      ptr = locals->user_agent_prefix + snprintf(locals->user_agent_prefix, sizeof(locals->user_agent_prefix), "KingStation/%s", PACKAGE_VERSION);
 
       if (frontend && frontend->get_os)
       {

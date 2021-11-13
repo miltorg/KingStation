@@ -1,4 +1,4 @@
-/* Copyright  (C) 2018-2020 The RetroArch team
+/* Copyright  (C) 2018-2020 The KingStation team
 *
 * ---------------------------------------------------------------------------------------
 * The following license statement only applies to this file (vfs_implementation_uwp.cpp).
@@ -62,7 +62,7 @@ namespace
    {
       /* UWP deals with paths containing / instead of 
        * \ way worse than normal Windows */
-      /* and RetroArch may sometimes mix them 
+      /* and KingStation may sometimes mix them 
        * (e.g. on archive extraction) */
       if (!path)
          return;
@@ -206,7 +206,7 @@ namespace
       }
       else
       {
-         /* No final slash - probably a file (since RetroArch usually slash-terminates dirs), but there is still a chance it's a directory */
+         /* No final slash - probably a file (since KingStation usually slash-terminates dirs), but there is still a chance it's a directory */
          IStorageItem^ item;
          item = RunAsyncAndCatchErrors<StorageFile^>([&]() {
             return concurrency::create_task(LocateStorageItem<StorageFile>(path));

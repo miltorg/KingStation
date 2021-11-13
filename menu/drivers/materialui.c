@@ -1,17 +1,17 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2014-2017 - Jean-André Santoni
  *  Copyright (C) 2016-2019 - Brad Parker
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -7954,7 +7954,7 @@ static void materialui_populate_nav_bar(
    mui->nav_bar.back_tab.enabled = menu_entries_ctl(MENU_ENTRIES_CTL_SHOW_BACK, NULL);
 
    /* Resume tab
-    * > Menu driver must be alive at this point, and retroarch
+    * > Menu driver must be alive at this point, and KingStation
     *   must be initialised, so all we have to do (or can do)
     *   is check whether a non-dummy core is loaded) */
    mui->nav_bar.resume_tab.enabled = !rarch_ctl(RARCH_CTL_IS_DUMMY_CORE, NULL);
@@ -9012,13 +9012,13 @@ static int materialui_list_push(void *data, void *userdata,
             }
 #if !defined(IOS)
 
-            if (settings->bools.menu_show_restart_retroarch)
+            if (settings->bools.menu_show_restart_KingStation)
             {
-               entry.enum_idx      = MENU_ENUM_LABEL_RESTART_RETROARCH;
+               entry.enum_idx      = MENU_ENUM_LABEL_RESTART_KingStation;
                menu_displaylist_setting(&entry);
             }
 
-            entry.enum_idx      = MENU_ENUM_LABEL_QUIT_RETROARCH;
+            entry.enum_idx      = MENU_ENUM_LABEL_QUIT_KingStation;
             menu_displaylist_setting(&entry);
 #endif
 #if defined(HAVE_LAKKA)
@@ -10086,8 +10086,8 @@ static void materialui_list_insert(
                node->icon_texture_index = MUI_TEXTURE_ADD;
                node->icon_type          = MUI_ICON_TYPE_INTERNAL;
             }
-            else if (string_is_equal(label, msg_hash_to_str(MENU_ENUM_LABEL_QUIT_RETROARCH)) ||
-                     string_is_equal(label, msg_hash_to_str(MENU_ENUM_LABEL_RESTART_RETROARCH))
+            else if (string_is_equal(label, msg_hash_to_str(MENU_ENUM_LABEL_QUIT_KingStation)) ||
+                     string_is_equal(label, msg_hash_to_str(MENU_ENUM_LABEL_RESTART_KingStation))
                   )
             {
                node->icon_texture_index = MUI_TEXTURE_QUIT;

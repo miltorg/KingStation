@@ -1,16 +1,16 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http:www.gnu.org/licenses/>.
  */
 
@@ -36,7 +36,7 @@
 #include "../frontend/frontend_driver.h"
 #include "../command.h"
 #include "../file_path_special.h"
-#include "../retroarch.h"
+#include "../KingStation.h"
 #include "video_shader_parse.h"
 
 #if defined(HAVE_SLANG) && defined(HAVE_SPIRV_CROSS)
@@ -1011,7 +1011,7 @@ bool video_shader_write_referenced_preset(const char *path_to_save,
 
    path_basedir(new_preset_basedir);
 
-   /* Get the retroarch config dir where the automatically loaded presets are located
+   /* Get the KingStation config dir where the automatically loaded presets are located
     * and where Save Game Preset, Save Core Preset, Save Global Preset save to */
    fill_pathname_application_special(config_dir, PATH_MAX_LENGTH, APPLICATION_SPECIAL_DIRECTORY_CONFIG);
 
@@ -1023,12 +1023,12 @@ bool video_shader_write_referenced_preset(const char *path_to_save,
       goto end;
    }
    
-   /* If the initial preset loaded is the ever-changing retroarch preset don't save a reference
+   /* If the initial preset loaded is the ever-changing KingStation preset don't save a reference
     * TODO remove once we don't write this preset anymore */
-   if (!strncmp(path_basename(shader->loaded_preset_path), "retroarch", STRLEN_CONST("retroarch")))
+   if (!strncmp(path_basename(shader->loaded_preset_path), "KingStation", STRLEN_CONST("KingStation")))
    {
       RARCH_WARN("[Shaders]: Saving Full Preset because we can't save a reference to the "
-                  "ever-changing retroarch preset.\n");
+                  "ever-changing KingStation preset.\n");
       goto end;
    }
 
@@ -1072,8 +1072,8 @@ bool video_shader_write_referenced_preset(const char *path_to_save,
    /* If 
     *    The new preset file we are trying to save is the same as the initially loaded preset
     * or
-    *    The initially loaded preset was located under the retroarch config folder
-    *    this means that it was likely saved from inside the retroarch UI
+    *    The initially loaded preset was located under the KingStation config folder
+    *    this means that it was likely saved from inside the KingStation UI
     * Then
     *    We should not save a preset with a reference to the initially loaded
     *    preset file itself, instead we need to save a new preset with the same reference 

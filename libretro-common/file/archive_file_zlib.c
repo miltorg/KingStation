@@ -1,4 +1,4 @@
-/* Copyright  (C) 2010-2020 The RetroArch team
+/* Copyright  (C) 2010-2020 The KingStation team
  *
  * ---------------------------------------------------------------------------------------
  * The following license statement only applies to this file (archive_file_zlib.c).
@@ -309,7 +309,7 @@ static int zip_file_decompressed(
          {
             /* Called in case core has need_fullpath disabled.
              * Will move decompressed content directly into
-             * RetroArch's ROM buffer. */
+             * KingStation's ROM buffer. */
             *decomp_state->buf = handle.data;
             handle.data = NULL;
 

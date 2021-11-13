@@ -1,18 +1,18 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2014-2017 - Jean-André Santoni
  *  Copyright (C) 2016-2019 - Brad Parker
  *  Copyright (C) 2018 - Alfredo Monclús
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -2518,7 +2518,7 @@ static uintptr_t xmb_icon_get_id(xmb_handle_t *xmb,
       case MENU_ENUM_LABEL_REBOOT:
       case MENU_ENUM_LABEL_RESET_TO_DEFAULT_CONFIG:
       case MENU_ENUM_LABEL_CHEAT_RELOAD_CHEATS:
-      case MENU_ENUM_LABEL_RESTART_RETROARCH:
+      case MENU_ENUM_LABEL_RESTART_KingStation:
       case MENU_ENUM_LABEL_VRR_RUNLOOP_ENABLE:
       case MENU_ENUM_LABEL_AUTOSAVE_INTERVAL:
       case MENU_ENUM_LABEL_FRAME_TIME_COUNTER_SETTINGS:
@@ -2629,7 +2629,7 @@ static uintptr_t xmb_icon_get_id(xmb_handle_t *xmb,
       case MENU_ENUM_LABEL_HELP_AUDIO_VIDEO_TROUBLESHOOTING:
       case MENU_ENUM_LABEL_HELP_SEND_DEBUG_INFO:
          return xmb->textures.list[XMB_TEXTURE_HELP];
-      case MENU_ENUM_LABEL_QUIT_RETROARCH:
+      case MENU_ENUM_LABEL_QUIT_KingStation:
       case MENU_ENUM_LABEL_BLOCK_SRAM_OVERWRITE:
          return xmb->textures.list[XMB_TEXTURE_EXIT];
       case MENU_ENUM_LABEL_DRIVER_SETTINGS:
@@ -5764,7 +5764,7 @@ static const char *xmb_texture_path(unsigned id)
 #if defined(HAVE_LAKKA)
          return "lakka.png";
 #else
-         return "retroarch.png";
+         return "KingStation.png";
 #endif
       case XMB_TEXTURE_SETTINGS:
          return "settings.png";
@@ -6671,8 +6671,8 @@ static int xmb_list_push(void *data, void *userdata,
    bool menu_show_shutdown         = settings->bools.menu_show_shutdown;
    bool menu_show_reboot           = settings->bools.menu_show_reboot;
 #if !defined(IOS)
-   bool menu_show_quit_retroarch   = settings->bools.menu_show_quit_retroarch;
-   bool menu_show_restart_ra       = settings->bools.menu_show_restart_retroarch;
+   bool menu_show_quit_KingStation   = settings->bools.menu_show_quit_KingStation;
+   bool menu_show_restart_ra       = settings->bools.menu_show_restart_KingStation;
 #endif
    bool menu_show_information      = settings->bools.menu_show_information;
    bool menu_show_help             = settings->bools.menu_show_help;
@@ -6855,13 +6855,13 @@ static int xmb_list_push(void *data, void *userdata,
 #if !defined(IOS)
             if (menu_show_restart_ra)
             {
-               entry.enum_idx      = MENU_ENUM_LABEL_RESTART_RETROARCH;
+               entry.enum_idx      = MENU_ENUM_LABEL_RESTART_KingStation;
                menu_displaylist_setting(&entry);
             }
 
-            if (menu_show_quit_retroarch)
+            if (menu_show_quit_KingStation)
             {
-               entry.enum_idx      = MENU_ENUM_LABEL_QUIT_RETROARCH;
+               entry.enum_idx      = MENU_ENUM_LABEL_QUIT_KingStation;
                menu_displaylist_setting(&entry);
             }
 #endif

@@ -1,16 +1,16 @@
-/* RetroArch - A frontend for libretro.
+/* KingStation - A frontend for libretro.
  *  Copyright (C) 2014-2017 - Ali Bouhlel
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *
- * RetroArch is free software: you can redistribute it and/or modify it under the terms
+ * KingStation is free software: you can redistribute it and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Found-
  * ation, either version 3 of the License, or (at your option) any later version.
  *
- * RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  * PURPOSE. See the GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License along with RetroArch.
+ * You should have received a copy of the GNU General Public License along with KingStation.
  * If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -45,7 +45,7 @@
 #include "../../verbosity.h"
 #include "../../defaults.h"
 #include "../../paths.h"
-#include "retroarch.h"
+#include "KingStation.h"
 #include "file_path_special.h"
 
 #include "ctr/ctr_debug.h"
@@ -59,7 +59,7 @@
 #endif
 
 static enum frontend_fork ctr_fork_mode = FRONTEND_FORK_NONE;
-static const char* elf_path_cst         = "sdmc:/retroarch/retroarch.3dsx";
+static const char* elf_path_cst         = "sdmc:/KingStation/KingStation.3dsx";
 
 extern bool ctr_bottom_screen_enabled;
 
@@ -68,7 +68,7 @@ static void get_first_valid_core(char* path_return, size_t len)
 {
    struct dirent* ent;
    const char* extension = envIsHomebrew() ? ".3dsx" : ".cia";
-   DIR              *dir = opendir("sdmc:/retroarch/cores");
+   DIR              *dir = opendir("sdmc:/KingStation/cores");
 
    path_return[0]        = '\0';
 
@@ -81,7 +81,7 @@ static void get_first_valid_core(char* path_return, size_t len)
          if (strlen(ent->d_name) > strlen(extension) 
                && !strcmp(ent->d_name + strlen(ent->d_name) - strlen(extension), extension))
          {
-            strcpy_literal(path_return, "sdmc:/retroarch/cores/");
+            strcpy_literal(path_return, "sdmc:/KingStation/cores/");
             strlcat(path_return, ent->d_name, len);
             break;
          }
@@ -155,7 +155,7 @@ static void frontend_ctr_deinit(void* data)
     * can prevent sdcard corruption. We therefore close any
     * existing log file, enable verbose logging and revert
     * to console output. (Normal logging will be resumed
-    * once retroarch.cfg has been re-read) */
+    * once KingStation.cfg has been re-read) */
    retro_main_log_file_deinit();
    verbosity_enable();
    retro_main_log_file_init(NULL, false);

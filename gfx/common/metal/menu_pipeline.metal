@@ -1,6 +1,6 @@
 //
 //  pipeline_ribbon.metal
-//  RetroArch
+//  KingStation
 //
 //  Created by Stuart Carnie on 6/30/18.
 //

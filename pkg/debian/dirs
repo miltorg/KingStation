@@ -1,8 +1,8 @@
 usr/bin
 etc
 usr/lib/libretro
-usr/lib/retroarch/filters/video
-usr/lib/retroarch/filters/audio
+usr/lib/KingStation/filters/video
+usr/lib/KingStation/filters/audio
 usr/share/applications
 usr/share/libretro/assets
 usr/share/libretro/autoconfig

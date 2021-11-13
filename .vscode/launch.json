@@ -8,7 +8,7 @@
          "name": "(gdb) Launch",
          "type": "cppdbg",
          "request": "launch",
-         "program": "${workspaceFolder}/retroarch.exe",
+         "program": "${workspaceFolder}/KingStation.exe",
          "args": ["-v"],
          "stopAtEntry": false,
          "cwd": "${workspaceFolder}",
@@ -28,7 +28,7 @@
          "name": "(gdb) Attach",
          "type": "cppdbg",
          "request": "attach",
-         "program": "${workspaceFolder}/retroarch.exe",
+         "program": "${workspaceFolder}/KingStation.exe",
          "processId": "${command:pickProcess}",
          "MIMode": "gdb",
          "miDebuggerPath": "c:\\msys64\\mingw64\\bin\\gdb.exe",
@@ -44,13 +44,13 @@
          "name": "PSP-GDB Debugger",
           "type": "cppdbg",
           "request": "launch",
-          "program": "${workspaceFolder}/retroarchpsp.elf",
+          "program": "${workspaceFolder}/KingStationpsp.elf",
           "stopAtEntry": false,
           "cwd": "${workspaceFolder}",
           "environment": [],
           "setupCommands": [
              {
-                 "text": "symbol-file ${workspaceFolder}/retroarchpsp.elf",
+                 "text": "symbol-file ${workspaceFolder}/KingStationpsp.elf",
                  "description": "read symbols for elf file",
                  "ignoreFailures": true
              },

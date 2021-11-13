@@ -20,10 +20,10 @@ PC_DEVELOPMENT_UDP_PORT		= 3490
 
 CONTENTID		= UP0001-SSNE10001_00-0000000000000001
 APPID                   = SSNE10001
-TITLE                   = Retroarch PSL1GHT
-PACKAGE_BASENAME := retroarch_psl1ght
+TITLE                   = KingStation PSL1GHT
+PACKAGE_BASENAME := KingStation_psl1ght
 
-ELF_TARGET := retroarch_psl1ght.elf
+ELF_TARGET := KingStation_psl1ght.elf
 SELF_TARGET := $(ELF_TARGET:.elf=.self)
 CORE_PATH		= pkg/psl1ght/pkg/USRDIR/cores/CORE.SELF
 

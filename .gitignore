@@ -17,14 +17,14 @@
 config.log
 /.project
 /.externalToolBuilders/
-/retroarch
-/retroarch.cfg
-/retroarch.exe
-/retroarch_debug.exe
+/KingStation
+/KingStation.cfg
+/KingStation.exe
+/KingStation_debug.exe
 /config.h
 /config.mk
-/tools/retroarch-joyconfig
-/tools/retroarch-joyconfig.exe
+/tools/KingStation-joyconfig
+/tools/KingStation-joyconfig.exe
 *.ncb
 *.sdf
 *.opensdf
@@ -36,8 +36,8 @@ ipch
 /bootstrap/gx/wii/app_booter/app_booter.bin
 /wii/app_booter/app_booter.bin
 *.zip
-RetroArch-w32/
-RetroArch-w64/
+KingStation-w32/
+KingStation-w64/
 .DS_Store
 */build/*
 *.pbxuser
@@ -56,7 +56,7 @@ DerivedData
 *.hmap
 apple/tmp
 apple/*.mobileprovision
-apple/RetroArch_iOS.xcodeproj/project.xcworkspace/*
+apple/KingStation_iOS.xcodeproj/project.xcworkspace/*
 /Cg/
 /GL/
 /SDL/
@@ -110,7 +110,7 @@ shaders/shaders_slang
 *.rpx
 *.last
 wiiu/wut/elf2rpl/elf2rpl
-/pkg/wiiu/retroarch
+/pkg/wiiu/KingStation
 /pkg/wiiu/wiiu
 /pkg/wiiu/rpx
 /wiiu-devel.properties
@@ -122,9 +122,9 @@ wiiu/wut/elf2rpl/elf2rpl
 *.3ds
 *.bnr
 *.smdh
-/retroarch_3ds.core
-/retroarch_3ds.icn
-/retroarch_3ds_salamander.icn
+/KingStation_3ds.core
+/KingStation_3ds.icn
+/KingStation_3ds_salamander.icn
 
 # Ctags
 /tags
@@ -174,13 +174,13 @@ obj-unix/
 /pkg/msvc/msvc-2010/Release Cg/*.obj
 /pkg/msvc/msvc-2010/Release Cg/*.res
 /pkg/msvc/msvc-2010/Release Cg/*.pdb
-retroarch.cfg
+KingStation.cfg
 Makefile.local
 
 # Emscripten artifacts
 
-retroarch.js
-retroarch.js.mem
+KingStation.js
+KingStation.js.mem
 *.bc
 *.wasm
 
@@ -190,11 +190,11 @@ retroarch.js.mem
 # Switch
 *.d
 exefs/*
-retroarch_switch.pfs0
-retroarch_switch.lst
-retroarch_switch.nacp
-retroarch_switch.nro
-retroarch_switch.nso
+KingStation_switch.pfs0
+KingStation_switch.lst
+KingStation_switch.nacp
+KingStation_switch.nro
+KingStation_switch.nso
 
 # PS2
 ps2/irx/*.c

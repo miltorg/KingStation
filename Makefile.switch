@@ -1,4 +1,4 @@
-TARGET := retroarch_switch
+TARGET := KingStation_switch
 
 DEBUG                  ?= 0
 GRIFFIN_BUILD           = 0

@@ -21,16 +21,16 @@ read_link()
 
 SCRIPT=$(read_link "$0")
 echo "Script: $SCRIPT"
-APP_BUNDLE_NAME=RetroArch.app
+APP_BUNDLE_NAME=KingStation.app
 BASE_DIR=$(dirname "$SCRIPT")
-RETROARCH_DIR=${BASE_DIR}/../../..
+KingStation_DIR=${BASE_DIR}/../../..
 IOSDIR=${BASE_DIR}/iOS
 APP_BUNDLE_DIR=${BASE_DIR}/obj/${APP_BUNDLE_NAME}
 APP_BUNDLE_DIR_MEDIA=${APP_BUNDLE_DIR}/Media.xcassets
 APP_BUNDLE_DIR_APPICONSET=${APP_BUNDLE_DIR_MEDIA}/AppIcon.appiconset
 APP_BUNDLE_DIR_LAUNCHIMAGE=${APP_BUNDLE_DIR_MEDIA}/LaunchImage.launchimage
-OVERLAY_DIR=${RETROARCH_DIR}/media/overlays
-SHADERS_DIR=${RETROARCH_DIR}/media/shaders_glsl
+OVERLAY_DIR=${KingStation_DIR}/media/overlays
+SHADERS_DIR=${KingStation_DIR}/media/shaders_glsl
 
 if [ -d "${OVERLAY_DIR}" ]; then
    mv -v ${OVERLAY_DIR}/.git ${OVERLAY_DIR}/../.git

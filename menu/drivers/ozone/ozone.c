@@ -1,4 +1,4 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2014-2017 - Jean-André Santoni
  *  Copyright (C) 2016-2019 - Brad Parker
@@ -6,15 +6,15 @@
  *  Copyright (C) 2018-2020 - natinusala
  *  Copyright (C) 2019      - Patrick Scheurenbrand
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -47,12 +47,12 @@
 #include "../../../verbosity.h"
 
 static const char *OZONE_TEXTURES_FILES[OZONE_TEXTURE_LAST] = {
-   "retroarch",
+   "KingStation",
    "cursor_border"
 };
 
 static const char *OZONE_TAB_TEXTURES_FILES[OZONE_TAB_TEXTURE_LAST] = {
-   "retroarch",
+   "KingStation",
    "settings",
    "history",
    "favorites",
@@ -754,13 +754,10 @@ static void *ozone_init(void **userdata, bool video_is_threaded)
 
    ozone->system_tab_end                        = 0;
    ozone->tabs[ozone->system_tab_end]           = OZONE_SYSTEM_TAB_MAIN;
-   if (      settings->bools.menu_content_show_settings 
-         && !settings->bools.kiosk_mode_enable)
-      ozone->tabs[++ozone->system_tab_end]      = OZONE_SYSTEM_TAB_SETTINGS;
-   if (settings->bools.menu_content_show_favorites)
-      ozone->tabs[++ozone->system_tab_end]      = OZONE_SYSTEM_TAB_FAVORITES;
    if (settings->bools.menu_content_show_history)
       ozone->tabs[++ozone->system_tab_end]      = OZONE_SYSTEM_TAB_HISTORY;
+   if (settings->bools.menu_content_show_favorites)
+      ozone->tabs[++ozone->system_tab_end]      = OZONE_SYSTEM_TAB_FAVORITES;
 #ifdef HAVE_IMAGEVIEWER
    if (settings->bools.menu_content_show_images)
       ozone->tabs[++ozone->system_tab_end]      = OZONE_SYSTEM_TAB_IMAGES;
@@ -784,6 +781,9 @@ static void *ozone_init(void **userdata, bool video_is_threaded)
    if (settings->bools.menu_content_show_explore)
       ozone->tabs[++ozone->system_tab_end]      = OZONE_SYSTEM_TAB_EXPLORE;
 #endif
+   if (      settings->bools.menu_content_show_settings 
+         && !settings->bools.kiosk_mode_enable)
+      ozone->tabs[++ozone->system_tab_end]      = OZONE_SYSTEM_TAB_SETTINGS;
 
    menu_driver_ctl(RARCH_MENU_CTL_UNSET_PREVENT_POPULATE, NULL);
 
@@ -1045,6 +1045,14 @@ static void ozone_cache_footer_labels(ozone_handle_t *ozone)
    ozone_cache_footer_label(
          ozone, &ozone->footer_labels.search,
          MENU_ENUM_LABEL_VALUE_SEARCH);
+
+   ozone_cache_footer_label(
+         ozone, &ozone->footer_labels.reset,
+         MENU_ENUM_LABEL_VALUE_RESET);
+
+   ozone_cache_footer_label(
+         ozone, &ozone->footer_labels.info,
+         MENU_ENUM_LABEL_VALUE_INFO);
 
    ozone_cache_footer_label(
          ozone, &ozone->footer_labels.fullscreen_thumbs,
@@ -1603,15 +1611,15 @@ static int ozone_list_push(void *data, void *userdata,
             }
 
 #if !defined(IOS)
-            if (settings->bools.menu_show_restart_retroarch)
+            if (settings->bools.menu_show_restart_KingStation)
             {
-               entry.enum_idx      = MENU_ENUM_LABEL_RESTART_RETROARCH;
+               entry.enum_idx      = MENU_ENUM_LABEL_RESTART_KingStation;
                menu_displaylist_setting(&entry);
             }
 
-            if (settings->bools.menu_show_quit_retroarch)
+            if (settings->bools.menu_show_quit_KingStation)
             {
-               entry.enum_idx      = MENU_ENUM_LABEL_QUIT_RETROARCH;
+               entry.enum_idx      = MENU_ENUM_LABEL_QUIT_KingStation;
                menu_displaylist_setting(&entry);
             }
 #endif
@@ -2164,7 +2172,7 @@ static void ozone_draw_header(ozone_handle_t *ozone,
             video_height,
             logo_icon_size,
             logo_icon_size,
-            ozone->textures[OZONE_TEXTURE_RETROARCH],
+            ozone->textures[OZONE_TEXTURE_KingStation],
             47 * scale_factor,
             (ozone->dimensions.header_height - logo_icon_size) / 2,
             video_width,
@@ -2323,7 +2331,12 @@ static void ozone_draw_footer(ozone_handle_t *ozone,
          ozone->footer_labels.back.width - icon_size - (2.0f * icon_padding);
    float search_x            = back_x -
          ozone->footer_labels.search.width - icon_size - (2.0f * icon_padding);
-   float fullscreen_thumbs_x = search_x -
+   float reset_x            = search_x -
+         ozone->footer_labels.reset.width - icon_size - (2.0f * icon_padding);
+   float info_x            = reset_x -
+         ozone->footer_labels.info.width - icon_size - (2.0f * icon_padding);
+
+   float fullscreen_thumbs_x = info_x -
          ozone->footer_labels.fullscreen_thumbs.width - icon_size - (2.0f * icon_padding);
    float metadata_toggle_x   = fullscreen_thumbs_x -
          ozone->footer_labels.metadata_toggle.width - icon_size - (2.0f * icon_padding);
@@ -2396,6 +2409,32 @@ static void ozone_draw_footer(ozone_handle_t *ozone,
          video_width,video_height,
          0, 1, col);
 
+   /* > reset */
+   ozone_draw_icon(
+         userdata,
+         video_width,
+         video_height,
+         icon_size,
+         icon_size,
+         ozone->icons_textures[OZONE_ENTRIES_ICONS_TEXTURE_INPUT_START],
+         reset_x,
+         icon_y,
+         video_width,video_height,
+         0, 1, col);
+
+   /* > info */
+   ozone_draw_icon(
+         userdata,
+         video_width,
+         video_height,
+         icon_size,
+         icon_size,
+         ozone->icons_textures[OZONE_ENTRIES_ICONS_TEXTURE_INPUT_SELECT],
+         info_x,
+         icon_y,
+         video_width,video_height,
+         0, 1, col);
+
    /* > fullscreen_thumbs */
    if (fullscreen_thumbnails_available)
       ozone_draw_icon(
@@ -2464,6 +2503,36 @@ static void ozone_draw_footer(ozone_handle_t *ozone,
          ozone->fonts.footer.font,
          ozone->footer_labels.search.str,
          search_x + icon_size + icon_padding,
+         footer_text_y,
+         video_width,
+         video_height,
+         ozone->theme->text_rgba,
+         TEXT_ALIGN_LEFT,
+         1.0f,
+         false,
+         1.0f,
+         false);
+
+   /* > reset */
+   gfx_display_draw_text(
+         ozone->fonts.footer.font,
+         ozone->footer_labels.reset.str,
+         reset_x + icon_size + icon_padding,
+         footer_text_y,
+         video_width,
+         video_height,
+         ozone->theme->text_rgba,
+         TEXT_ALIGN_LEFT,
+         1.0f,
+         false,
+         1.0f,
+         false);
+
+   /* > info */
+   gfx_display_draw_text(
+         ozone->fonts.footer.font,
+         ozone->footer_labels.info.str,
+         info_x + icon_size + icon_padding,
          footer_text_y,
          video_width,
          video_height,

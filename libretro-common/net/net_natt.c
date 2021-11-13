@@ -1,4 +1,4 @@
-/* Copyright  (C) 2016-2020 The RetroArch team
+/* Copyright  (C) 2016-2020 The KingStation team
  *
  * ---------------------------------------------------------------------------------------
  * The following license statement only applies to this file (net_natt.c).
@@ -119,7 +119,7 @@ static bool natt_open_port(struct natt_status *status,
    /* add the port mapping */
    r = UPNP_AddAnyPortMapping(urls.controlURL,
          data.first.servicetype, port_str,
-         port_str, host, "retroarch",
+         port_str, host, "KingStation",
          proto_str, NULL, "3600", ext_port_str);
 
    if (r != 0)
@@ -128,7 +128,7 @@ static bool natt_open_port(struct natt_status *status,
       memcpy(ext_port_str, port_str, 6);
       r = UPNP_AddPortMapping(urls.controlURL,
             data.first.servicetype, port_str,
-            port_str, host, "retroarch",
+            port_str, host, "KingStation",
             proto_str, NULL, "3600");
    }
    if (r != 0)

@@ -5,7 +5,7 @@ This driver is meant for devices with Allwinner SoCs with Mali400 3D block and a
 good fbdev implementation. It is derived from the old Android GLES driver.
 
 It was meant to be used on Cubieboard/Cubieboard2/Cubietruck, but it should not
-be used on an Odroid X2/U2/U3 where a superior solution (RetroArch exynos video driver) is available.
+be used on an Odroid X2/U2/U3 where a superior solution (KingStation exynos video driver) is available.
 Fbdev implementation on Odroid harware is missing WAITFORVSYNC ioctl, so use Exynos driver there.
 
 This driver requires MALI r4p0 binary blobs for fbdev, and a kernel compatible with r4p0 binaries.
@@ -76,9 +76,9 @@ In the end you should have this on your system:
       gl3.h
       gl3platform.h
 
-To enable mali_fbdev you must configure RetroArch with --enable-gles and --enable-mali_fbdev.
+To enable mali_fbdev you must configure KingStation with --enable-gles and --enable-mali_fbdev.
 
-This is an example of what you would use on a CubieBoard2 for a lightweight RetroArch:
+This is an example of what you would use on a CubieBoard2 for a lightweight KingStation:
 
 ./configure --enable-gles --enable-mali_fbdev --disable-x11 --disable-sdl2 --enable-floathard --disable-ffmpeg --disable-netplay --enable-udev --disable-sdl --disable-pulse --disable-oss --disable-freetype --disable-7zip
 

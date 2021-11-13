@@ -1,4 +1,4 @@
-/* Copyright  (C) 2010-2020 The RetroArch team
+/* Copyright  (C) 2010-2020 The KingStation team
  *
  * ---------------------------------------------------------------------------------------
  * The following license statement only applies to this file (video_layout.c).
@@ -29,7 +29,7 @@
 #include "video_layout.h"
 #include "video_layout/view.h"
 
-#include "../retroarch.h"
+#include "../KingStation.h"
 #include "../verbosity.h"
 
 bool video_layout_load_internal(view_array_t *view_array,

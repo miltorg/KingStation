@@ -104,15 +104,15 @@ MSG_HASH(
    "راهنما"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
    "بازآغاز کردن برنامه."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
    "خروج از رتروآرچ"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
    "از برنامه خارج می‌شود."
    )
 

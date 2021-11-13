@@ -1,23 +1,23 @@
-# Contributing to RetroArch
+# Contributing to KingStation
 
-If you are a developer and want to contribute to the development of RetroArch, please read this.
+If you are a developer and want to contribute to the development of KingStation, please read this.
 If you have found a bug and want to submit a minor patch or a bug report, please read this as well.
 
 # Submitting a bug report
-When submitting a bug report, make sure that the bug is local to RetroArch.
+When submitting a bug report, make sure that the bug is local to KingStation.
 A bug in a libretro core or something deemed to be external is likely to be closed very fast.
-If you still suspect a bug in RetroArch, make sure to test with several cores to make sure.
+If you still suspect a bug in KingStation, make sure to test with several cores to make sure.
 
-If you have troubles building RetroArch on Linux/BSD/OSX, make sure to paste shell output of ./configure,
+If you have troubles building KingStation on Linux/BSD/OSX, make sure to paste shell output of ./configure,
 as well as config.log and shell output of make. If building on Windows, just paste shell output of make.
 
-If the issue occurs during runtime, make sure to paste RetroArch's verbose log.
+If the issue occurs during runtime, make sure to paste KingStation's verbose log.
 If using Phoenix frontend, you can find log in (File -> Show Log) after running.
 In console, make sure to run with verbose (-v) flag.
 
 # Pull Requests
 Outside contributions are generally only accepted in the form of a pull request. The process is very simple.
-Fork RetroArch, make your changes, and issue a pull request on GitHub. This can all be done within the browser.
+Fork KingStation, make your changes, and issue a pull request on GitHub. This can all be done within the browser.
 The changes are reviewed, and might be merged in. If the pull request isn't acceptable at the time,
 note that it's possible to continue pushing up commits to your branch.
 
@@ -50,7 +50,7 @@ If you have contributed significantly
 We'd like your full name and email, and which features you have been part of.
 
 # IRC
-Active development happens on IRC. (#retroarch @ irc.freenode.org)
+Active development happens on IRC. (#KingStation @ irc.freenode.org)
 We value discussing things in "real-time".
 
 # Commit Access

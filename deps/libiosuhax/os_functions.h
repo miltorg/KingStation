@@ -7,7 +7,7 @@ extern "C" {
 
 #define OS_MUTEX_SIZE                   44
 
-// RetroArch mod: use existing headers; prevents conflicts in griffin
+// KingStation mod: use existing headers; prevents conflicts in griffin
 #include <wiiu/os.h>
 #include <wiiu/ios.h>
 #if 0

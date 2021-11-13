@@ -1,5 +1,5 @@
-static const char *retroarch_contributors_list = R"(
-RetroArch and the libretro team would like to
+static const char *KingStation_contributors_list = R"(
+KingStation and the libretro team would like to
 acknowledge the following contributors:
 
 1ch (L0sted)

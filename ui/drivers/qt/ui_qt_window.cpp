@@ -1,16 +1,16 @@
-/* RetroArch - A frontend for libretro.
+/* KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2016-2019 - Brad Parker
  *
- * RetroArch is free software: you can redistribute it and/or modify it under the terms
+ * KingStation is free software: you can redistribute it and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Found-
  * ation, either version 3 of the License, or (at your option) any later version.
  *
- * RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  * PURPOSE. See the GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License along with RetroArch.
+ * You should have received a copy of the GNU General Public License along with KingStation.
  * If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -57,7 +57,7 @@ extern "C" {
 
 #include "../../../version.h"
 #include "../../../verbosity.h"
-#include "../../../retroarch.h"
+#include "../../../KingStation.h"
 #include "../../../msg_hash.h"
 #include "../../../core_info.h"
 #include "../../../content.h"
@@ -516,7 +516,7 @@ MainWindow::MainWindow(QWidget *parent) :
    m_defaultPalette = QApplication::palette();
 
    /* ViewOptionsDialog needs m_settings set before it's constructed */
-   m_settings            = new QSettings(configDir + "/retroarch_qt.cfg", QSettings::IniFormat, this);
+   m_settings            = new QSettings(configDir + "/KingStation_qt.cfg", QSettings::IniFormat, this);
    m_viewOptionsDialog   = new ViewOptionsDialog(this, 0);
    m_playlistEntryDialog = new PlaylistEntryDialog(this, 0);
 
@@ -900,7 +900,7 @@ void MainWindow::showWelcomeScreen()
    bool dontAsk              = false;
    bool answer               = false;
    const QString welcomeText = QStringLiteral(""
-      "Welcome to the RetroArch Desktop Menu!<br>\n"
+      "Welcome to the KingStation Desktop Menu!<br>\n"
       "<br>\n"
       "Many settings and actions are currently only available in the familiar Big Picture menu, "
       "but this Desktop Menu should be functional for launching content and managing playlists.<br>\n"
@@ -909,12 +909,12 @@ void MainWindow::showWelcomeScreen()
       "<ul><li>F1 - Bring up the Big Picture menu</li>\n"
       "<li>F - Switch between fullscreen and windowed modes</li>\n"
       "<li>F5 - Bring the Desktop Menu back if closed</li>\n"
-      "<li>Esc - Exit RetroArch</li></ul>\n"
+      "<li>Esc - Exit KingStation</li></ul>\n"
       "\n"
       "For more hotkeys and their assignments, see:<br>\n"
       "Settings -> Input -> Input Hotkey Binds<br>\n"
       "<br>\n"
-      "Documentation for RetroArch, libretro and cores:<br>\n"
+      "Documentation for KingStation, libretro and cores:<br>\n"
       "<a href=\"https://docs.libretro.com/\">https://docs.libretro.com/</a>");
 
    if (!m_settings->value("show_welcome_screen", true).toBool())
@@ -3028,7 +3028,7 @@ void MainWindow::onContributorsClicked()
    dialog->layout()->addWidget(buttonBox);
 
    textEdit->setReadOnly(true);
-   textEdit->setHtml(QString("<pre>") + retroarch_contributors_list + "</pre>");
+   textEdit->setHtml(QString("<pre>") + KingStation_contributors_list + "</pre>");
 
    dialog->resize(480, 640);
    dialog->exec();
@@ -3038,11 +3038,11 @@ void MainWindow::showAbout()
 {
    QScopedPointer<QDialog> dialog(new QDialog());
    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok);
-   QString text = QString("RetroArch ") + PACKAGE_VERSION +
+   QString text = QString("KingStation ") + PACKAGE_VERSION +
          "<br><br>" + "<a href=\"https://www.libretro.com/\">www.libretro.com</a>"
-         "<br><br>" + "<a href=\"https://www.retroarch.com/\">www.retroarch.com</a>"
+         "<br><br>" + "<a href=\"https://www.KingStation.com/\">www.KingStation.com</a>"
 #ifdef HAVE_GIT_VERSION
-         "<br><br>" + msg_hash_to_str(MENU_ENUM_LABEL_VALUE_SYSTEM_INFO_GIT_VERSION) + ": " + retroarch_git_version +
+         "<br><br>" + msg_hash_to_str(MENU_ENUM_LABEL_VALUE_SYSTEM_INFO_GIT_VERSION) + ": " + KingStation_git_version +
 #endif
          "<br>" + msg_hash_to_str(MENU_ENUM_LABEL_VALUE_SYSTEM_INFO_BUILD_DATE) + ": " + __DATE__;
    QLabel *label = new QLabel(text, dialog.data());

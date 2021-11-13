@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/libretro/RetroArch.svg?branch=master)](https://travis-ci.org/libretro/RetroArch)
-[![Coverity Scan Build Status](https://scan.coverity.com/projects/8936/badge.svg)](https://scan.coverity.com/projects/retroarch)
-[![Crowdin](https://badges.crowdin.net/retroarch/localized.svg)](https://crowdin.com/project/retroarch)
+[![Build Status](https://travis-ci.org/libretro/KingStation.svg?branch=master)](https://travis-ci.org/libretro/KingStation)
+[![Coverity Scan Build Status](https://scan.coverity.com/projects/8936/badge.svg)](https://scan.coverity.com/projects/KingStation)
+[![Crowdin](https://badges.crowdin.net/KingStation/localized.svg)](https://crowdin.com/project/KingStation)
 
-# RetroArch
+# KingStation
 
-RetroArch is the reference frontend for the libretro API.
+KingStation is the reference frontend for the libretro API.
 Popular examples of implementations for this API includes video game system emulators and game engines as well as
 more generalized 3D programs.
 These programs are instantiated as dynamic libraries. We refer to these as "libretro cores".
@@ -20,13 +20,13 @@ These programs are instantiated as dynamic libraries. We refer to these as "libr
 ## libretro
 
 [libretro](https://www.libretro.com) is an API that exposes generic audio/video/input callbacks.
-A frontend for libretro (such as RetroArch) handles video output, audio output, input and application lifecycle.
+A frontend for libretro (such as KingStation) handles video output, audio output, input and application lifecycle.
 A libretro core written in portable C or C++ can run seamlessly on many platforms with very little to no porting effort.
 
-While RetroArch is the reference frontend for libretro, several other projects have used the libretro
+While KingStation is the reference frontend for libretro, several other projects have used the libretro
 interface to include support for emulators and/or game engines. libretro is completely open and free for anyone to use.
 
-[libretro API header](https://github.com/libretro/RetroArch/blob/master/libretro-common/include/libretro.h)
+[libretro API header](https://github.com/libretro/KingStation/blob/master/libretro-common/include/libretro.h)
 
 ## Binaries
 
@@ -34,7 +34,7 @@ Latest binaries are currently hosted on the [buildbot](http://buildbot.libretro.
 
 ## Support
 
-To reach developers, either make an issue here on GitHub, make a thread on the [forum](https://www.libretro.com/forums/), chat on [discord](https://discord.gg/C4amCeV), or visit our IRC channel: #retroarch @ irc.freenode.org. You could create a post in [Reddit](https://www.reddit.com/r/RetroArch/) with *Technical Support* flair.
+To reach developers, either make an issue here on GitHub, make a thread on the [forum](https://www.libretro.com/forums/), chat on [discord](https://discord.gg/C4amCeV), or visit our IRC channel: #KingStation @ irc.freenode.org. You could create a post in [Reddit](https://www.reddit.com/r/KingStation/) with *Technical Support* flair.
 
 ## Documentation
 
@@ -51,19 +51,19 @@ More developer-centric stuff is found [here](https://docs.libretro.com/developme
 
 ## Philosophy
 
-RetroArch attempts to be small and lean
+KingStation attempts to be small and lean
 while still having all the useful core features expected from an emulator.
 It is designed to be very portable and features a gamepad-centric and touchscreen UI.
 It also has a full-featured command-line interface.
 
-In some areas, RetroArch goes beyond and emphasizes on not-so-common technical features such as multi-pass shader support,
+In some areas, KingStation goes beyond and emphasizes on not-so-common technical features such as multi-pass shader support,
 real-time rewind (Braid-style), video recording (using FFmpeg), run-ahead input latency removal, etc.
 
-RetroArch also emphasizes being easy to integrate into various launcher frontends.
+KingStation also emphasizes being easy to integrate into various launcher frontends.
 
 ## Platforms
 
-RetroArch has been ported to the following platforms:
+KingStation has been ported to the following platforms:
 
    - DOS
    - Windows
@@ -96,7 +96,7 @@ RetroArch has been ported to the following platforms:
 
 There are no true hard dependencies per se.
 
-On Windows, RetroArch can run with only Win32 as dependency.
+On Windows, KingStation can run with only Win32 as dependency.
 
 On Linux, there are no true dependencies. For optimal usage, the
 following dependencies come as recommended:
@@ -104,14 +104,14 @@ following dependencies come as recommended:
    - GL headers / Vulkan headers
    - X11 headers and libs, or EGL/KMS/GBM
 
-OSX port of RetroArch requires latest versions of XCode to build.
+OSX port of KingStation requires latest versions of XCode to build.
 
-RetroArch can utilize these libraries if enabled:
+KingStation can utilize these libraries if enabled:
 
    - nvidia-cg-toolkit
    - libfreetype2 (TTF font rendering on screen)
 
-RetroArch needs at least one of these audio driver libraries:
+KingStation needs at least one of these audio driver libraries:
 
    - ALSA
    - OSS
@@ -125,7 +125,7 @@ RetroArch needs at least one of these audio driver libraries:
    - DirectSound (Win32, Xbox 1)
    - CoreAudio (OSX, iOS)
 
-To run properly, RetroArch requires a libretro implementation present; however, as it's typically loaded
+To run properly, KingStation requires a libretro implementation present; however, as it's typically loaded
 dynamically, it's not required at build time.
 
 ## Dependencies (Console ports, mobile)
@@ -138,20 +138,20 @@ anything other than what the respective SDKs provide.
 The default configuration is defined in `config.def.h`.
 It is not recommended to change this unless you know what you're doing.
 These can later be tweaked by using a config file.
-A sample configuration file is installed to `/etc/retroarch.cfg`. This is the system-wide config file.
+A sample configuration file is installed to `/etc/KingStation.cfg`. This is the system-wide config file.
 
-RetroArch will on startup create a config file in `$XDG\_CONFIG\_HOME/retroarch/retroarch.cfg` if it does not exist.
+KingStation will on startup create a config file in `$XDG\_CONFIG\_HOME/KingStation/KingStation.cfg` if it does not exist.
 Users only need to configure a certain option if the desired value deviates from the value defined in config.def.h.
 
-To configure joypads, use the built-in menu or the `retroarch-joyconfig` command-line tool.
+To configure joypads, use the built-in menu or the `KingStation-joyconfig` command-line tool.
 
 ## Compiling and installing
 
-Instructions for compiling and installing RetroArch can be found in the [Libretro/RetroArch Documentation Center](https://docs.libretro.com/).
+Instructions for compiling and installing KingStation can be found in the [Libretro/KingStation Documentation Center](https://docs.libretro.com/).
 
 ## CRT 15Khz Resolution Switching
 
-CRT SwitchRes will turn on, on the fly. However, you will need to restart RetroArch to disable it. With CRT SwitchRes enable RetroArch will start in 2560 x 480 @ 60.
+CRT SwitchRes will turn on, on the fly. However, you will need to restart KingStation to disable it. With CRT SwitchRes enable KingStation will start in 2560 x 480 @ 60.
 
 If you are running Windows, before enabling the CRT SwitchRes options please make sure you have installed CRTEmudriver and installed some modelines. The minimum modelines for all games to switch correctly are:
 
@@ -186,7 +186,7 @@ Ideally install all these modelines and everything will work great.
 
 ## Super Resolutions
 
-The default super resolution is 2560. It is displayed just under the CRT switch option, which can be found in video settings. This can be changed within the retroarch.cfg. The only compatible resolutions are 1920, 2560 and 3840. Any other resolutions will be ignored and native switching will be activated.
+The default super resolution is 2560. It is displayed just under the CRT switch option, which can be found in video settings. This can be changed within the KingStation.cfg. The only compatible resolutions are 1920, 2560 and 3840. Any other resolutions will be ignored and native switching will be activated.
 
 ## Native Resolutions
 
@@ -259,24 +259,24 @@ These modelines are more accurate giving exact hz. However, some games may have 
 
 Some arcade resolutions can be very different from consumer CRTs. There is resolution detection to ensure MAME games will be displayed in the closest available resolution but drawn at their native resolution within this resolution. Meaning that the MAME game will look just like the original hardware.
 
-MAME ROMs that run in a vertical aspect like DoDonPachi need to be rotated within MAME before resolution switching and aspect correction will work. Do this before enabling CRT SwitchRes so that RetroArch will run in your desktop resolution. Once you have rotated any games that may need it turn CRT SwitchRes on.
+MAME ROMs that run in a vertical aspect like DoDonPachi need to be rotated within MAME before resolution switching and aspect correction will work. Do this before enabling CRT SwitchRes so that KingStation will run in your desktop resolution. Once you have rotated any games that may need it turn CRT SwitchRes on.
 
 ## Socials
 
 The links below belong to our official channels. Links other than this may have been created by fans, independent members or followers. We seriously recommend using our original resources.
 
-- [Website](https://www.retroarch.com/)
+- [Website](https://www.KingStation.com/)
 - [Blog](https://libretro.com/)
 - [Facebook](https://www.facebook.com/libretro)
 - [Twitter](https://twitter.com/libretro)
-- [Reddit](https://www.reddit.com/r/RetroArch/)
+- [Reddit](https://www.reddit.com/r/KingStation/)
 - [YouTube](https://www.youtube.com/Libretro)
 - [Google Post](https://posts.google.com/share/55Nhs2jG)
-- [Steam](https://store.steampowered.com/app/1118310/RetroArch/)
+- [Steam](https://store.steampowered.com/app/1118310/KingStation/)
 - [YouTube Topic](https://www.youtube.com/channel/UC5q007PYyQPgin0HHbzF0zQ)
 - [Patreon](https://www.patreon.com/libretro)
 - [BOUNTYSOURCE](https://www.bountysource.com/teams/libretro/issues)
 - [Discord](https://discord.gg/27Xxm2h)
-- [Teespring](https://teespring.com/stores/retroarch)
+- [Teespring](https://teespring.com/stores/KingStation)
 - [Documentation](https://docs.libretro.com/)
 - [Forum](https://forums.libretro.com/)

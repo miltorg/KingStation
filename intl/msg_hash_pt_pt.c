@@ -1,15 +1,15 @@
-﻿/*  RetroArch - A frontend for libretro.
+﻿/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -252,7 +252,7 @@ int msg_hash_get_help_pt_pt_enum(enum msg_hash_enums msg, char *s, size_t len)
          snprintf(s, len,
                "Número de Shaders. \n"
                " \n"
-               "O RetroArch permite que você combine vários \n"
+               "O KingStation permite que você combine vários \n"
                "shaders com número arbitrário de passos, filtros \n"
                "de hardware e fatores de escala personalizados. \n"
                " \n"
@@ -380,7 +380,7 @@ int msg_hash_get_help_pt_pt_enum(enum msg_hash_enums msg, char *s, size_t len)
                "Quando se aplicam shaders, as definições do menu \n"
                "de shaders são salvas em um arquivo temporário \n"
                "(menu.cgp ou menu.glslp) e carregadas. O arquivo \n"
-               "persiste ao fechar o RetroArch. Ele é salvo \n"
+               "persiste ao fechar o KingStation. Ele é salvo \n"
                "no Diretório de Shaders."
                );
          break;
@@ -392,7 +392,7 @@ int msg_hash_get_help_pt_pt_enum(enum msg_hash_enums msg, char *s, size_t len)
          snprintf(s, len,
                "Alterna uso de mouse.\n"
                " \n"
-               "Quando o mouse é usado, RetroArch o esconde e \n"
+               "Quando o mouse é usado, KingStation o esconde e \n"
                "mantém o seu ponteiro dentro da janela para \n"
                "permitir que a entrada relativa do mouse \n"
                "funcione melhor.");
@@ -524,7 +524,7 @@ int msg_hash_get_help_pt_pt_enum(enum msg_hash_enums msg, char *s, size_t len)
                " (Ex.: 5.0 para conteúdo 60 fps => 300 fps \n"
                "máximo).\n"
                " \n"
-               "RetroArch entra em modo sleep para assegurar \n"
+               "KingStation entra em modo sleep para assegurar \n"
                "que a taxa máxima não será excedida.\n"
                "Não confie que esse teto tenha exatidão \n"
                "perfeita.");
@@ -535,7 +535,7 @@ int msg_hash_get_help_pt_pt_enum(enum msg_hash_enums msg, char *s, size_t len)
                " \n"
                "0 (padrão) significa nenhum monitor é \n"
                "preferido, 1 e demais (1 é o primeiro \n"
-               "monitor), sugere ao RetroArch usar esse \n"
+               "monitor), sugere ao KingStation usar esse \n"
                "monitor em particular.");
          break;
       case MENU_ENUM_LABEL_VIDEO_CROP_OVERSCAN:
@@ -632,9 +632,9 @@ int msg_hash_get_help_pt_pt_enum(enum msg_hash_enums msg, char *s, size_t len)
       case MENU_ENUM_LABEL_SAVESTATE_AUTO_SAVE:
          snprintf(s, len,
                "Guardar automaticamente o estado de gravação ao sair \n"
-               "do RetroArch.\n"
+               "do KingStation.\n"
                " \n"
-               "O RetroArch carregará automaticamente qualquer\n"
+               "O KingStation carregará automaticamente qualquer\n"
                "estado de gravação com este caminho ao iniciar, \n"
                "caso a opção 'Carregar estado de gravação automaticamente' estiver ativa.");
          break;
@@ -846,7 +846,7 @@ int msg_hash_get_help_pt_pt_enum(enum msg_hash_enums msg, char *s, size_t len)
          break;
       case MENU_ENUM_LABEL_EXIT_EMULATOR:
          snprintf(s, len,
-               "Tecla para encerrar o RetroArch."
+               "Tecla para encerrar o KingStation."
 #if !defined(RARCH_MOBILE) && !defined(RARCH_CONSOLE)
                "\nSe o fechar abruptamente, \n"
                "(SIGKILL, etc) sairá sem guardar a RAM, entre outros dados.\n"

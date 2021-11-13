@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <app version="1">
-  <name>Retroarch</name>
+  <name>KingStation</name>
   <coder>Libretro</coder>
   <version>&version;</version>
   <release_date>20200505133000</release_date>

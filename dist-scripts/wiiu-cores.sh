@@ -2,31 +2,31 @@
 
 # usage:
 # copy core libs (*_libretro_wiiu.a), info files (https://github.com/libretro/libretro-super/tree/master/dist/info)
-# and icons (https://github.com/libretro/retroarch-assets/tree/master/pkg/wiiu) to this directory then run
-# the script. the output will be in retroarch/pkg/wiiu
+# and icons (https://github.com/libretro/KingStation-assets/tree/master/pkg/wiiu) to this directory then run
+# the script. the output will be in KingStation/pkg/wiiu
 
 . ../version.all
 
 platform=wiiu
 EXT=a
 
-mkdir -p ../pkg/wiiu/retroarch/cores/info
-cp *.info ../pkg/wiiu/retroarch/cores/info/
-mkdir -p ../pkg/wiiu/rpx/retroarch/cores/info
-cp *.info ../pkg/wiiu/rpx/retroarch/cores/info/
+mkdir -p ../pkg/wiiu/KingStation/cores/info
+cp *.info ../pkg/wiiu/KingStation/cores/info/
+mkdir -p ../pkg/wiiu/rpx/KingStation/cores/info
+cp *.info ../pkg/wiiu/rpx/KingStation/cores/info/
 
 make -C ../ -f Makefile.${platform} SALAMANDER_BUILD=1 clean || exit 1
 make -C ../ -f Makefile.${platform} SALAMANDER_BUILD=1 BUILD_HBL_ELF=1 BUILD_RPX=1 -j3 || exit 1
 
-mkdir -p ../pkg/wiiu/wiiu/apps/retroarch
-mv -f ../retroarch_wiiu_salamander.elf ../pkg/wiiu/wiiu/apps/retroarch/retroarch.elf
-cp -f ../pkg/wiiu/meta.xml ../pkg/wiiu/wiiu/apps/retroarch/meta.xml
-cp -f ../pkg/wiiu/icon.png ../pkg/wiiu/wiiu/apps/retroarch/icon.png
-mkdir -p ../pkg/wiiu/rpx/wiiu/apps/retroarch
-mv -f ../retroarch_wiiu_salamander.rpx ../pkg/wiiu/rpx/wiiu/apps/retroarch/retroarch.rpx
-rm -f ../retroarch_wiiu_salamander.rpx.elf
-cp -f ../pkg/wiiu/meta.xml ../pkg/wiiu/rpx/wiiu/apps/retroarch/meta.xml
-cp -f ../pkg/wiiu/icon.png ../pkg/wiiu/rpx/wiiu/apps/retroarch/icon.png
+mkdir -p ../pkg/wiiu/wiiu/apps/KingStation
+mv -f ../KingStation_wiiu_salamander.elf ../pkg/wiiu/wiiu/apps/KingStation/KingStation.elf
+cp -f ../pkg/wiiu/meta.xml ../pkg/wiiu/wiiu/apps/KingStation/meta.xml
+cp -f ../pkg/wiiu/icon.png ../pkg/wiiu/wiiu/apps/KingStation/icon.png
+mkdir -p ../pkg/wiiu/rpx/wiiu/apps/KingStation
+mv -f ../KingStation_wiiu_salamander.rpx ../pkg/wiiu/rpx/wiiu/apps/KingStation/KingStation.rpx
+rm -f ../KingStation_wiiu_salamander.rpx.elf
+cp -f ../pkg/wiiu/meta.xml ../pkg/wiiu/rpx/wiiu/apps/KingStation/meta.xml
+cp -f ../pkg/wiiu/icon.png ../pkg/wiiu/rpx/wiiu/apps/KingStation/icon.png
 
 make -C ../ -f Makefile.${platform} clean || exit 1
 
@@ -52,7 +52,7 @@ gen_meta_xml()
       echo '  <coder>'$authors'</coder>' >> "$1"_meta.xml
       echo '  <version>'$PACKAGE_VERSION' r'$build_hash'</version>' >> "$1"_meta.xml
       echo '  <release_date>'$date'</release_date>' >> "$1"_meta.xml
-      echo '  <short_description>RetroArch</short_description>' >> "$1"_meta.xml
+      echo '  <short_description>KingStation</short_description>' >> "$1"_meta.xml
       echo -e '  <long_description>'$display_name'\n\nSystem: '$systemname'\nLicense: '$license'</long_description>' >> "$1"_meta.xml
       echo '  <category>emu</category>' >> "$1"_meta.xml
       echo '  <url>https://github.com/libretro</url>' >> "$1"_meta.xml
@@ -103,10 +103,10 @@ for f in `ls -v *_${platform}.${EXT}`; do
    make -C ../ -f Makefile.${platform} LIBRETRO=$name BUILD_HBL_ELF=$build_hbl_elf BUILD_RPX=$build_rpx $whole_archive -j3 || exit 1
    gen_meta_xml $name
 
-   if [  -e ../retroarch_wiiu.elf ] ; then
-      cp ../retroarch_wiiu.elf ../pkg/wiiu/retroarch/cores/${name}_libretro.elf
+   if [  -e ../KingStation_wiiu.elf ] ; then
+      cp ../KingStation_wiiu.elf ../pkg/wiiu/KingStation/cores/${name}_libretro.elf
       mkdir -p ../pkg/wiiu/wiiu/apps/${name}_libretro
-      mv -f ../retroarch_wiiu.elf ../pkg/wiiu/wiiu/apps/${name}_libretro/${name}_libretro.elf
+      mv -f ../KingStation_wiiu.elf ../pkg/wiiu/wiiu/apps/${name}_libretro/${name}_libretro.elf
       if [  -e ${name}_meta.xml ] ; then
          cp -f ${name}_meta.xml ../pkg/wiiu/wiiu/apps/${name}_libretro/meta.xml
       else
@@ -118,11 +118,11 @@ for f in `ls -v *_${platform}.${EXT}`; do
          cp -f ../pkg/wiiu/icon.png ../pkg/wiiu/wiiu/apps/${name}_libretro/icon.png
       fi
    fi
-   if [  -e ../retroarch_wiiu.rpx ] ; then
-      cp ../retroarch_wiiu.rpx ../pkg/wiiu/rpx/retroarch/cores/${name}_libretro.rpx
+   if [  -e ../KingStation_wiiu.rpx ] ; then
+      cp ../KingStation_wiiu.rpx ../pkg/wiiu/rpx/KingStation/cores/${name}_libretro.rpx
       mkdir -p ../pkg/wiiu/rpx/wiiu/apps/${name}_libretro
-      mv -f ../retroarch_wiiu.rpx ../pkg/wiiu/rpx/wiiu/apps/${name}_libretro/${name}_libretro.rpx
-      rm -f ../retroarch_wiiu.rpx.elf
+      mv -f ../KingStation_wiiu.rpx ../pkg/wiiu/rpx/wiiu/apps/${name}_libretro/${name}_libretro.rpx
+      rm -f ../KingStation_wiiu.rpx.elf
       if [  -e ${name}_meta.xml ] ; then
          cp -f ${name}_meta.xml ../pkg/wiiu/rpx/wiiu/apps/${name}_libretro/meta.xml
       else

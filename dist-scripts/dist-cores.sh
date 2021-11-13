@@ -123,23 +123,23 @@ if [ $SALAMANDER = "yes" ]; then
    mv -f ../retrodos_salamander.exe ../pkg/${platform}/RETRODOS.EXE
    fi
    if [ $PLATFORM = "vita" ] ; then
-     mkdir -p ../pkg/${platform}/retroarch.vpk/vpk/sce_sys/livearea/contents
-     vita-make-fself -c -s ../retroarchvita_salamander.velf ../pkg/${platform}/retroarch.vpk/vpk/eboot.bin
-     vita-mksfoex -s TITLE_ID=RETROVITA "RetroArch" -d ATTRIBUTE2=12 ../pkg/${platform}/retroarch.vpk/vpk/sce_sys/param.sfo
-     cp ../pkg/${platform}/assets/ICON0.PNG ../pkg/${platform}/retroarch.vpk/vpk/sce_sys/icon0.png
-     cp -R ../pkg/${platform}/assets/livearea ../pkg/${platform}/retroarch.vpk/vpk/sce_sys/
+     mkdir -p ../pkg/${platform}/KingStation.vpk/vpk/sce_sys/livearea/contents
+     vita-make-fself -c -s ../KingStationvita_salamander.velf ../pkg/${platform}/KingStation.vpk/vpk/eboot.bin
+     vita-mksfoex -s TITLE_ID=RETROVITA "KingStation" -d ATTRIBUTE2=12 ../pkg/${platform}/KingStation.vpk/vpk/sce_sys/param.sfo
+     cp ../pkg/${platform}/assets/ICON0.PNG ../pkg/${platform}/KingStation.vpk/vpk/sce_sys/icon0.png
+     cp -R ../pkg/${platform}/assets/livearea ../pkg/${platform}/KingStation.vpk/vpk/sce_sys/
      make -C ../ -f Makefile.${platform}.salamander clean || exit 1
    fi
    if [ $PLATFORM = "ctr" ] ; then
-   mv -f ../retroarch_3ds_salamander.cia ../pkg/${platform}/build/cia/retroarch_3ds.cia
-   mkdir -p ../pkg/${platform}/build/3dsx/3ds/RetroArch
-   mv -f ../retroarch_3ds_salamander.3dsx ../pkg/${platform}/build/3dsx/3ds/RetroArch/RetroArch.3dsx
-   mv -f ../retroarch_3ds_salamander.smdh ../pkg/${platform}/build/3dsx/3ds/RetroArch/RetroArch.smdh
+   mv -f ../KingStation_3ds_salamander.cia ../pkg/${platform}/build/cia/KingStation_3ds.cia
+   mkdir -p ../pkg/${platform}/build/3dsx/3ds/KingStation
+   mv -f ../KingStation_3ds_salamander.3dsx ../pkg/${platform}/build/3dsx/3ds/KingStation/KingStation.3dsx
+   mv -f ../KingStation_3ds_salamander.smdh ../pkg/${platform}/build/3dsx/3ds/KingStation/KingStation.smdh
    # the .3ds port cant use salamander since you can only have one ROM on a cartridge at once
    make -C ../ -f Makefile.${platform}.salamander clean || exit 1
    fi
    if [ $PLATFORM = "wii" ] ; then
-   mv -f ../retroarch-salamander_wii.dol ../pkg/${platform}/boot.dol
+   mv -f ../KingStation-salamander_wii.dol ../pkg/${platform}/boot.dol
    fi
 fi
 
@@ -149,7 +149,7 @@ if [ $PLATFORM = "libnx" ]; then
    echo Buildbot: building static core for ${platform}
    mkdir -p ../pkg/${platform}/switch
    make -C ../ -f Makefile.${platform} HAVE_STATIC_DUMMY=1 -j3 || exit 1
-   mv -f ../retroarch_switch.nro ../pkg/${platform}/switch/retroarch_switch.nro
+   mv -f ../KingStation_switch.nro ../pkg/${platform}/switch/KingStation_switch.nro
    make -C ../ -f Makefile.${platform} clean || exit 1
 fi
 
@@ -220,36 +220,36 @@ for f in `ls -v *_${platform}.${EXT}`; do
 
    # Move executable files
    if [ $platform = "psl1ght" ] ; then
-       mv -fv ../retroarch_psl1ght.self ../pkg/psl1ght/pkg/USRDIR/cores/"${name}_libretro_${platform}.SELF"
+       mv -fv ../KingStation_psl1ght.self ../pkg/psl1ght/pkg/USRDIR/cores/"${name}_libretro_${platform}.SELF"
        if [ -d ../../dist/info ]; then
            mkdir -p ../pkg/psl1ght/pkg/USRDIR/cores/info
            cp -fv ../../dist/info/"${name}_libretro.info" ../pkg/psl1ght/pkg/USRDIR/cores/info/"${name}_libretro.info"
        fi
    elif [ $PLATFORM = "ps2" ] ; then
-      mv -f ../retroarchps2.elf ../pkg/${platform}/cores/${name}_libretro_${platform}.elf
+      mv -f ../KingStationps2.elf ../pkg/${platform}/cores/${name}_libretro_${platform}.elf
    elif [ $PLATFORM = "psp1" ] ; then
       mv -f ../EBOOT.PBP ../pkg/${platform}/cores/${name}_libretro.PBP
    elif [ $PLATFORM = "vita" ] ; then
       COUNTER=$((COUNTER + 1))
       COUNTER_ID=`printf  "%05d" ${COUNTER}`
-      cp ../retroarch_${platform}.self ../pkg/${platform}/retroarch.vpk/vpk/${name}_libretro.self
+      cp ../KingStation_${platform}.self ../pkg/${platform}/KingStation.vpk/vpk/${name}_libretro.self
          if [ -d ../../dist/info ]; then
-            mkdir -p ../pkg/${platform}/retroarch.vpk/vpk/info
-            cp -fv ../../dist/info/"${name}_libretro.info" ../pkg/${platform}/retroarch.vpk/vpk/info/"${name}_libretro.info"
+            mkdir -p ../pkg/${platform}/KingStation.vpk/vpk/info
+            cp -fv ../../dist/info/"${name}_libretro.info" ../pkg/${platform}/KingStation.vpk/vpk/info/"${name}_libretro.info"
          fi
    elif [ $PLATFORM = "ctr" ] ; then
-      mv -f ../retroarch_3ds.cia ../pkg/${platform}/build/cia/${name}_libretro.cia
-      mv -f ../retroarch_3ds.3dsx ../pkg/${platform}/build/3dsx/${name}_libretro.3dsx
-      mv -f ../retroarch_3ds.3ds ../pkg/${platform}/build/rom/${name}_libretro.3ds
+      mv -f ../KingStation_3ds.cia ../pkg/${platform}/build/cia/${name}_libretro.cia
+      mv -f ../KingStation_3ds.3dsx ../pkg/${platform}/build/3dsx/${name}_libretro.3dsx
+      mv -f ../KingStation_3ds.3ds ../pkg/${platform}/build/rom/${name}_libretro.3ds
    elif [ $PLATFORM = "libnx" ] ; then
-      mkdir -p ../pkg/${platform}/retroarch/cores/
-      mv -f ../retroarch_switch.nro ../pkg/${platform}/retroarch/cores/${name}_libretro_${platform}.nro
+      mkdir -p ../pkg/${platform}/KingStation/cores/
+      mv -f ../KingStation_switch.nro ../pkg/${platform}/KingStation/cores/${name}_libretro_${platform}.nro
    elif [ $PLATFORM = "unix" ] ; then
-      mv -f ../retroarch ../pkg/${platform}/${name}_libretro.elf
+      mv -f ../KingStation ../pkg/${platform}/${name}_libretro.elf
    elif [ $PLATFORM = "ngc" ] ; then
-      mv -f ../retroarch_${platform}.dol ../pkg/${platform}/${name}_libretro_${platform}.dol
+      mv -f ../KingStation_${platform}.dol ../pkg/${platform}/${name}_libretro_${platform}.dol
    elif [ $PLATFORM = "wii" ] ; then
-       mv -f ../retroarch_${platform}.dol ../pkg/${platform}/${name}_libretro_${platform}.dol
+       mv -f ../KingStation_${platform}.dol ../pkg/${platform}/${name}_libretro_${platform}.dol
    elif [ $PLATFORM = "dos" ] ; then
       mkdir -p ../pkg/${platform}/cores
       mv -f ../retrodos.exe ../pkg/${platform}/cores/${name}.exe
@@ -264,28 +264,28 @@ for f in `ls -v *_${platform}.${EXT}`; do
 
    # Remove executable files
    if [ $platform = "psl1ght" ] ; then
-       rm -f ../retroarch_${platform}.elf ../retroarch_${platform}.self ../CORE.SELF
+       rm -f ../KingStation_${platform}.elf ../KingStation_${platform}.self ../CORE.SELF
    elif [ $PLATFORM = "ps2" ] ; then
-      rm -f ../retroarchps2.elf
-      rm -f ../retroarchps2-debug.elf
+      rm -f ../KingStationps2.elf
+      rm -f ../KingStationps2-debug.elf
    elif [ $PLATFORM = "psp1" ] ; then
-      rm -f ../retroarchpsp.elf
+      rm -f ../KingStationpsp.elf
    elif [ $PLATFORM = "vita" ] ; then
-      rm -f ../retroarch_${platform}.velf ../retroarch_${platform}.elf ../eboot.bin
+      rm -f ../KingStation_${platform}.velf ../KingStation_${platform}.elf ../eboot.bin
    elif [ $PLATFORM = "ctr" ] ; then
-      rm -f ../retroarch_3ds.elf
-      rm -f ../retroarch_3ds.bnr
-      rm -f ../retroarch_3ds.icn
+      rm -f ../KingStation_3ds.elf
+      rm -f ../KingStation_3ds.bnr
+      rm -f ../KingStation_3ds.icn
    elif [ $PLATFORM = "libnx" ] ; then
-      rm -f ../retroarch_switch.elf
-      rm -f ../retroarch_switch.nacp
-      rm -f ../retroarch_switch.nso
+      rm -f ../KingStation_switch.elf
+      rm -f ../KingStation_switch.nacp
+      rm -f ../KingStation_switch.nso
    elif [ $PLATFORM = "unix" ] ; then
-      rm -f ../retroarch
+      rm -f ../KingStation
    elif [ $PLATFORM = "ngc" ] ; then
-      rm -f ../retroarch_${platform}.dol ../retroarch_${platform}.elf ../retroarch_${platform}.elf.map
+      rm -f ../KingStation_${platform}.dol ../KingStation_${platform}.elf ../KingStation_${platform}.elf.map
    elif [ $PLATFORM = "wii" ] ; then
-      rm -f ../retroarch_${platform}.dol ../retroarch_${platform}.elf ../retroarch_${platform}.elf.map
+      rm -f ../KingStation_${platform}.dol ../KingStation_${platform}.elf ../KingStation_${platform}.elf.map
    elif [ $platform = "emscripten" ] ; then
       rm -f ../${name}_libretro.js
    fi
@@ -335,5 +335,5 @@ fi
 
 # Packaging
 if [ $PLATFORM = "psl1ght" ] ; then
-   ${PS3DEV}/bin/pkg.py --contentid UP0001-SSNE10001_00-0000000000000001 ../pkg/psl1ght/pkg/ ../pkg/psl1ght/RetroArch.PSL1GHT.pkg
+   ${PS3DEV}/bin/pkg.py --contentid UP0001-SSNE10001_00-0000000000000001 ../pkg/psl1ght/pkg/ ../pkg/psl1ght/KingStation.PSL1GHT.pkg
 fi

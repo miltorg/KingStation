@@ -56,7 +56,7 @@ ifeq ($(TARGET_ARCH),mips)
    DEFINES += -DANDROID_MIPS -D__mips__ -D__MIPSEL__
 endif
 
-LOCAL_MODULE := retroarch-activity
+LOCAL_MODULE := KingStation-activity
 
 LOCAL_SRC_FILES  +=	$(RARCH_DIR)/griffin/griffin.c \
 							$(RARCH_DIR)/griffin/griffin_cpp.cpp
@@ -93,7 +93,7 @@ ifeq ($(HAVE_CHEEVOS),1)
 DEFINES += -DHAVE_CHEEVOS -DRC_DISABLE_LUA
 endif
 
-DEFINES += -DFLAC_PACKAGE_VERSION="\"retroarch\"" -DHAVE_LROUND -DFLAC__HAS_OGG=0
+DEFINES += -DFLAC_PACKAGE_VERSION="\"KingStation\"" -DHAVE_LROUND -DFLAC__HAS_OGG=0
 
 LOCAL_CFLAGS   += -Wall -std=gnu99 -pthread -Wno-unused-function -fno-stack-protector -funroll-loops $(DEFINES)
 LOCAL_CPPFLAGS := -fexceptions -fpermissive -std=gnu++11 -fno-rtti -Wno-reorder $(DEFINES)

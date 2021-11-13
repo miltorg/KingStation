@@ -1,15 +1,15 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2018      - Stuart Carnie
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -49,7 +49,7 @@
 #import "../../driver.h"
 #import "../../configuration.h"
 
-#import "../../retroarch.h"
+#import "../../KingStation.h"
 #import "../../verbosity.h"
 
 #import "../video_coord_array.h"
@@ -176,7 +176,7 @@ static void *metal_init(
    metal_fake_context.get_flags = metal_get_flags;
    video_context_driver_set(&metal_fake_context);
 
-   shader_path = retroarch_get_shader_preset();
+   shader_path = KingStation_get_shader_preset();
    type = video_shader_parse_type(shader_path);
    metal_set_shader((__bridge void *)md, type, shader_path);
 

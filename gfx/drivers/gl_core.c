@@ -1,15 +1,15 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2019 - Hans-Kristian Arntzen
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -37,7 +37,7 @@
 #include "../../state_manager.h"
 #endif
 
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 #include "../../verbosity.h"
 
 #ifdef HAVE_THREADS
@@ -989,7 +989,7 @@ static bool gl_core_init_filter_chain_preset(gl_core_t *gl, const char *shader_p
 
 static bool gl_core_init_filter_chain(gl_core_t *gl)
 {
-   const char *shader_path     = retroarch_get_shader_preset();
+   const char *shader_path     = KingStation_get_shader_preset();
    enum rarch_shader_type type = video_shader_parse_type(shader_path);
 
    if (string_is_empty(shader_path))
@@ -1274,9 +1274,9 @@ static void *gl_core_init(const video_info_t *video,
    if (string_is_equal(vendor, "Microsoft Corporation"))
       if (string_is_equal(renderer, "GDI Generic"))
 #ifdef HAVE_OPENGL1
-         retroarch_force_video_driver_fallback("gl1");
+         KingStation_force_video_driver_fallback("gl1");
 #else
-         retroarch_force_video_driver_fallback("gdi");
+         KingStation_force_video_driver_fallback("gdi");
 #endif
 #endif
 

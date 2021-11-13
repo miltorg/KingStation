@@ -1,16 +1,16 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2016-2019 - Brad Parker
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -80,9 +80,9 @@
 #endif
 
 #if defined(IS_SALAMANDER)
-#define FILE_PATH_PROGRAM_NAME "RetroArch Salamander"
+#define FILE_PATH_PROGRAM_NAME "KingStation Salamander"
 #else
-#define FILE_PATH_PROGRAM_NAME "RetroArch"
+#define FILE_PATH_PROGRAM_NAME "KingStation"
 #endif
 
 typedef struct verbosity_state
@@ -456,7 +456,7 @@ void rarch_log_file_init(
       rtime_localtime(&cur_time, &tm_);
 
       format[0] = '\0';
-      strftime(format, sizeof(format), "retroarch__%Y_%m_%d__%H_%M_%S", &tm_);
+      strftime(format, sizeof(format), "KingStation__%Y_%m_%d__%H_%M_%S", &tm_);
       fill_pathname_noext(timestamped_log_file_name, format,
             ".log",
             sizeof(timestamped_log_file_name));
@@ -515,7 +515,7 @@ void rarch_log_file_init(
             log_dir,
             log_to_file_timestamp
             ? timestamped_log_file_name
-            : "retroarch.log",
+            : "KingStation.log",
             sizeof(log_file_path));
    }
 
@@ -537,7 +537,7 @@ void rarch_log_file_init(
          }
       }
 
-      /* When RetroArch is launched, log file is overwritten.
+      /* When KingStation is launched, log file is overwritten.
        * On subsequent calls within the same session, it is appended to. */
       retro_main_log_file_init(log_file_path, log_file_created);
       if (g_verbosity->initialized)

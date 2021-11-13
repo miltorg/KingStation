@@ -1,16 +1,16 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -640,8 +640,8 @@ static bool gfx_ctx_wl_set_video_mode(void *data,
       wl->xdg_toplevel = xdg_surface_get_toplevel(wl->xdg_surface);
       xdg_toplevel_add_listener(wl->xdg_toplevel, &xdg_toplevel_listener, wl);
 
-      xdg_toplevel_set_app_id(wl->xdg_toplevel, "retroarch");
-      xdg_toplevel_set_title(wl->xdg_toplevel, "RetroArch");
+      xdg_toplevel_set_app_id(wl->xdg_toplevel, "KingStation");
+      xdg_toplevel_set_title(wl->xdg_toplevel, "KingStation");
 
       if (wl->deco_manager)
       {
@@ -667,8 +667,8 @@ static bool gfx_ctx_wl_set_video_mode(void *data,
       wl->zxdg_toplevel = zxdg_surface_v6_get_toplevel(wl->zxdg_surface);
       zxdg_toplevel_v6_add_listener(wl->zxdg_toplevel, &zxdg_toplevel_v6_listener, wl);
 
-      zxdg_toplevel_v6_set_app_id(wl->zxdg_toplevel, "retroarch");
-      zxdg_toplevel_v6_set_title(wl->zxdg_toplevel, "RetroArch");
+      zxdg_toplevel_v6_set_app_id(wl->zxdg_toplevel, "KingStation");
+      zxdg_toplevel_v6_set_title(wl->zxdg_toplevel, "KingStation");
 
       if (wl->deco_manager)
          wl->deco = zxdg_decoration_manager_v1_get_toplevel_decoration(

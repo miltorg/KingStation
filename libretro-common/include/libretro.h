@@ -1,4 +1,4 @@
-/* Copyright (C) 2010-2020 The RetroArch team
+/* Copyright (C) 2010-2020 The KingStation team
  *
  * ---------------------------------------------------------------------------------------
  * The following license statement only applies to this libretro API header (libretro.h).
@@ -2649,7 +2649,7 @@ struct retro_message_ext
     *   *highest* priority value should be shown
     * > There is no upper limit to a message priority
     *   value (within the bounds of the unsigned data type)
-    * > In the reference frontend (RetroArch), the same
+    * > In the reference frontend (KingStation), the same
     *   priority values are used for frontend-generated
     *   notifications, which are typically assigned values
     *   between 0 and 3 depending upon importance */

@@ -1,15 +1,15 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -59,15 +59,15 @@ void logger_send_v(const char *__format, va_list args);
 #ifdef IS_SALAMANDER
 
 #define RARCH_DBG(...) do { \
-   logger_send("RetroArch Salamander: " __VA_ARGS__); \
+   logger_send("KingStation Salamander: " __VA_ARGS__); \
 } while (0)
 
 #define RARCH_LOG(...) do { \
-   logger_send("RetroArch Salamander: " __VA_ARGS__); \
+   logger_send("KingStation Salamander: " __VA_ARGS__); \
 } while (0)
 
 #define RARCH_LOG_V(tag, fmt, vp) do { \
-   logger_send("RetroArch Salamander: " tag); \
+   logger_send("KingStation Salamander: " tag); \
    logger_send_v(fmt, vp); \
 } while (0)
 

@@ -129,7 +129,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_ONLINE_UPDATER,
-   "RetroArch用のアドオン, コンポーネント, コンテンツをダウンロードします."
+   "KingStation用のアドオン, コンポーネント, コンテンツをダウンロードします."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_NETPLAY,
@@ -169,23 +169,23 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_HELP_LIST,
-   "RetroArchの基本的な使い方についてのヘルプを表示します."
+   "KingStationの基本的な使い方についてのヘルプを表示します."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
    "再起動"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
-   "RetroArchを再起動します."
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
+   "KingStationを再起動します."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
    "終了"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
-   "RetroArchを終了します."
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
+   "KingStationを終了します."
    )
 
 /* Main Menu > Load Core */
@@ -1936,7 +1936,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_MAX_USERS,
-   "RetroArchで対応するユーザの最大数です."
+   "KingStationで対応するユーザの最大数です."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_POLL_TYPE_BEHAVIOR,
@@ -1944,7 +1944,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_POLL_TYPE_BEHAVIOR,
-   "RetroArch での入力ポーリングの実行方法に影響を与えます. これを｢早い｣または｢遅い｣に設定すると, 設定によっては遅延が少なくなることがあります. "
+   "KingStation での入力ポーリングの実行方法に影響を与えます. これを｢早い｣または｢遅い｣に設定すると, 設定によっては遅延が少なくなることがあります. "
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_AUTODETECT_ENABLE,
@@ -2101,7 +2101,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_QUIT_PRESS_TWICE,
-   "RetroArchを終了するのに, 終了ホットキーを2回押す必要があります."
+   "KingStationを終了するのに, 終了ホットキーを2回押す必要があります."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_MENU_ENUM_TOGGLE_GAMEPAD_COMBO,
@@ -2177,11 +2177,11 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_QUIT_KEY,
-   "RetroArchを終了"
+   "KingStationを終了"
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_META_QUIT_KEY,
-   "RetroArchを終了し, すべての保存データと設定ファイルをディスクに書き込みます."
+   "KingStationを終了し, すべての保存データと設定ファイルをディスクに書き込みます."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_STATE_SLOT_PLUS,
@@ -2301,7 +2301,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_META_SEND_DEBUG_INFO,
-   "解析のため, お使いのデバイスに関する診断情報とRetroArch設定をサーバーに送信します."
+   "解析のため, お使いのデバイスに関する診断情報とKingStation設定をサーバーに送信します."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_NETPLAY_HOST_TOGGLE,
@@ -2622,7 +2622,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_DUMMY_ON_CORE_SHUTDOWN,
-   "一部のコアには終了機能があり, ダミーコアをロードするとRetroArchが終了するのを防止できます. "
+   "一部のコアには終了機能があり, ダミーコアをロードするとKingStationが終了するのを防止できます. "
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_CORE_SET_SUPPORTS_NO_CONTENT_ENABLE,
@@ -2643,7 +2643,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_ALWAYS_RELOAD_CORE_ON_RUN_CONTENT,
-   "要求されたコアがすでに読み込まれている場合でも, コンテンツを起動するときにRetroArchを再起動します. これはロード時間の増加を犠牲にしてシステムの安定性を向上させる可能性があります."
+   "要求されたコアがすでに読み込まれている場合でも, コンテンツを起動するときにKingStationを再起動します. これはロード時間の増加を犠牲にしてシステムの安定性を向上させる可能性があります."
    )
 #endif
 MSG_HASH(
@@ -2707,7 +2707,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_GLOBAL_CORE_OPTIONS,
-   "全てのコアオプションを共通の設定ファイル(retroarch-core-options.cfg)に保存します. 無効に設定すると, [設定]ディレクトリにコアごとのフォルダ/ファイルを作成して保存します."
+   "全てのコアオプションを共通の設定ファイル(KingStation-core-options.cfg)に保存します. 無効に設定すると, [設定]ディレクトリにコアごとのフォルダ/ファイルを作成して保存します."
    )
 
 /* Settings > Saving */
@@ -2750,7 +2750,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_SAVESTATE_AUTO_SAVE,
-   "コンテンツを閉じるときに自動的にステートセーブを行います. [自動的にステートをロード]が有効の場合, RetroArchは自動的にこのセーブステートをロードします."
+   "コンテンツを閉じるときに自動的にステートセーブを行います. [自動的にステートをロード]が有効の場合, KingStationは自動的にこのセーブステートをロードします."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_SAVESTATE_AUTO_LOAD,
@@ -2857,7 +2857,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_LOG_TO_FILE_TIMESTAMP,
-   "ファイルへのログ出力時, RetroArchの各セッション毎に新たなタイムスタンプ付きのファイルにリダイレクトします. 無効の場合, ログはRetroArchを再起動するたびに上書きされます."
+   "ファイルへのログ出力時, KingStationの各セッション毎に新たなタイムスタンプ付きのファイルにリダイレクトします. 無効の場合, ログはKingStationを再起動するたびに上書きされます."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_PERFCNT_ENABLE,
@@ -2865,7 +2865,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_PERFCNT_ENABLE,
-   "RetroArchとコアのパフォーマンスカウンタです. カウンタデータはシステムのボトルネック解析や性能の微調整に役立ちます."
+   "KingStationとコアのパフォーマンスカウンタです. カウンタデータはシステムのボトルネック解析や性能の微調整に役立ちます."
    )
 
 /* Settings > File Browser */
@@ -3503,19 +3503,19 @@ MSG_HASH(
    "[ヘルプ]オプションを表示/非表示にします。"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_KingStation,
    "[終了]を表示"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_KingStation,
    "[終了]オプションを表示/非表示にします。"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_MENU_SHOW_RESTART_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_MENU_SHOW_RESTART_KingStation,
    "[再起動]を表示"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_MENU_SHOW_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_MENU_SHOW_RESTART_KingStation,
    "[再起動]オプションを表示/非表示にします。"
    )
 MSG_HASH(
@@ -4684,7 +4684,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_ASSETS_DIRECTORY,
-   "RetroArchが使用するメニューアセットは, このディレクトリに保存されます."
+   "KingStationが使用するメニューアセットは, このディレクトリに保存されます."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_DYNAMIC_WALLPAPERS_DIRECTORY,
@@ -7094,7 +7094,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_MENU_HELP_ABOUT,
-   "RetroArchについて"
+   "KingStationについて"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_MENU_HELP_DOCUMENTATION,
@@ -7186,7 +7186,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_RESTART_TO_TAKE_EFFECT,
-   "変更はRetroArchを再起動した後に反映されます。"
+   "変更はKingStationを再起動した後に反映されます。"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_LOG,
@@ -7405,15 +7405,15 @@ MSG_HASH(
    "必須フィールドがすべて入力されていることを確認してください。"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_NIGHTLY,
-   "RetroArchを更新 (nightly)"
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_NIGHTLY,
+   "KingStationを更新 (nightly)"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_FINISHED,
-   "更新に成功しました。変更を適用にするには, RetroArchを再起動する必要があります。"
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_FINISHED,
+   "更新に成功しました。変更を適用にするには, KingStationを再起動する必要があります。"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_FAILED,
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_FAILED,
    "更新に失敗しました。"
    )
 MSG_HASH(
@@ -7776,7 +7776,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_HELP_SEND_DEBUG_INFO,
-   "解析のため, デバイスとRetroArch設定に関する情報をサーバーに送信します。"
+   "解析のため, デバイスとKingStation設定に関する情報をサーバーに送信します。"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_MANAGEMENT,
@@ -7997,7 +7997,7 @@ MSG_HASH( /* FIXME Should be MSG_ */
    )
 MSG_HASH( /* FIXME Should be MSG_ */
    MENU_ENUM_LABEL_VALUE_VIDEO_DRIVER_FALLBACK,
-   "グラフィックドライバは, RetroArchの現在のビデオドライバと互換性がありません.  %s ドライバに戻ります.  変更を有効にするには, RetroArchを再起動してください. "
+   "グラフィックドライバは, KingStationの現在のビデオドライバと互換性がありません.  %s ドライバに戻ります.  変更を有効にするには, KingStationを再起動してください. "
    )
 MSG_HASH( /* FIXME Should be MSG_ */
    MENU_ENUM_LABEL_VALUE_SIDELOAD_CORE_SUCCESS,
@@ -8029,11 +8029,11 @@ MSG_HASH(
    )
 MSG_HASH(
    MSG_PRESS_TWO_MORE_TIMES_TO_SEND_DEBUG_INFO,
-   "2回以上押すと, 診断情報をRetroArchチームに送信します."
+   "2回以上押すと, 診断情報をKingStationチームに送信します."
    )
 MSG_HASH(
    MSG_PRESS_ONE_MORE_TIME_TO_SEND_DEBUG_INFO,
-   "もう一度押すと, 診断情報をRetroArchチームに送信します."
+   "もう一度押すと, 診断情報をKingStationチームに送信します."
    )
 MSG_HASH(
    MSG_AUDIO_MIXER_VOLUME,
@@ -8096,16 +8096,16 @@ MSG_HASH(
    "｢%.*s｣が入力デバイス｢%.*s｣で接続しました"
    )
 MSG_HASH(
-   MSG_NETPLAY_NOT_RETROARCH,
-   "相手の接続が失敗しました. 古いRetroArchバージョンを使っているかもしれません. "
+   MSG_NETPLAY_NOT_KingStation,
+   "相手の接続が失敗しました. 古いKingStationバージョンを使っているかもしれません. "
    )
 MSG_HASH(
    MSG_NETPLAY_OUT_OF_DATE,
-   "相手のRetroArchバージョンは古いため, 接続できません。"
+   "相手のKingStationバージョンは古いため, 接続できません。"
    )
 MSG_HASH(
    MSG_NETPLAY_DIFFERENT_VERSIONS,
-   "警告: 相手が違うRetroArchバージョンを使っています. 問題があれば同じバージョンを使って下さい. "
+   "警告: 相手が違うKingStationバージョンを使っています. 問題があれば同じバージョンを使って下さい. "
    )
 MSG_HASH(
    MSG_NETPLAY_DIFFERENT_CORES,
@@ -9407,11 +9407,11 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_RESTART_KEY,
-   "RetroArchを再起動"
+   "KingStationを再起動"
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_META_RESTART_KEY,
-   "RetroArchを終了して再起動します. 特定のメニュー設定の有効化(例えば, メニューの変更時など)に必要です. "
+   "KingStationを終了して再起動します. 特定のメニュー設定の有効化(例えば, メニューの変更時など)に必要です. "
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_TOUCH_ENABLE,
@@ -9582,6 +9582,6 @@ MSG_HASH(
 #ifdef HAVE_QT
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_SCAN_FINISHED,
-   "スキャンが成功しました。<br><br>\nコンテンツを正確にスキャンするには:\n<ul><li>互換機コアがもうダウンロードされた</li>\n<li>オンラインアップデータで｢コア情報｣がもうアップデートされた</li>\n<li>オンラインアップデータで｢データベース｣がもうアップデートされた</li>\n<li>上記タスクの後にRetroArchを再起動してください。</li></ul>\nコンテンツが<a href=\"https://docs.libretro.com/guides/roms-playlists-thumbnails/#sources\">存在データベース</a>の一致が必要です。\nまだちゃんと動けないとバグを<a href=\"https://www.github.com/libretro/RetroArch/issues\">報告</a>できます。"
+   "スキャンが成功しました。<br><br>\nコンテンツを正確にスキャンするには:\n<ul><li>互換機コアがもうダウンロードされた</li>\n<li>オンラインアップデータで｢コア情報｣がもうアップデートされた</li>\n<li>オンラインアップデータで｢データベース｣がもうアップデートされた</li>\n<li>上記タスクの後にKingStationを再起動してください。</li></ul>\nコンテンツが<a href=\"https://docs.libretro.com/guides/roms-playlists-thumbnails/#sources\">存在データベース</a>の一致が必要です。\nまだちゃんと動けないとバグを<a href=\"https://www.github.com/libretro/KingStation/issues\">報告</a>できます。"
    )
 #endif

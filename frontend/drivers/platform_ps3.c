@@ -1,16 +1,16 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -191,9 +191,9 @@ static void frontend_ps3_get_env(int *argc, char *argv[],
    logger_init();
 #elif defined(HAVE_FILE_LOGGER)
 #ifndef IS_SALAMANDER
-   retro_main_log_file_init("/dev_hdd0/game/" EMULATOR_CONTENT_DIR "/USRDIR/retroarch-log.txt", false);
+   retro_main_log_file_init("/dev_hdd0/game/" EMULATOR_CONTENT_DIR "/USRDIR/KingStation-log.txt", false);
 #else
-   retro_main_log_file_init("/dev_hdd0/game/" EMULATOR_CONTENT_DIR "/USRDIR/retroarch-log-salamander.txt", false);
+   retro_main_log_file_init("/dev_hdd0/game/" EMULATOR_CONTENT_DIR "/USRDIR/KingStation-log-salamander.txt", false);
 #endif
 #endif
 
@@ -228,7 +228,7 @@ static void frontend_ps3_get_env(int *argc, char *argv[],
 #if defined(HAVE_LOGGER)
    logger_init();
 #elif defined(HAVE_FILE_LOGGER)
-   retro_main_log_file_init("/dev_hdd0/retroarch-log.txt", false);
+   retro_main_log_file_init("/dev_hdd0/KingStation-log.txt", false);
 #endif
 #endif
 
@@ -293,16 +293,16 @@ static void frontend_ps3_get_env(int *argc, char *argv[],
       switch(get_type)
       {
          case CELL_GAME_GAMETYPE_DISC:
-            RARCH_LOG("RetroArch was launched on Optical Disc Drive.\n");
+            RARCH_LOG("KingStation was launched on Optical Disc Drive.\n");
             break;
          case CELL_GAME_GAMETYPE_HDD:
-            RARCH_LOG("RetroArch was launched on HDD.\n");
+            RARCH_LOG("KingStation was launched on HDD.\n");
             break;
       }
 
       if ((get_attributes & CELL_GAME_ATTRIBUTE_APP_HOME)
             == CELL_GAME_ATTRIBUTE_APP_HOME)
-         RARCH_LOG("RetroArch was launched from host machine (APP_HOME).\n");
+         RARCH_LOG("KingStation was launched from host machine (APP_HOME).\n");
 
       ret = cellGameContentPermit(content_info_path, g_defaults.dirs[DEFAULT_DIR_PORT]);
 
@@ -378,8 +378,8 @@ static void frontend_ps3_init(void *data)
 #ifdef HAVE_SYSUTILS
    CellScreenShotSetParam screenshot_param = {0, 0, 0, 0};
 
-   screenshot_param.photo_title = "RetroArch PS3";
-   screenshot_param.game_title = "RetroArch PS3";
+   screenshot_param.photo_title = "KingStation PS3";
+   screenshot_param.game_title = "KingStation PS3";
    cellScreenShotSetParameter (&screenshot_param);
    cellScreenShotEnable();
 #endif

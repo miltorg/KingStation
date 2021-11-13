@@ -1,16 +1,16 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2014-2017 - Ali Bouhlel
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -24,7 +24,7 @@
 #include "../../driver.h"
 #include "../../configuration.h"
 #include "../../verbosity.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 
 #ifdef HAVE_REWIND
 #include "../../state_manager.h"
@@ -466,7 +466,7 @@ static void *wiiu_gfx_init(const video_info_t *video,
 
       video_context_driver_set(&wiiu_fake_context); 
 
-      shader_preset               = retroarch_get_shader_preset();
+      shader_preset               = KingStation_get_shader_preset();
       type                        = video_shader_parse_type(shader_preset);
       wiiu_gfx_set_shader(wiiu, type, shader_preset);
    }

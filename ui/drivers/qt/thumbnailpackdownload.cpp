@@ -23,7 +23,7 @@ extern "C" {
 #endif
 
 #undef TEMP_EXTENSION
-#define USER_AGENT "RetroArch-WIMP/" PACKAGE_VERSION
+#define USER_AGENT "KingStation-WIMP/" PACKAGE_VERSION
 #define PARTIAL_EXTENSION ".partial"
 #define TEMP_EXTENSION ".tmp"
 #define THUMBNAILPACK_URL_HEADER "http://thumbnailpacks.libretro.com/"

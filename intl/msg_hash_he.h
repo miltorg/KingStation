@@ -84,19 +84,19 @@ MSG_HASH(
    "עזרה"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
-   "אתחול RetroArch"
+   MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
+   "אתחול KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
    "אתחול יישום."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
    "יציאה"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
    "יציאה."
    )
 

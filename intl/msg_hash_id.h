@@ -125,7 +125,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_ONLINE_UPDATER,
-   "Unduh add-on, komponen, dan konten untuk RetroArch."
+   "Unduh add-on, komponen, dan konten untuk KingStation."
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_NETPLAY,
@@ -164,19 +164,19 @@ MSG_HASH(
    "Pelajari lebih lanjut cara kerja aplikasi."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
-   "Jalankan Ulang RetroArch"
+   MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
+   "Jalankan Ulang KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
    "Jalankan ulang program."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
-   "Tutup RetroArch"
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
+   "Tutup KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
    "Tutup program."
    )
 

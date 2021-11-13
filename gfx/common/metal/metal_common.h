@@ -1,6 +1,6 @@
 //
 //  metal_common.h
-//  RetroArch_Metal
+//  KingStation_Metal
 //
 //  Created by Stuart Carnie on 6/15/18.
 //

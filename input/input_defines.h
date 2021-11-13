@@ -1,16 +1,16 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -37,11 +37,11 @@ RETRO_BEGIN_DECLS
 
 #define RARCH_UNMAPPED                 1024
 
-/* RetroArch specific bind IDs. */
+/* KingStation specific bind IDs. */
 enum
 {
    /* Custom binds that extend the scope of RETRO_DEVICE_JOYPAD for
-    * RetroArch specifically.
+    * KingStation specifically.
     * Analogs (RETRO_DEVICE_ANALOG) */
    RARCH_ANALOG_LEFT_X_PLUS = RARCH_FIRST_CUSTOM_BIND,
    RARCH_ANALOG_LEFT_X_MINUS,
@@ -148,7 +148,7 @@ enum analog_dpad_mode
 
 /* libretro has 16 buttons from 0-15 (libretro.h)
  * Analog binds use RETRO_DEVICE_ANALOG, but we follow the same scheme
- * internally in RetroArch for simplicity, so they are mapped into [16, 23].
+ * internally in KingStation for simplicity, so they are mapped into [16, 23].
  */
 
 #define AXIS_NEG(x)        (((uint32_t)(x) << 16) | 0xFFFFU)

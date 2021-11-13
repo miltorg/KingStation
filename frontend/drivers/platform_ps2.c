@@ -1,14 +1,14 @@
-/* RetroArch - A frontend for libretro.
+/* KingStation - A frontend for libretro.
  * Copyright (C) 2010-2018 - Francisco Javier Trujillo Mata - fjtrujy
  *
- * RetroArch is free software: you can redistribute it and/or modify it under the terms
+ * KingStation is free software: you can redistribute it and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Found-
  * ation, either version 3 of the License, or (at your option) any later version.
  *
- * RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  * PURPOSE. See the GNU General Public License for more details.
- * * You should have received a copy of the GNU General Public License along with RetroArch.
+ * * You should have received a copy of the GNU General Public License along with KingStation.
  * If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -47,7 +47,7 @@ static void create_path_names(void)
    /* TODO/FIXME - third parameter here needs to be size of
     * rootDevicePath(bootDeviceID) */
    strlcpy(user_path, rootDevicePath(bootDeviceID), sizeof(user_path));
-   strlcat(user_path, "RETROARCH", sizeof(user_path));
+   strlcat(user_path, "KingStation", sizeof(user_path));
 
    /* Content in the same folder */
    fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_CORE], cwd,

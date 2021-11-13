@@ -1,17 +1,17 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2016-2017 - Gregor Richards
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -34,7 +34,7 @@
 #include "../../autosave.h"
 #include "../../configuration.h"
 #include "../../content.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 #include "../../version.h"
 
 struct nick_buf_s
@@ -152,7 +152,7 @@ static void netplay_log_connection(
 /**
  * netplay_impl_magic:
  *
- * A pseudo-hash of the RetroArch and Netplay version, so only compatible
+ * A pseudo-hash of the KingStation and Netplay version, so only compatible
  * versions play together.
  */
 static uint32_t netplay_impl_magic(void)
@@ -290,7 +290,7 @@ static void handshake_password(void *ignore, const char *line)
 
 #ifdef HAVE_MENU
    menu_input_dialog_end();
-   retroarch_menu_running_finished(false);
+   KingStation_menu_running_finished(false);
 #endif
 }
 #endif
@@ -324,7 +324,7 @@ bool netplay_handshake_init(netplay_t *netplay,
 
    if (ntohl(header[0]) != NETPLAY_MAGIC)
    {
-      dmsg = msg_hash_to_str(MSG_NETPLAY_NOT_RETROARCH);
+      dmsg = msg_hash_to_str(MSG_NETPLAY_NOT_KingStation);
       goto error;
    }
 
@@ -415,7 +415,7 @@ bool netplay_handshake_init(netplay_t *netplay,
    {
 #ifdef HAVE_MENU
       menu_input_ctx_line_t line;
-      retroarch_menu_running();
+      KingStation_menu_running();
 #endif
 
       handshake_password_netplay = netplay;

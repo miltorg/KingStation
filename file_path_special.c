@@ -1,16 +1,16 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2016-2019 - Brad Parker
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -100,7 +100,7 @@ bool fill_pathname_application_data(char *s, size_t len)
    if (appdata)
    {
       fill_pathname_join(s, appdata,
-            "Library/Application Support/RetroArch", len);
+            "Library/Application Support/KingStation", len);
       return true;
    }
 #elif defined(DINGUX)
@@ -108,7 +108,7 @@ bool fill_pathname_application_data(char *s, size_t len)
 
    if (appdata)
    {
-      fill_pathname_join(s, appdata, "/.retroarch", len);
+      fill_pathname_join(s, appdata, "/.KingStation", len);
       return true;
    }
 #elif !defined(RARCH_CONSOLE)
@@ -119,7 +119,7 @@ bool fill_pathname_application_data(char *s, size_t len)
    /* On Haiku, it is set by default to /home/user/config/settings */
    if (xdg)
    {
-      fill_pathname_join(s, xdg, "retroarch/", len);
+      fill_pathname_join(s, xdg, "KingStation/", len);
       return true;
    }
 
@@ -128,10 +128,10 @@ bool fill_pathname_application_data(char *s, size_t len)
 #ifdef __HAIKU__
       /* in theory never used as Haiku has XDG_CONFIG_HOME set by default */
       fill_pathname_join(s, appdata,
-            "config/settings/retroarch/", len);
+            "config/settings/KingStation/", len);
 #else
       fill_pathname_join(s, appdata,
-            ".config/retroarch/", len);
+            ".config/KingStation/", len);
 #endif
       return true;
    }

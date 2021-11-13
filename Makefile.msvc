@@ -1,4 +1,4 @@
-TARGET		    := retroarch.exe
+TARGET		    := KingStation.exe
 DEBUG           = 0
 GRIFFIN_BUILD   = 0
 OS              = Win32

@@ -37,7 +37,7 @@
 #include "../../verbosity.h"
 #include "../../defaults.h"
 #include "../../paths.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 #include "../../file_path_special.h"
 
 #ifndef IS_SALAMANDER
@@ -54,7 +54,7 @@
 #endif
 
 static enum frontend_fork switch_fork_mode = FRONTEND_FORK_NONE;
-static const char *elf_path_cst = "/switch/retroarch_switch.nro";
+static const char *elf_path_cst = "/switch/KingStation_switch.nro";
 
 bool platform_switch_has_focus = true;
 
@@ -104,7 +104,7 @@ static void on_applet_hook(AppletHookType hook, void *param)
    {
       case AppletHookType_OnExitRequest:
          RARCH_LOG("Got AppletHook OnExitRequest, exiting.\n");
-         retroarch_main_quit();
+         KingStation_main_quit();
          break;
 
          /* Focus state*/
@@ -157,7 +157,7 @@ static void get_first_valid_core(char *path_return, size_t len)
 
    path_return[0] = '\0';
 
-   dir = opendir(SD_PREFIX "/retroarch/cores");
+   dir = opendir(SD_PREFIX "/KingStation/cores");
    if (dir)
    {
       while ((ent = readdir(dir)))
@@ -166,7 +166,7 @@ static void get_first_valid_core(char *path_return, size_t len)
             break;
          if (strlen(ent->d_name) > strlen(extension) && !strcmp(ent->d_name + strlen(ent->d_name) - strlen(extension), extension))
          {
-            strcpy_literal(path_return, SD_PREFIX "/retroarch/cores");
+            strcpy_literal(path_return, SD_PREFIX "/KingStation/cores");
             strlcat(path_return, "/", len);
             strlcat(path_return, ent->d_name, len);
             break;
@@ -187,11 +187,11 @@ static void frontend_switch_get_env(
 #if defined(HAVE_LOGGER)
    logger_init();
 #elif defined(HAVE_FILE_LOGGER)
-   retro_main_log_file_init(SD_PREFIX "/retroarch-log.txt");
+   retro_main_log_file_init(SD_PREFIX "/KingStation-log.txt");
 #endif
 #endif
 
-   fill_pathname_basedir(g_defaults.dirs[DEFAULT_DIR_PORT], SD_PREFIX "/retroarch/retroarch_switch.nro", sizeof(g_defaults.dirs[DEFAULT_DIR_PORT]));
+   fill_pathname_basedir(g_defaults.dirs[DEFAULT_DIR_PORT], SD_PREFIX "/KingStation/KingStation_switch.nro", sizeof(g_defaults.dirs[DEFAULT_DIR_PORT]));
    RARCH_LOG("port dir: [%s]\n", g_defaults.dirs[DEFAULT_DIR_PORT]);
 
    fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_CORE], g_defaults.dirs[DEFAULT_DIR_PORT],
@@ -429,7 +429,7 @@ static void frontend_switch_exitspawn(char *s, size_t len, char *args)
 
 #if 0
 /* TODO/FIXME - should be refactored into something that can be used for all
- * RetroArch versions, and not just Switch */
+ * KingStation versions, and not just Switch */
 static void argb_to_rgba8(uint32_t *buff, uint32_t height, uint32_t width)
 {
    uint32_t h, w;

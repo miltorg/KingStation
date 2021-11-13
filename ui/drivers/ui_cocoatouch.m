@@ -1,15 +1,15 @@
-/* RetroArch - A frontend for libretro.
+/* KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2016 - Daniel De Matteis
  *
- * RetroArch is free software: you can redistribute it and/or modify it under the terms
+ * KingStation is free software: you can redistribute it and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Found-
  * ation, either version 3 of the License, or (at your option) any later version.
  *
- * RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  * PURPOSE. See the GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License along with RetroArch.
+ * You should have received a copy of the GNU General Public License along with KingStation.
  * If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -32,7 +32,7 @@
 #include "../../frontend/frontend.h"
 #include "../../input/drivers/cocoa_input.h"
 #include "../../input/drivers_keyboard/keyboard_event_apple.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 
 #ifdef HAVE_MENU
 #include "../../menu/menu_setting.h"
@@ -58,7 +58,7 @@ static void rarch_enable_ui(void)
 
    rarch_ctl(RARCH_CTL_SET_PAUSED, &boolean);
    rarch_ctl(RARCH_CTL_SET_IDLE,   &boolean);
-   retroarch_menu_running();
+   KingStation_menu_running();
 }
 
 static void rarch_disable_ui(void)
@@ -69,7 +69,7 @@ static void rarch_disable_ui(void)
 
    rarch_ctl(RARCH_CTL_SET_PAUSED, &boolean);
    rarch_ctl(RARCH_CTL_SET_IDLE,   &boolean);
-   retroarch_menu_running_finished(false);
+   KingStation_menu_running_finished(false);
 }
 
 static void ui_companion_cocoatouch_event_command(
@@ -327,7 +327,7 @@ enum
 
 @end
 
-@implementation RetroArch_iOS
+@implementation KingStation_iOS
 
 #pragma mark - ApplePlatform
 -(id)renderView { return _renderView; }
@@ -395,7 +395,7 @@ enum
 
 - (void)setCursorVisible:(bool)v { /* no-op for iOS */ }
 - (bool)setDisableDisplaySleep:(bool)disable { /* no-op for iOS */ return NO; }
-+ (RetroArch_iOS*)get { return (RetroArch_iOS*)[[UIApplication sharedApplication] delegate]; }
++ (KingStation_iOS*)get { return (KingStation_iOS*)[[UIApplication sharedApplication] delegate]; }
 
 -(NSString*)documentsDirectory
 {
@@ -415,7 +415,7 @@ enum
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
    NSError *error;
-   char arguments[]   = "retroarch";
+   char arguments[]   = "KingStation";
    char       *argv[] = {arguments,   NULL};
    int argc           = 1;
    apple_platform     = self;
@@ -539,13 +539,13 @@ enum
 int main(int argc, char *argv[])
 {
    @autoreleasepool {
-      return UIApplicationMain(argc, argv, NSStringFromClass([RApplication class]), NSStringFromClass([RetroArch_iOS class]));
+      return UIApplicationMain(argc, argv, NSStringFromClass([RApplication class]), NSStringFromClass([KingStation_iOS class]));
    }
 }
 
 static void apple_rarch_exited(void)
 {
-   RetroArch_iOS *ap = (RetroArch_iOS *)apple_platform;
+   KingStation_iOS *ap = (KingStation_iOS *)apple_platform;
 
    if (!ap)
       return;

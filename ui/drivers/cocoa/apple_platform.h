@@ -41,7 +41,7 @@ id apple_platform;
 #endif
 
 #if defined(HAVE_COCOATOUCH)
-@interface RetroArch_iOS : UINavigationController<ApplePlatform, UIApplicationDelegate,
+@interface KingStation_iOS : UINavigationController<ApplePlatform, UIApplicationDelegate,
 UINavigationControllerDelegate> {
     UIView *_renderView;
     apple_view_type_t _vt;
@@ -51,7 +51,7 @@ UINavigationControllerDelegate> {
 @property (nonatomic) NSString* documentsDirectory;
 @property (nonatomic) int menu_count;
 
-+ (RetroArch_iOS*)get;
++ (KingStation_iOS*)get;
 
 - (void)showGameView;
 - (void)supportOtherAudioSessions;
@@ -60,11 +60,11 @@ UINavigationControllerDelegate> {
 @end
 #else
 #if defined(HAVE_COCOA_METAL)
-@interface RetroArch_OSX : NSObject<ApplePlatform, NSApplicationDelegate> {
+@interface KingStation_OSX : NSObject<ApplePlatform, NSApplicationDelegate> {
 #elif (defined(__MACH__) && (defined(__ppc__) || defined(__ppc64__)))
-@interface RetroArch_OSX : NSObject {
+@interface KingStation_OSX : NSObject {
 #else
-@interface RetroArch_OSX : NSObject<NSApplicationDelegate> {
+@interface KingStation_OSX : NSObject<NSApplicationDelegate> {
 #endif
 	NSWindow *_window;
 	apple_view_type_t _vt;

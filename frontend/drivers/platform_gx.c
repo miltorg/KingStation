@@ -1,17 +1,17 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2012-2015 - Michael Lelli
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -165,7 +165,7 @@ static void frontend_gx_get_env(
 #ifndef IS_SALAMANDER
 
    /* This situation can happen on some loaders so we really need some
-      fake args or else retroarch will just crash on parsing NULL pointers */
+      fake args or else KingStation will just crash on parsing NULL pointers */
    if(*argc == 0 || !argv)
    {
       struct rarch_main_wrap *args = (struct rarch_main_wrap*)params_data;
@@ -184,7 +184,7 @@ static void frontend_gx_get_env(
 #endif
 
 #ifdef HW_DOL
-   chdir("carda:/retroarch");
+   chdir("carda:/KingStation");
 #endif
    getcwd(g_defaults.dirs[DEFAULT_DIR_CORE], PATH_MAX_LENGTH);
 #if defined(HW_RVL) && !defined(IS_SALAMANDER)
@@ -214,11 +214,11 @@ static void frontend_gx_get_env(
    device_end = strchr(g_defaults.dirs[DEFAULT_DIR_CORE], '/');
    if (device_end)
       snprintf(g_defaults.dirs[DEFAULT_DIR_PORT], sizeof(g_defaults.dirs[DEFAULT_DIR_PORT]),
-            "%.*s/retroarch", device_end - g_defaults.dirs[DEFAULT_DIR_CORE],
+            "%.*s/KingStation", device_end - g_defaults.dirs[DEFAULT_DIR_CORE],
             g_defaults.dirs[DEFAULT_DIR_CORE]);
    else
       fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_PORT], g_defaults.dirs[DEFAULT_DIR_PORT],
-            "retroarch", sizeof(g_defaults.dirs[DEFAULT_DIR_PORT]));
+            "KingStation", sizeof(g_defaults.dirs[DEFAULT_DIR_PORT]));
 
    /* System paths */
    fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_CORE_INFO], g_defaults.dirs[DEFAULT_DIR_CORE],
@@ -242,7 +242,7 @@ static void frontend_gx_get_env(
 
    /* User paths */
    fill_pathname_join(g_defaults.path_config, g_defaults.dirs[DEFAULT_DIR_PORT],
-         "retroarch.cfg", sizeof(g_defaults.path_config));
+         "KingStation.cfg", sizeof(g_defaults.path_config));
    fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_SYSTEM], g_defaults.dirs[DEFAULT_DIR_PORT],
          "system", sizeof(g_defaults.dirs[DEFAULT_DIR_SYSTEM]));
    fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_SRAM], g_defaults.dirs[DEFAULT_DIR_PORT],

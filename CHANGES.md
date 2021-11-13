@@ -33,10 +33,10 @@ Having remaps for many different cores makes finding the active core files cumbe
 - CHEEVOS: Upgrade to rcheevos 9.1
 - CHEEVOS: Restore display of unlocked achievements across hardcore modes
 - CHEEVOS: Hash buffered data when available
-- CHEEVOS: Fix 'Auto Save State freezes RetroArch while Cheevos is enabled'
+- CHEEVOS: Fix 'Auto Save State freezes KingStation while Cheevos is enabled'
 - CORE OPTIONS: Pressing OK (or clicking/tapping) on a 'boolean toggle' core option no longer opens a drop-down list. The value now toggles directly, just like boolean options everywhere else in the menu
 - CORE OPTIONS: Toggling an option that changes the number of core options being displayed (i.e. things like `Show Advanced Audio/Video Settings) no longer resets the navigation pointer to the start of the list
-- CORE OPTIONS: Before, RetroArch would identify core option values as being 'boolean' if they had labels matching the specific strings enabled or disabled. Most core devs would abide by this, but not always... As a result, we sometimes would end up with misidentified values, with all kinds of Enabled, Off, True, etc. strings littering the menu, in place of proper toggle switches. All boolean-type value labels are now detected, and replaced with standard ON/OFF strings.
+- CORE OPTIONS: Before, KingStation would identify core option values as being 'boolean' if they had labels matching the specific strings enabled or disabled. Most core devs would abide by this, but not always... As a result, we sometimes would end up with misidentified values, with all kinds of Enabled, Off, True, etc. strings littering the menu, in place of proper toggle switches. All boolean-type value labels are now detected, and replaced with standard ON/OFF strings.
 - CLI: A new command line option --load-menu-on-error has been added
 - CRT: On the fly CRT porch adjuments - these changes allow a user to adjust how the porch algorithm generates the 15khz/31khz output. Giving the ability to change over/under scan.
 - CONFIG FILE: Optimise parsing of configuration files
@@ -48,7 +48,7 @@ Having remaps for many different cores makes finding the active core files cumbe
 - INPUT MAPPING/REMAPPING: Add input remap drop-down lists
 - IOS: Fixed iOS 6 version
 - IOS: Hide the home indicator as it obscures the content too frequently
-- IOS/METAL: Metal video driver now works on RetroArch iOS
+- IOS/METAL: Metal video driver now works on KingStation iOS
 - IOS/METAL: Support getting video metrics to support proper touchscreen interactions
 - LOCALIZATION: Updates for several languages (synchronized from Crowdin)
 - MEMORY/LINUX/ANDROID: Fix reporting of free memory
@@ -74,7 +74,7 @@ Having remaps for many different cores makes finding the active core files cumbe
 - X11: Add lightgun support
 
 # 1.8.9
-- AUTO SAVESTATES: Ensure save states are correctly flushed to disk when quitting RetroArch (fixes broken save states when exiting RetroArch - without first closing content - with 'Auto Save State' enabled)
+- AUTO SAVESTATES: Ensure save states are correctly flushed to disk when quitting KingStation (fixes broken save states when exiting KingStation - without first closing content - with 'Auto Save State' enabled)
 - BUILTIN CORES: Builtin cores like ffmpeg and imageviewer would previously try  to erroneously load a dynamic core named 'builtin' - this would fail and would just be a wasteful operation - this now skips dylib loading in libretro_get_system_info for builtin cores
 - CHEEVOS: Report API errors when unlocking achievements or submitting leaderboards
 - CHEEVOS: Support less common file extensions
@@ -171,7 +171,7 @@ Having remaps for many different cores makes finding the active core files cumbe
 # 1.8.7
 - 3DS: Add IDs for Frodo
 - 3DS: Enable basic networking / cheevos
-- CHEEVOS/BUGFIX: Opening achievements list would crash RetroArch with badges enabled (on new games)
+- CHEEVOS/BUGFIX: Opening achievements list would crash KingStation with badges enabled (on new games)
 - CHEEVOS: Option to start a session with all achievements active
 - CHEEVOS: Don't perform unnecessary cheevos initialisation when cheevos are disabled. Should reduce startup times when loading content.
 - CORE OPTIONS: Disable 'Use Global Core Options File' by default
@@ -209,8 +209,8 @@ Having remaps for many different cores makes finding the active core files cumbe
 - CHEEVOS/BUGFIX: Report non-memorymap GBA cores as unsupported
 - COMMANDLINE: Advise against using -s and -S variables on the command line. …
 - CONFIG FILE: Only write config files to disk when parameters change
-- CONFIG FILE/BUGFIX: RetroArch no longer crashes when attempting to save a config file after 'unsetting' a parameter (currently, this can be triggered quite easily by manipulating input remaps)
-- CONFIG FILE/BUGFIX: When using Material UI, RetroArch no longer modifies the wrong setting (or segfaults...) when tapping entries in the Quick Menu > Controls input remapping submenu
+- CONFIG FILE/BUGFIX: KingStation no longer crashes when attempting to save a config file after 'unsetting' a parameter (currently, this can be triggered quite easily by manipulating input remaps)
+- CONFIG FILE/BUGFIX: When using Material UI, KingStation no longer modifies the wrong setting (or segfaults...) when tapping entries in the Quick Menu > Controls input remapping submenu
 - CONFIG FILE/BUGFIX: Quite a few real and potential memory leaks have been fixed.
 - CHD: Fixes a crash caused by ignoring the return value from one of the CHD library functions
 - FASTFORWARDING: A new Mute When Fast-Forwarding option has been added under Settings > Audio. When enabled, users can fast forward without having to listen to distorted audio.
@@ -219,7 +219,7 @@ Having remaps for many different cores makes finding the active core files cumbe
 - LOCALIZATION: Update Spanish translation
 - LOCALIZATION: Update Portuguese Brazilian translation
 - IOS: Set audio session category to ambient so sound does not get cut off on interruption (phone call/playing back audio)
-- MAC/IOHIDMANAGER/BUGFIX: Fix for Mayflash N64 adapter. In case last hatswitch does not match cookie. For the mayflash N64 adapter, I was getting a BAD EXC ADDRESS (in mac OS 10.13) for this line (tmp was NULL). Retroarch would crash in the gui if I pressed a button from the DPAD on controller 2. With this change, it no longer crashes in the gui and still registers the button push.
+- MAC/IOHIDMANAGER/BUGFIX: Fix for Mayflash N64 adapter. In case last hatswitch does not match cookie. For the mayflash N64 adapter, I was getting a BAD EXC ADDRESS (in mac OS 10.13) for this line (tmp was NULL). KingStation would crash in the gui if I pressed a button from the DPAD on controller 2. With this change, it no longer crashes in the gui and still registers the button push.
 - MAC/COCOA: Fix mouse input - this brings back two lines of code that have been removed over time but
 appear to be required in order for mouse input to work on macOS
 - METAL/BUGFIX: GPU capture on Metal/OSX/NVidia could crash
@@ -238,15 +238,15 @@ appear to be required in order for mouse input to work on macOS
 - MENU/OZONE: Refactor footer display
 - MENU/OZONE: Hide thumbnail button hints when viewing file browser lists
 - MENU/OZONE/INPUT/BUGFIX: Fix undefined behaviour when using touch screen to change input remaps
-- MENU/OZONE/INPUT/BUGFIX: It turns out that Windows reports negative pointer coordinates when the mouse cursor goes beyond the left hand edge of the RetroArch window (this doesn't happen on Linux, so I never encountered this issue before!). As a result, if Ozone is currently not showing the sidebar (menu depth > 1), moving the cursor off the left edge of the window generates a false positive 'cursor in sidebar' event - which breaks menu navigation, as described in #10419. With this PR, we now handle 'cursor in sidebar' status correctly in all cases
+- MENU/OZONE/INPUT/BUGFIX: It turns out that Windows reports negative pointer coordinates when the mouse cursor goes beyond the left hand edge of the KingStation window (this doesn't happen on Linux, so I never encountered this issue before!). As a result, if Ozone is currently not showing the sidebar (menu depth > 1), moving the cursor off the left edge of the window generates a false positive 'cursor in sidebar' event - which breaks menu navigation, as described in #10419. With this PR, we now handle 'cursor in sidebar' status correctly in all cases
 - MENU/OZONE/INPUT/BUGFIX: Pointer input is now correctly disabled when message boxes are displayed
 - MENU/XMB: Fix thumbnail switching via 'scan' button functionality
 - ODROID GO ADVANCE: Add DRM HW context driver
 - PSL1GHT: Initial port
 - PSL1GHT/KEYBOARD: Implement PSL1GHT keyboard
-- PLAYLIST/BUGFIX: Improve handling of 'broken' playlists - RetroArch will no longer segfault when attempting to run content via a playlist entry with missing path or core path fields.
+- PLAYLIST/BUGFIX: Improve handling of 'broken' playlists - KingStation will no longer segfault when attempting to run content via a playlist entry with missing path or core path fields.
 - PLAYLIST/BUGFIX: Improve handling of 'broken' playlists - when a playlist entry has either core path and/or core name set to NULL, DETECT or an empty string, attempting to load content will fallback to the normal 'core selection' code (currently this happens only if both core path and core name are DETECT - this is wholly inadequate!)
-- PLAYLIST/BUGFIX: RetroArch will no longer segfault when attempting to fetch content runtime information when core path is NULL
+- PLAYLIST/BUGFIX: KingStation will no longer segfault when attempting to fetch content runtime information when core path is NULL
 - PLAYLIST/BUGFIX: Core name + runtime info will only be displayed on playlists and in the Information submenu if both the core path and core name fields are 'valid' (i.e. not NULL or DETECT)
 - PLAYLIST/BUGFIX: When handling entries with missing path fields, the menu sorting order now matches that of the playlist sorting order (at present, everything goes out of sync when paths are empty). Moreover, entries with missing path fields can now be 'selected', so users can remove them (currently, hitting A on such an entry immediately tries - and fails - to load the content, so the only way to remove the broken entry is via the Playlist Management > Clean Playlist feature)
 - PLAYLIST: Add optional per-playlist alphabetical sorting
@@ -275,8 +275,8 @@ appear to be required in order for mouse input to work on macOS
 - BUGFIX: Prevent double input when using 'return' key (hardware) to close on-screen keyboard
 - BUGFIX: Fix mouse capture hotkey not working
 - BUGFIX: Avoid overflow when calculating multiplying performance counter
-- BUGFIX: Retroarch overlay displaying "Game remap file loaded." on the overlay instead of "Core remap file loaded." when only a core remap file is present
-- CHEEVOS/BUGFIX: Achievement triggers could cause Retroarch to Crash
+- BUGFIX: KingStation overlay displaying "Game remap file loaded." on the overlay instead of "Core remap file loaded." when only a core remap file is present
+- CHEEVOS/BUGFIX: Achievement triggers could cause KingStation to Crash
 - CHEEVOS: Don't block Sameboy core because it only exposes some memory
 - CHEEVOS: Support for extended Sega CD memory
 - CHEEVOS: Show RetroAchievements Hash in content information list
@@ -292,7 +292,7 @@ appear to be required in order for mouse input to work on macOS
 - EMSCRIPTEN: Recreate input event listeners properly
 - FFMPEG CORE: Fix crash on seeking when using HW decoding in some cases
 - LIBRETRO: Add disk control interface API extension
-- LINUX: Avoid possible crash when running retroarch at startup
+- LINUX: Avoid possible crash when running KingStation at startup
 - LINUX/GLX: Fix threaded video crashes/instability because of GLX OML sync callbacks
 - LOCALIZATION: Update French translation
 - LOCALIZATION: Update Korean translation
@@ -398,7 +398,7 @@ appear to be required in order for mouse input to work on macOS
 - BUG/CRASH/GLSLANG: Fix glslang crashing error - managed to reproduce an issue which has been plaguing
 users for a while, where glslang throws an assert after closing a game (and starting a new one). This would affect all video drivers that use Slang for shaders, such as D3D10/11/12/Vulkan/Metal
 - CHEEVOS: Display Unofficial and Unsupported achievement states
-- CHEEVOS: Pass RetroArch and core versions through User-Agent HTTP header
+- CHEEVOS: Pass KingStation and core versions through User-Agent HTTP header
 - CHEEVOS: Use PSX.EXE if SYSTEM.CNF cannot be found
 - CHEEVOS: Prevent loading state while achievements are still being fetched from server
 - CHEEVOS: Pause hardcore if core doesn't support achievements
@@ -487,7 +487,7 @@ users for a while, where glslang throws an assert after closing a game (and star
 - OPENBSD/POWERPC: Should build now on OpenBSD PowerPC
 - PLAYLISTS: Pressing 'Start' or long touching a playlist will bring you to a Playlist submenu where you can set a default core, setup thumbnail view, delete the playlist, etc
 - OSX: Forcibly disable Threaded Video until NSWindow concurrency issues are fixed
-- PSP: Solving issue exiting RetroArch by HOME button
+- PSP: Solving issue exiting KingStation by HOME button
 - SCANNER: Manual scanner, not dependent on database files
 - SCANNER/MANUAL: Add option to scan inside archives
 - SCANNER/MANUAL: Enable automatic naming of arcade content via DAT files. This is compatible with DAT files in either Logiqx XML or MAME List XML format.
@@ -569,7 +569,7 @@ Vulkan, so use the old onContentRectChanged callback to get notified when size c
 # (1.7.9)
 - AI SERVICE: Image mode is now much faster, it now saves the image in-memory in PNG format then passes it along to the translation service
 - BUGFIX: Touch input - When using an overlay to toggle the quick menu on touchscreen devices, we no longer get 'phantom' menu input - i.e. the old bug of hitting the toggle and instantly resuming content (or performing a save state) is fixed
-- BUGFIX: Networking - RetroArch crashed when pressing left while Relay Server Location entry was selected 
+- BUGFIX: Networking - KingStation crashed when pressing left while Relay Server Location entry was selected 
 - BUGFIX: Networking - fix memory leak that could happen at exit after a network
 operation had run
 - CHEEVOS: Improve handling of line endings when calculating CD hashes for retroachievements
@@ -679,7 +679,7 @@ operation had run
 - CPU FILTERS: Add Scanline2x filter
 - DINPUT: Cleanup magic numbers mess surrounding hat code
 - GAMECUBE: Add default video/audio filter directories
-- GL/MALI400: Fix menu issues on Mali 400 series GPUs, should also fix 'RetroArch flickers black on ARM Mali GPUs (Android/ARM Linux)
+- GL/MALI400: Fix menu issues on Mali 400 series GPUs, should also fix 'KingStation flickers black on ARM Mali GPUs (Android/ARM Linux)
 - GL/GLCORE: Use highest supported OpenGL Core version on Windows and X11
 - GL1: Ignore alpha in core video, fixes XRGB8888 rendering in some cores
 - GLCORE: Don't hardcode shader cross compilation target version but poll it. glcore would always only use the minimum target shader version, i.e. GLSL ES 3.00 for OpenGL ES 3.0+ or GLSL 1.50 for OpenGL 3.2+
@@ -740,7 +740,7 @@ operation had run
 - MIDI: Fix SysEx handling. We need to clear the event status after each message. Otherwise, after a SysEx message the first byte of the next event will incorrectly inherit its delta_time. This causes a delay of several seconds in nearly every MT-32 games which uses a lot of long SysEx.
 - METAL/SLANG: Added "FrameDirection" slang semantic
 - NETBSD: Audioio is now the default audio driver
-- NETBSD: Fix a segfault when starting RetroArch with an empty configuration file and LANG unset in the environment
+- NETBSD: Fix a segfault when starting KingStation with an empty configuration file and LANG unset in the environment
 - OSD: OSD is now drawn above the overlay with Vulkan
 - OSX: Fix regression with Cocoa GL - shader / preset loading was getting stuck in an infinite loop
 - OSX: Add improved menu resizing for window resizing
@@ -815,7 +815,7 @@ operation had run
 - COMMON: Fix buffer overflows in system information
 - COMMON: Add option to change screen orientation via the windowing system (Android, Windows, X11)
 - COMMON: Show CPU model name in log
-- COMMON: Add "Help -> Send Debug Info" option (and F10 hotkey) to send diagnostic info to the RetroArch team for help with problems
+- COMMON: Add "Help -> Send Debug Info" option (and F10 hotkey) to send diagnostic info to the KingStation team for help with problems
 - COMMON: Show GPU device name/version in log
 - COMMON: Add menu option to write log info to a file
 - COMMON: Add subsystem support for playlists. Subsystem info is automatically saved to the history playlist for easy relaunching
@@ -853,7 +853,7 @@ operation had run
 - MENU: Fix core video rendering when using ozone with GL cores that implement the scissor test
 - MENU: Add optional playlist sublabels (associated core + play time, where available)
 - MENU: Dropdown list settings now apply immediately
-- MENU: Add setting to require pressing the "Exit RetroArch" hotkey twice to confirm
+- MENU: Add setting to require pressing the "Exit KingStation" hotkey twice to confirm
 - MENU: Now able to run at higher refresh rates than 60Hz
 - MENU: Enable "Add to Favorites" without loading a core
 - MENU: Allow core name to be hidden on history/favorites playlists
@@ -869,7 +869,7 @@ operation had run
 - MENU/OZONE: Add wifi icon for network entries
 - MENU/QT/WIMP: Add git version and build date to Help->About window
 - MENU/QT/WIMP: Fix content loading via the file browser
-- MENU/QT/WIMP: Add new settings window to control all RetroArch settings
+- MENU/QT/WIMP: Add new settings window to control all KingStation settings
 - MENU/RGUI: Improve playlist titles
 - MENU/RGUI: Add option to hide associated cores in playlists
 - MENU/RGUI: Add internal upscaling option
@@ -897,7 +897,7 @@ operation had run
 - NETPLAY: Add hotkey option to toggle hosting on/off
 - NETWORKING: Encode URLs to allow for spaces in directory names
 - OSX: Prevent crash on exit
-- OSX: Metal is now the default video driver for the RetroArch Metal build
+- OSX: Metal is now the default video driver for the KingStation Metal build
 - OSX: Enable CoreAudio v3 driver for Metal
 - OSX/MACOS/IOS: Now uses the STB Unicode font driver
 - PS2: CDFS support
@@ -1059,7 +1059,7 @@ it will add all content it finds to a playlist. This way, you can install the co
 - MENU/QT/WIMP: Remove button ghostly inside highlighting
 - MENU/QT/WIMP: Initial grid view
 - MENU/QT/WIMP: Drag&drop to add new playlist items, add option to add/edit/delete playlists
-- MENU/QT/WIMP: Add menu option to update RetroArch (Windows only for now)
+- MENU/QT/WIMP: Add menu option to update KingStation (Windows only for now)
 - MENU/QT/WIMP: Add menu option to manage shaders
 - MENU/QT/WIMP: Add menu option to manage core options
 - MENU/XMB: Add new icons for the settings
@@ -1223,7 +1223,7 @@ that support it (so far this includes - D3D8/D3D9, OpenGL, Vulkan)
 - SHADERS: SPIRV-Cross/slang shader support for D3D11
 - SHIELD ATV: Allow the remote / gamepad takeover hack to work with the 2017 gamepad
 - SUBSYSTEM: Subsystem saves now respect the save directory
-- SUBSYSTEM: You can now load subsystem games from the menu (see https://github.com/libretro/RetroArch/pull/6282 for caveats)
+- SUBSYSTEM: You can now load subsystem games from the menu (see https://github.com/libretro/KingStation/pull/6282 for caveats)
 - VULKAN: Fix swapchain recreation bug on Nvidia GPUs with Windows 10 (resolved in Windows Nvidia driver version 390.77)
 - WINDOWS: Improved Unicode support (for cores/directory creation and 7zip archives)
 - WINDOWS: Show progress meter on taskbar for downloads (Windows 7 and up)
@@ -1257,7 +1257,7 @@ that support it (so far this includes - D3D8/D3D9, OpenGL, Vulkan)
 - FREEBSD: Support libusb HID input driver
 - HAIKU: Buildfix
 - INPUT: Map clear button to DEL key
-- LINUX/X11: Add RetroArch logo to window title bar
+- LINUX/X11: Add KingStation logo to window title bar
 - LINUX/X11: Input driver now supports new lightgun code
 - LINUX/X11: Support window transparency (requires a compositing window manager)
 - LOBBIES: Fix for crash on join netplay rooms via touch / glui
@@ -1325,7 +1325,7 @@ that support it (so far this includes - D3D8/D3D9, OpenGL, Vulkan)
 - LOCALIZATION: Update Russian translation
 - LINUX/ARMHF: Set buildbot updater URL to armhf location instead of blank string
 - LINUX/PI: Broadcom VC4: Add Videocore config option
-- LINUX/UDEV: Fix - RetroArch reads keyboard input when not focused with the udev input driver
+- LINUX/UDEV: Fix - KingStation reads keyboard input when not focused with the udev input driver
 - NETPLAY: Fix disconnection not fully deinitializing Netplay
 - NETPLAY: Fix lan rooms when there is more than one room
 - NETPLAY: Fix lan rooms on systems where all addresses are treated as IPv6
@@ -1400,7 +1400,7 @@ Skipped this one
 - WINDOWS: Provide default save / system / state / screenshot locations
 - LOBBIES: Show what country the host is in
 - MENU: Enable OSD text rendering for gdi and libcaca drivers
-- WINDOWS 98/ME/2K: Set default directory for MSVC 2005 RetroArch version
+- WINDOWS 98/ME/2K: Set default directory for MSVC 2005 KingStation version
 - WII: Better V-Sync handling, backported from SuperrSonic
 - WIIU: Exception handler rewritten
 
@@ -1413,7 +1413,7 @@ Skipped this one
 - INPUT: Add mouse index selection; ability now to select between different mice
 - INPUT: Fix 'All Users Control Menu' setting
 - LINUX: Add a tinyalsa audio driver. Doesn't require asoundlib, should be self-contained and lower-level
-- LOBBIES: Announce the RetroArch version too
+- LOBBIES: Announce the KingStation version too
 - LOCALIZATION: Add Traditional Chinese translation
 - LOCALIZATION: Update French translation
 - LOCALIZATION: Update Italian translation
@@ -1437,7 +1437,7 @@ Skipped this one
 - ANDROID: Improve shield portable/gamepad device grouping workaround
 - ANDROID: Runtime permission checking
 - AUDIO: Audio mixer support. Mix up to 8 streams with the game's audio
-- AUTOSAVE/SRAM - Fix bug #3829 / #4820 (https://github.com/libretro/RetroArch/issues/3829)
+- AUTOSAVE/SRAM - Fix bug #3829 / #4820 (https://github.com/libretro/KingStation/issues/3829)
 - ENDIANNESS: Fixed database scanning. Should fix scanning on PS3/WiiU/Wii, etc
 - LOBBIES: Fallback to filename based matching if no CRC matches are found (for people making playlists by hand)
 - LOBBIES: GUI refinement, show stop hosting when a host has been started, show disconnect when playing as client
@@ -1450,7 +1450,7 @@ Skipped this one
 - LOCALIZATION: Update/finish French translation
 - MENU: Improved rendering for XMB ribbon; using additive blending (Vulkan/GL)
 - MISC: Various frontend optimizations
-- NET: Fix bug #4703 (https://github.com/libretro/RetroArch/issues/4703)
+- NET: Fix bug #4703 (https://github.com/libretro/KingStation/issues/4703)
 - OSX/MACOS: Fixes serious memory leak
 - THUMBNAILS: Thumbnails show up now in Load Content -> Collection, Information -> Database
 - VIDEO: Fix threaded video regression; tickering of menu entries would no longer work

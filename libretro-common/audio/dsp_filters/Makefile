@@ -4,7 +4,7 @@ use_neon    := 0
 build       = release
 DYLIB	      := so
 PREFIX      := /usr
-INSTALLDIR  := $(PREFIX)/lib/retroarch/filters/audio
+INSTALLDIR  := $(PREFIX)/lib/KingStation/filters/audio
 
 ifeq ($(platform),)
    platform = unix

@@ -1,15 +1,15 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2018 - Krzysztof Haładyn
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -27,14 +27,14 @@
 #include "paths.h"
 
 #include "uwp_main.h"
-#include "../retroarch.h"
+#include "../KingStation.h"
 #include "../frontend/frontend.h"
 #include "../input/input_keymaps.h"
 #include "../verbosity.h"
 #include "uwp_func.h"
 #include "uwp_async.h"
 
-using namespace RetroArchUWP;
+using namespace KingStationUWP;
 
 using namespace concurrency;
 using namespace Windows::ApplicationModel;
@@ -615,7 +615,7 @@ extern "C" {
 
 		/* Setting the window size may sometimes fail "because UWP"
 		 * (i.e. we are on device with no windows, or Windows sandbox decides the window can't be that small)
-		 * so in case resizing fails we just send a resized event back to RetroArch with old size
+		 * so in case resizing fails we just send a resized event back to KingStation with old size
 		 * (and report success because otherwise it bails out hard about failing to set video mode)
 		 */
 		App::GetInstance()->SetWindowResized();

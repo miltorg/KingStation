@@ -1,16 +1,16 @@
-﻿/*  RetroArch - A frontend for libretro.
+﻿/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2016-2019 - Brad Parker
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -118,7 +118,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
              break;
           case RARCH_SEND_DEBUG_INFO:
              snprintf(s, len,
-                   "Analiz için cihazınızın ve RetroArch yapılandırmasına ilişkin tanılama bilgilerini sunucularımıza gönderin.");
+                   "Analiz için cihazınızın ve KingStation yapılandırmasına ilişkin tanılama bilgilerini sunucularımıza gönderin.");
              break;
           case RARCH_NETPLAY_HOST_TOGGLE:
              snprintf(s, len,
@@ -169,7 +169,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
              snprintf(s, len,
                    "Fare tutmayı değiştirir. \n"
                    " \n"
-                   "Fare tutulduğunda, RetroArch fareyi gizler \n"
+                   "Fare tutulduğunda, KingStation fareyi gizler \n"
                    " ve göreceli fare girişinin daha iyi çalışmasını \n"
                    "sağlamak için fare işaretçisini pencerenin \n"
                    "içinde tutar.");
@@ -178,7 +178,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
              snprintf(s, len,
                    "Oyun odağını değiştirir.\n"
                    " \n"
-                   "Bir oyuna odaklanıldığında, RetroArch hem kısayol tuşlarını \n"
+                   "Bir oyuna odaklanıldığında, KingStation hem kısayol tuşlarını \n"
                    "devre dışı bırakacak hem de farenin imlecini pencerenin içinde tutacaktır.");
              break;
           case RARCH_MENU_TOGGLE:
@@ -194,10 +194,10 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
              break;
           case RARCH_QUIT_KEY:
              snprintf(s, len,
-                   "RetroArch'tan temiz bir şekilde çıkmak için basın. \n"
+                   "KingStation'tan temiz bir şekilde çıkmak için basın. \n"
                    " \n"
                    "Herhangi bir şekilde kapatmak (SIGKILL, vb.) \n"
-                   "RAM, vb. Kaydetmeden RetroArch'ı sonlandıracaktır."
+                   "RAM, vb. Kaydetmeden KingStation'ı sonlandıracaktır."
 #ifdef __unix__
                    "\nUnix gibilerde, SIGINT/SIGTERM temiz bir \n"
                    "yeniden başlatmaya izin verir."
@@ -248,7 +248,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
                     "ücretsiz bir hesap için kaydolun. \n"
                     " \n"
                     "Kayıt işlemini tamamladıktan sonra,  \n"
-                    "kullanıcı adınızı ve şifrenizi RetroArch'a \n"
+                    "kullanıcı adınızı ve şifrenizi KingStation'a \n"
                     "girmeniz gerekir.");
             break;
         case MENU_ENUM_LABEL_CHEEVOS_USERNAME:
@@ -377,12 +377,12 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
                              "kapanma özelliği olabilir. \n"
                              " \n"
                              "Bu seçenek devre dışı bırakılırsa, \n"
-                             "kapatma prosedürünün seçilmesi RetroArch'in \n"
+                             "kapatma prosedürünün seçilmesi KingStation'in \n"
                              "kapatılmasını tetikler. \n"
                              " \n"
                              "Bu seçeneği etkinleştirmek kukla bir Çekirdek \n"
                              "yükler böylelikle menüde kalırız \n"
-                             "ve RetroArch kapanmaz.");
+                             "ve KingStation kapanmaz.");
             break;
         case MENU_ENUM_LABEL_CHECK_FOR_MISSING_FIRMWARE:
             snprintf(s, len,
@@ -475,7 +475,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
             snprintf(s, len,
                      "Libretro Core. \n"
                              " \n"
-                             "RetroArch'ın bu Core'u yüklemesi için bu dosyayı seçin.");
+                             "KingStation'ın bu Core'u yüklemesi için bu dosyayı seçin.");
             break;
         case MENU_ENUM_LABEL_FILE_BROWSER_DIRECTORY:
             snprintf(s, len,
@@ -487,12 +487,12 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
             snprintf(s, len,
                      "Önbellek Dizini. \n"
                              " \n"
-                             "RetroArch tarafından sıkıştırılmış içerik \n"
+                             "KingStation tarafından sıkıştırılmış içerik \n"
                              "geçici olarak bu dizine çıkarılır.");
             break;
         case MENU_ENUM_LABEL_HISTORY_LIST_ENABLE:
             snprintf(s, len,
-                     "Etkinleştirilirse, RetroArch'a yüklenen \n"
+                     "Etkinleştirilirse, KingStation'a yüklenen \n"
                              "her içerik otomatik olarak en son \n"
                              "geçmiş listesine eklenir.");
             break;
@@ -504,7 +504,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
             break;
         case MENU_ENUM_LABEL_INPUT_POLL_TYPE_BEHAVIOR:
             snprintf(s, len,
-                     "Giriş yoklama işleminin RetroArch \n"
+                     "Giriş yoklama işleminin KingStation \n"
                              "içinde yapılmasının etkisi. \n"
                              " \n"
                              "Erken - çerçeve işlenmeden önce \n"
@@ -679,16 +679,16 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
                              " \n"
             );
             break;
-        case MENU_ENUM_LABEL_WELCOME_TO_RETROARCH:
+        case MENU_ENUM_LABEL_WELCOME_TO_KingStation:
             snprintf(s, len,
-                     "RetroArch'a Hoşgeldiniz\n"
+                     "KingStation'a Hoşgeldiniz\n"
             );
             break;
         case MENU_ENUM_LABEL_VALUE_HELP_AUDIO_VIDEO_TROUBLESHOOTING_DESC: {
             /* Work around C89 limitations */
             char u[501];
             const char *t =
-                    "RetroArch, en iyi performans sonuçları için\n"
+                    "KingStation, en iyi performans sonuçları için\n"
                             "ekranınızın yenileme hızına göre kalibre edilmesi gereken\n"
                             "benzersiz bir ses/video senkronizasyonu şekline dayanır.\n"
                             "Herhangi bir ses çatlaması veya video yırtılması yaşarsanız,\n"                   
@@ -738,7 +738,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
             break;
         case MENU_ENUM_LABEL_VALUE_EXTRACTING_PLEASE_WAIT:
             snprintf(s, len,
-                     "RetroArch'a Hoşgeldiniz\n"
+                     "KingStation'a Hoşgeldiniz\n"
                              "\n"
                              "Varlıklar ayıklanıyor, lütfen bekleyin.\n"
                              "İşlem biraz zaman alabilir...\n"
@@ -808,7 +808,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
                              "İçerik yüklendikçe, içerik ve libretro \n"
                              "Çekirdek kombinasyonları geçmişe kaydedilir. \n"
                              " \n"
-                             "Geçmiş, RetroArch yapılandırma dosyasıyla aynı \n"
+                             "Geçmiş, KingStation yapılandırma dosyasıyla aynı \n"
                              "dizindeki bir dosyaya kaydedilir. Başlangıçta hiçbir \n"
                              "yapılandırma dosyası yüklenmemişse, geçmiş kaydedilmeyecek \n"
                              "veya yüklenmeyecek ve ana menüde bulunmayacaktır. "
@@ -958,7 +958,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
             snprintf(s, len,
                      "Gölgelendirici Geçişleri. \n"
                              " \n"
-                             "RetroArch, çeşitli gölgelendiricileri isteğe \n"
+                             "KingStation, çeşitli gölgelendiricileri isteğe \n"
                              "bağlı gölgelendirici geçişleri ileözel donanım filtreleri \n"
                              "özel donanım filtreleri ve ölçek faktörleriyle karıştırmanıza ve eşleştirmenize olanak sağlar. \n"
                              " \n"
@@ -1094,7 +1094,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
                              " \n"
                              "Gölgelendirici uyguladığınızda, menü gölgelendirici \n"
                              "ayarları geçici bir dosyaya kaydedilir (menu.cgp veya menu.glslp) \n"
-                             "ve yüklenir. RetroArch çıktıktan sonra işlem devam eder. \n"
+                             "ve yüklenir. KingStation çıktıktan sonra işlem devam eder. \n"
                              "Dosya Gölgelendirici Dizinine kaydedilir."
             );
             break;
@@ -1115,7 +1115,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
             snprintf(s, len,
                      "Fare tutmayı değiştirir.\n"
                              " \n"
-                             "Fare tutulduğunda, RetroArch fareyi gizler \n"
+                             "Fare tutulduğunda, KingStation fareyi gizler \n"
                              "ve göreceli fare girişinin daha iyi çalışmasını \n"
                              "sağlamak için fare işaretçisini pencerenin \n"
                              "içinde tutar.");
@@ -1124,7 +1124,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
             snprintf(s, len,
                      "Oyun odağını değiştirir.\n"
                              " \n"
-                             "Bir oyunun odağı olduğunda, RetroArch hem kısayol \n"
+                             "Bir oyunun odağı olduğunda, KingStation hem kısayol \n"
                              "tuşlarını devre dışı bırakacak hem de farenin imlecini pencerenin içinde tutacaktır.");
             break;
         case MENU_ENUM_LABEL_DISK_NEXT:
@@ -1261,7 +1261,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
                              " (Örnek 60 fps içeriği için 5.0 => 300 fps \n"
                              "sınırı).\n"
                              " \n"
-                             "RetroArch, maksimum hızın aşılmamasını sağlamak \n"
+                             "KingStation, maksimum hızın aşılmamasını sağlamak \n"
                              "için uyku moduna geçecektir.\n"
                              "Mükemmel bir şekilde doğru olması için \n"
                              "bu başlığa güvenmeyin.");
@@ -1281,7 +1281,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
                              " \n"
                              "0 (varsayılan), belirli bir monitörün \n"
                              "tercih edilmediği anlamına gelir; 1 ve \n"
-                             "üstü (1, ilk monitördür), RetroArch'ın \n"
+                             "üstü (1, ilk monitördür), KingStation'ın \n"
                              "belirli monitörü kullanmasını önerir.");
             break;
         case MENU_ENUM_LABEL_VIDEO_CROP_OVERSCAN:
@@ -1379,9 +1379,9 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
         case MENU_ENUM_LABEL_SAVESTATE_AUTO_LOAD:
             snprintf(s, len,
                      "Automatically saves a savestate at the \n"
-                             "end of RetroArch's lifetime.\n"
+                             "end of KingStation's lifetime.\n"
                              " \n"
-                             "RetroArch will automatically load any savestate\n"
+                             "KingStation will automatically load any savestate\n"
                              "with this path on startup if 'Auto Load State\n"
                              "is enabled.");
             break;
@@ -1820,7 +1820,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
             break;
         case MENU_ENUM_LABEL_INPUT_MAX_USERS:
             snprintf(s, len,
-                     "RetroArch tarafından desteklenen maksimum \n"
+                     "KingStation tarafından desteklenen maksimum \n"
                              "kullanıcı sayısı.");
             break;
         case MENU_ENUM_LABEL_CORE_UPDATER_AUTO_EXTRACT_ARCHIVE:
@@ -1836,7 +1836,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
             break;
         case MENU_ENUM_LABEL_NETPLAY_NICKNAME:
             snprintf(s, len,
-                     "RetroArch çalıştıran kişinin kullanıcı adı. \n"
+                     "KingStation çalıştıran kişinin kullanıcı adı. \n"
                              "Çevrimiçi oyunlar oynamak için kullanılacak.");
             break;
         case MENU_ENUM_LABEL_NETPLAY_TCP_UDP_PORT:
@@ -1936,7 +1936,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
             break;
         case MENU_ENUM_LABEL_EXIT_EMULATOR:
             snprintf(s, len,
-                     "RetroArch'tan temiz bir şekilde çıkmak için tuş."
+                     "KingStation'tan temiz bir şekilde çıkmak için tuş."
 #if !defined(RARCH_MOBILE) && !defined(RARCH_CONSOLE)
                             "\nKilling it in any hard way (SIGKILL, \n"
                             "etc) will terminate without saving\n"
@@ -2119,7 +2119,7 @@ int msg_hash_get_help_tr_enum(enum msg_hash_enums msg, char *s, size_t len)
             break;
         case MENU_ENUM_LABEL_VALUE_WHAT_IS_A_CORE_DESC:
             snprintf(s, len,
-                     "RetroArch kendi başına hiçbir şey yapmaz. \n"
+                     "KingStation kendi başına hiçbir şey yapmaz. \n"
                             " \n"
                             "Bir şeyler yapması için programa \n"
                             "bir program yüklemeniz gerekir.. \n"

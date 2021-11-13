@@ -11,7 +11,7 @@
 
 #include "../../config.def.h"
 
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 
 #ifdef HAVE_LIBNX
 #include <switch.h>

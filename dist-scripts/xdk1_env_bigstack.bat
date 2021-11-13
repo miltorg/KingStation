@@ -43,9 +43,9 @@
 :end
 
 cd ../pkg/msvc/
-devenv /clean Release_LTCG_BigStack RetroArch-Xbox1.sln
-devenv /build Release_LTCG_BigStack RetroArch-Xbox1.sln
-copy RetroArch-Xbox1\Release_LTCG_BigStack\RetroArch.xbe RetroArch-Xbox1\%1.xbe
-del RetroArch-Xbox1\Release_LTCG_BigStack\RetroArch.xbe
-del RetroArch-Xbox1\Release_LTCG_BigStack\libretro_xdk1.lib
+devenv /clean Release_LTCG_BigStack KingStation-Xbox1.sln
+devenv /build Release_LTCG_BigStack KingStation-Xbox1.sln
+copy KingStation-Xbox1\Release_LTCG_BigStack\KingStation.xbe KingStation-Xbox1\%1.xbe
+del KingStation-Xbox1\Release_LTCG_BigStack\KingStation.xbe
+del KingStation-Xbox1\Release_LTCG_BigStack\libretro_xdk1.lib
 exit

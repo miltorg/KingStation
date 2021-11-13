@@ -36,7 +36,7 @@ extern "C" {
 #include "../../../command.h"
 #include "../../../configuration.h"
 #include "../../../msg_hash.h"
-#include "../../../retroarch.h"
+#include "../../../KingStation.h"
 #include "../../../paths.h"
 #include "../../../file_path_special.h"
 #include "../../../menu/menu_shader.h"

@@ -11,7 +11,7 @@
 #import <QuartzCore/CAMetalLayer.h>
 #import "RendererCommon.h"
 
-#include "../../../retroarch.h"
+#include "../../../KingStation.h"
 
 @interface Texture : NSObject
 @property (nonatomic, readonly) id<MTLTexture> texture;

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# This script will upload the packaged RetroArch cores to a WiiU running
+# This script will upload the packaged KingStation cores to a WiiU running
 # FTPiiU or FTPiiU Anywhere
 #
 # IMPORTANT: This script assumes the following structur
@@ -17,7 +17,7 @@
 # (see the file wiiu-devel.properties.template for instructions).
 #
 
-# The path to the parent directory of your retroarch/ and wiiu/ folders, as
+# The path to the parent directory of your KingStation/ and wiiu/ folders, as
 # visible in FTPiiU.
 
 RETRO_ROOT=sd
@@ -100,5 +100,5 @@ if [ $errors -ne 0 ]; then
   exit 1
 fi
 
-echo "RetroArch build uploaded and validated successfully."
+echo "KingStation build uploaded and validated successfully."
 exit 0

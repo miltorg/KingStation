@@ -1,17 +1,17 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2012-2014 - OV2
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -67,7 +67,7 @@
 
 #include "../../core.h"
 #include "../../verbosity.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 
 #ifdef __WINRT__
 #error "UWP does not support D3D9"
@@ -1209,7 +1209,7 @@ static bool d3d9_init_internal(d3d9_video_t *d3d,
    video_context_driver_set(&d3d9_fake_context); 
 #if defined(HAVE_CG) || defined(HAVE_HLSL)
    {
-      const char *shader_preset   = retroarch_get_shader_preset();
+      const char *shader_preset   = KingStation_get_shader_preset();
       enum rarch_shader_type type = video_shader_parse_type(shader_preset);
 
       d3d9_set_shader(d3d, type, shader_preset);

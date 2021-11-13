@@ -1,4 +1,4 @@
-TARGET := retroarch_wiiu
+TARGET := KingStation_wiiu
 
 BUILD_HBL_ELF              = 1
 BUILD_RPX                  = 1

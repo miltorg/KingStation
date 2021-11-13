@@ -11,7 +11,7 @@ endif
 TOPDIR ?= $(CURDIR)
 include $(DEVKITPRO)/libnx/switch_rules
 
-TARGET := retroarch_switch
+TARGET := KingStation_switch
 
 DEBUG                  ?= 0
 WHOLE_ARCHIVE_LINK      = 0
@@ -52,7 +52,7 @@ HAVE_CHD = 0 # disabled due to static libretro-common and libchdr conflicts betw
 HAVE_STB_VORBIS = 1
 HAVE_IBXM = 1
 
-# RetroArch libnx useful flags
+# KingStation libnx useful flags
 HAVE_THREADS = 1
 HAVE_PTHREADS = 1
 HAVE_FREETYPE = 0
@@ -113,10 +113,10 @@ INCLUDES :=	include
 EXEFS_SRC := exefs_src
 #ROMFS := switch/romfs
 
-APP_TITLE := RetroArch
+APP_TITLE := KingStation
 APP_VERSION := $(RARCH_VERSION)
 APP_AUTHOR := libretro Team
-APP_ICON := pkg/libnx/retroarch.jpg
+APP_ICON := pkg/libnx/KingStation.jpg
 
 #---------------------------------------------------------------------------------
 # options for code generation

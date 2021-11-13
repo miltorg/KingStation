@@ -1,6 +1,6 @@
 ifeq ($(TARGET),)
 ifeq ($(LIBRETRO),)
-TARGET := retroarch.js
+TARGET := KingStation.js
 else
 TARGET := $(LIBRETRO)_libretro.js
 endif

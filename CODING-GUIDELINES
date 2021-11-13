@@ -61,6 +61,6 @@ struct a
 Stack size
 ----------
 
-You have to assume that stack size is going to be limited in RetroArch. Some game consoles (and other embedded systems) might have a default stack size as low as 128Kb or less. Be conservative with stack size but don't try to put very small structs on heap either [to avoid memory fragmentation among other things].
+You have to assume that stack size is going to be limited in KingStation. Some game consoles (and other embedded systems) might have a default stack size as low as 128Kb or less. Be conservative with stack size but don't try to put very small structs on heap either [to avoid memory fragmentation among other things].
 
 Be mindful that heap allocations are slow compared to stack.

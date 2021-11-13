@@ -1,17 +1,17 @@
-/* RetroArch - A frontend for libretro.
+/* KingStation - A frontend for libretro.
  * Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  * Copyright (C) 2011-2017 - Daniel De Matteis
  * Copyright (C) 2012-2015 - Michael Lelli
  *
- * RetroArch is free software: you can redistribute it and/or modify it under the terms
+ * KingStation is free software: you can redistribute it and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Found-
  * ation, either version 3 of the License, or (at your option) any later version.
  *
- * RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  * PURPOSE. See the GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License along with RetroArch.
+ * You should have received a copy of the GNU General Public License along with KingStation.
  * If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -40,7 +40,7 @@
 #include "../../configuration.h"
 #include "../../defaults.h"
 #include "../../content.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 #include "../../verbosity.h"
 #include "../../command.h"
 #include "../../tasks/tasks_internal.h"
@@ -83,14 +83,14 @@ static void frontend_emscripten_get_env(int *argc, char *argv[],
    if (home)
    {
       snprintf(base_path, sizeof(base_path),
-            "%s/retroarch", home);
+            "%s/KingStation", home);
       snprintf(user_path, sizeof(user_path),
-            "%s/retroarch/userdata", home);
+            "%s/KingStation/userdata", home);
    }
    else
    {
-      snprintf(base_path, sizeof(base_path), "retroarch");
-      snprintf(user_path, sizeof(user_path), "retroarch/userdata");
+      snprintf(base_path, sizeof(base_path), "KingStation");
+      snprintf(user_path, sizeof(user_path), "KingStation/userdata");
    }
 
    fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_CORE], base_path,
@@ -148,7 +148,7 @@ static void frontend_emscripten_get_env(int *argc, char *argv[],
 
    /* cache dir */
    fill_pathname_join(g_defaults.dirs[DEFAULT_DIR_CACHE], "/tmp/",
-         "retroarch", sizeof(g_defaults.dirs[DEFAULT_DIR_CACHE]));
+         "KingStation", sizeof(g_defaults.dirs[DEFAULT_DIR_CACHE]));
 
    /* history and main config */
    strlcpy(g_defaults.dirs[DEFAULT_DIR_CONTENT_HISTORY],

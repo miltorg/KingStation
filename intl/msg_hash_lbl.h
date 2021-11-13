@@ -2219,8 +2219,8 @@ MSG_HASH(
    "midi_settings"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_QUIT_RETROARCH,
-   "quit_retroarch"
+   MENU_ENUM_LABEL_QUIT_KingStation,
+   "quit_KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_RDB_ENTRY,
@@ -2511,8 +2511,8 @@ MSG_HASH(
    "restart_content"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_RESTART_RETROARCH,
-   "restart_retroarch"
+   MENU_ENUM_LABEL_RESTART_KingStation,
+   "restart_KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_RESUME,
@@ -3867,12 +3867,12 @@ MSG_HASH(
    "menu_show_help"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_MENU_SHOW_QUIT_RETROARCH,
-   "menu_show_quit_retroarch"
+   MENU_ENUM_LABEL_MENU_SHOW_QUIT_KingStation,
+   "menu_show_quit_KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_MENU_SHOW_RESTART_RETROARCH,
-   "menu_show_restart_retroarch"
+   MENU_ENUM_LABEL_MENU_SHOW_RESTART_KingStation,
+   "menu_show_restart_KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_MENU_SHOW_REBOOT,

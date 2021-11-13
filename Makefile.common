@@ -153,7 +153,7 @@ ifeq ($(HAVE_UNIX), 1)
    OBJ += frontend/drivers/platform_unix.o
 endif
 
-ifeq ($(TARGET), retroarch_3ds)
+ifeq ($(TARGET), KingStation_3ds)
    OBJ += frontend/drivers/platform_ctr.o
 endif
 # Git Version
@@ -193,7 +193,7 @@ ifeq ($(HAVE_DR_MP3), 1)
 endif
 
 OBJ += frontend/frontend_driver.o \
-       retroarch.o \
+       KingStation.o \
        msg_hash.o \
        intl/msg_hash_us.o \
        $(LIBRETRO_COMM_DIR)/queues/task_queue.o \
@@ -248,7 +248,7 @@ else ifneq ($(findstring Darwin,$(OS)),)
 	OBJ += $(LIBRETRO_COMM_DIR)/file/nbio/nbio_unixmmap.o
 endif
 
-ifeq ($(TARGET), retroarch_orbis)
+ifeq ($(TARGET), KingStation_orbis)
 	OBJ += $(LIBRETRO_COMM_DIR)/file/nbio/nbio_orbis.o
 endif
 
@@ -460,7 +460,7 @@ ifeq ($(HAVE_QT), 1)
           ui/drivers/qt/playlistentrydialog.o \
           ui/drivers/qt/viewoptionsdialog.o \
           ui/drivers/qt/qt_playlist.o \
-          ui/drivers/qt/updateretroarch.o \
+          ui/drivers/qt/updateKingStation.o \
           ui/drivers/qt/thumbnaildownload.o \
           ui/drivers/qt/thumbnailpackdownload.o \
           ui/drivers/qt/playlistthumbnaildownload.o
@@ -774,7 +774,7 @@ ifeq ($(HAVE_CORETEXT), 1)
    OBJ += gfx/drivers_font_renderer/coretext.o
 endif
 
-ifeq ($(TARGET), retroarch_3ds)
+ifeq ($(TARGET), KingStation_3ds)
    OBJ += gfx/drivers_font/ctr_font.o
 endif
 
@@ -792,7 +792,7 @@ else ifeq ($(HAVE_OSS_BSD), 1)
    OBJ += audio/drivers/oss.o
 endif
 
-ifeq ($(TARGET), retroarch_3ds)
+ifeq ($(TARGET), KingStation_3ds)
    OBJ += audio/drivers/ctr_csnd_audio.o \
           audio/drivers/ctr_dsp_audio.o
 ifeq ($(HAVE_THREADS), 1)
@@ -1122,27 +1122,27 @@ ifeq ($(HAVE_VITA2D), 1)
    INCLUDE_DIRS += -I$(DEPS_DIR)/libvita2d/include
 endif
 
-ifeq ($(TARGET), retroarch_3ds)
+ifeq ($(TARGET), KingStation_3ds)
    OBJ += gfx/drivers/ctr_gfx.o \
           gfx/drivers_display/gfx_display_ctr.o \
           input/drivers/ctr_input.o \
           input/drivers_joypad/ctr_joypad.o
 endif
 
-ifeq ($(TARGET), retroarch_orbis)
+ifeq ($(TARGET), KingStation_orbis)
    OBJ +=  input/drivers/ps4_input.o \
 			  input/drivers_joypad/ps4_joypad.o \
 			  audio/drivers/psp_audio.o
 endif
 
-ifeq ($(TARGET), retroarch_vita)
+ifeq ($(TARGET), KingStation_vita)
    OBJ +=  input/drivers/psp_input.o \
 			  input/drivers_joypad/psp_joypad.o \
 			  audio/drivers/psp_audio.o \
 			  frontend/drivers/platform_psp.o
 endif
 
-ifeq ($(TARGET), retroarch_wiiu)
+ifeq ($(TARGET), KingStation_wiiu)
    OBJ +=  gfx/drivers/gx2_gfx.o \
 			  gfx/drivers_font/wiiu_font.o \
 			  gfx/drivers_display/gfx_display_wiiu.o \
@@ -1168,7 +1168,7 @@ ifeq ($(TARGET), retroarch_wiiu)
       endif
 endif
 
-ifeq ($(TARGET), retroarch_switch)
+ifeq ($(TARGET), KingStation_switch)
    ifeq ($(HAVE_LIBNX), 1)
       OBJ += gfx/drivers_display/gfx_display_switch.o \
              gfx/drivers/switch_nx_gfx.o \
@@ -1187,7 +1187,7 @@ ifeq ($(TARGET), retroarch_switch)
           frontend/drivers/platform_switch.o
 endif
 
-ifeq ($(TARGET), retroarch_orbis)
+ifeq ($(TARGET), KingStation_orbis)
    OBJ += gfx/drivers_context/orbis_ctx.o \
           frontend/drivers/platform_orbis.o
 endif
@@ -1887,7 +1887,7 @@ endif
 ifeq ($(HAVE_BUILTINFLAC),1)
    HAVE_FLAC = 1
    DEFINES += -DHAVE_FLAC -DHAVE_DR_FLAC  -DHAVE_STDINT_H -DHAVE_LROUND -DFLAC__HAS_OGG=0 \
-              -DFLAC_PACKAGE_VERSION="\"retroarch\""
+              -DFLAC_PACKAGE_VERSION="\"KingStation\""
    INCLUDE_DIRS += -I$(DEPS_DIR) -I$(DEPS_DIR)/libFLAC/include
    FLACOBJ = $(DEPS_DIR)/libFLAC/bitmath.o \
              $(DEPS_DIR)/libFLAC/bitreader.o \

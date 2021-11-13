@@ -1,10 +1,10 @@
-TARGET		    := retroarch_orbis
+TARGET		    := KingStation_orbis
 DEBUG               ?= 0
 GRIFFIN_BUILD        = 0
 WHOLE_ARCHIVE_LINK   = 0
 
-PS4_TITLE_ID	:= RETROARCH
-PS4_TITLE_NAME	:= RetroArch
+PS4_TITLE_ID	:= KingStation
+PS4_TITLE_NAME	:= KingStation
 
 PC_DEVELOPMENT_IP_ADDRESS  =
 PC_DEVELOPMENT_UDP_PORT	   =

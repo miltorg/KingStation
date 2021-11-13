@@ -129,7 +129,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_ONLINE_UPDATER,
-   "Κατεβάστε πρόσθετα, στοιχεία και περιεχόμενο για το RetroArch."
+   "Κατεβάστε πρόσθετα, στοιχεία και περιεχόμενο για το KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_NETPLAY,
@@ -172,19 +172,19 @@ MSG_HASH(
    "Μάθετε περισσότερα για το πως λειτουργεί το πρόγραμμα."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
-   "Επανεκκίνηση RetroArch"
+   MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
+   "Επανεκκίνηση KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
    "Επανεκκίνηση του προγράμματος."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
-   "Έξοδος από RetroArch"
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
+   "Έξοδος από KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
    "Έξοδος από το πρόγραμμα."
    )
 
@@ -1804,7 +1804,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_MAX_USERS,
-   "Μέγιστος αριθμός χρηστών που υποστηρίζεται από το RetroArch."
+   "Μέγιστος αριθμός χρηστών που υποστηρίζεται από το KingStation."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_AUTODETECT_ENABLE,
@@ -1921,7 +1921,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_QUIT_KEY,
-   "Έξοδος από το RetroArch"
+   "Έξοδος από το KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_STATE_SLOT_PLUS,
@@ -2207,7 +2207,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_GLOBAL_CORE_OPTIONS,
-   "Αποθήκευση όλων των επιλογών πυρήνα σε ένα κοινό αρχείο ρυθμίσεων (retroarch-core-options.cfg). Όταν είναι απενεργοποιημένο οι επιλογές για τον κάθε πυρήνα θα αποθηκεύονται σε ξεχωριστό ανά πυρήνα φάκελο/αρχείο στο ευρετήριο 'Config' του RetroArch."
+   "Αποθήκευση όλων των επιλογών πυρήνα σε ένα κοινό αρχείο ρυθμίσεων (KingStation-core-options.cfg). Όταν είναι απενεργοποιημένο οι επιλογές για τον κάθε πυρήνα θα αποθηκεύονται σε ξεχωριστό ανά πυρήνα φάκελο/αρχείο στο ευρετήριο 'Config' του KingStation."
    )
 
 /* Settings > Saving */
@@ -2529,7 +2529,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_PAUSE_LIBRETRO,
-   "Εάν απενεργοποιηθεί το περιεχόμενο θα συνεχίσει να τρέχει στο παρασκήνιο όταν το μενού του RetroArch είναι ανοικτό."
+   "Εάν απενεργοποιηθεί το περιεχόμενο θα συνεχίσει να τρέχει στο παρασκήνιο όταν το μενού του KingStation είναι ανοικτό."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_MOUSE_ENABLE,
@@ -2549,7 +2549,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_PAUSE_NONACTIVE,
-   "Παύση παιχνιδιού όταν το RetroArch δεν είναι το ενεργό παράθυρο."
+   "Παύση παιχνιδιού όταν το KingStation δεν είναι το ενεργό παράθυρο."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_UI_MENUBAR_ENABLE,
@@ -2627,16 +2627,16 @@ MSG_HASH(
    "Εμφάνιση/απόκρυψη της επιλογής 'Βοήθεια'."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_RETROARCH,
-   "Προβολή Εξόδου RetroArch"
+   MENU_ENUM_LABEL_VALUE_MENU_SHOW_QUIT_KingStation,
+   "Προβολή Εξόδου KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_RETROARCH,
-   "Εμφάνιση/απόκρυψη της επιλογής 'Έξοδος από RetroArch'."
+   MENU_ENUM_SUBLABEL_MENU_SHOW_QUIT_KingStation,
+   "Εμφάνιση/απόκρυψη της επιλογής 'Έξοδος από KingStation'."
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_MENU_SHOW_RESTART_RETROARCH,
-   "Εμφάνιση/απόκρυψη της επιλογής 'Eπανεκκίνηση του RetroArch'."
+   MENU_ENUM_SUBLABEL_MENU_SHOW_RESTART_KingStation,
+   "Εμφάνιση/απόκρυψη της επιλογής 'Eπανεκκίνηση του KingStation'."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_CONTENT_SHOW_SETTINGS,
@@ -4466,7 +4466,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_MENU_HELP_ABOUT,
-   "Σχετικά με το RetroArch"
+   "Σχετικά με το KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_QT_MENU_HELP_DOCUMENTATION,
@@ -4601,7 +4601,7 @@ MSG_HASH(
    "Επιλογή Φακέλου"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_FAILED,
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_FAILED,
    "Αποτυχία Ενημέρωσης."
    )
 MSG_HASH(
@@ -5072,16 +5072,16 @@ MSG_HASH(
    "%.*s συνδέθηκε με συσκευές εισόδου %.*s"
    )
 MSG_HASH(
-   MSG_NETPLAY_NOT_RETROARCH,
-   "Η προσπάθεια σύνδεσης netplay απέτυχε επειδή ο συμπέκτης δεν χρησιμοποιεί το RetroArch ή χρησιμοποιεί πιο παλιά έκδοση."
+   MSG_NETPLAY_NOT_KingStation,
+   "Η προσπάθεια σύνδεσης netplay απέτυχε επειδή ο συμπέκτης δεν χρησιμοποιεί το KingStation ή χρησιμοποιεί πιο παλιά έκδοση."
    )
 MSG_HASH(
    MSG_NETPLAY_OUT_OF_DATE,
-   "Ο συμπαίκτης χρησιμοποιεί πιο παλιά έκδοση RetroArch. Αδύνατη η σύνδεση."
+   "Ο συμπαίκτης χρησιμοποιεί πιο παλιά έκδοση KingStation. Αδύνατη η σύνδεση."
    )
 MSG_HASH(
    MSG_NETPLAY_DIFFERENT_VERSIONS,
-   "ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Ο συμπαίκτης netplay χρησιμοποιεί διαφορετική έκδοση του RetroArch. Εάν προκύψουν προβλήματα χρησιμοποιήστε την ίδια έκδοση."
+   "ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Ο συμπαίκτης netplay χρησιμοποιεί διαφορετική έκδοση του KingStation. Εάν προκύψουν προβλήματα χρησιμοποιήστε την ίδια έκδοση."
    )
 MSG_HASH(
    MSG_NETPLAY_DIFFERENT_CORES,
@@ -5507,7 +5507,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_RESTART_KEY,
-   "Επανεκκίνηση RetroArch"
+   "Επανεκκίνηση KingStation"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_AUDIO_BLOCK_FRAMES,

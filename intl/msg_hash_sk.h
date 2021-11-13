@@ -125,7 +125,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_ONLINE_UPDATER,
-   "Stiahnutie prídavkov, komponentov, a obsahu pre RetroArch."
+   "Stiahnutie prídavkov, komponentov, a obsahu pre KingStation."
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_NETPLAY,
@@ -164,19 +164,19 @@ MSG_HASH(
    "Zisti viac o tom ako program funguje."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
-   "Reštartovať RetroArch"
+   MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
+   "Reštartovať KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
    "Reštartuje sa program."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
-   "Vypnúť RetroArch"
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
+   "Vypnúť KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
    "Ukončiť program."
    )
 

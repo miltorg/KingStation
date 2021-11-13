@@ -125,7 +125,7 @@ MSG_HASH(
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_ONLINE_UPDATER,
-   "Ladda ner tillägg, komponenter och innehåll för RetroArch."
+   "Ladda ner tillägg, komponenter och innehåll för KingStation."
    )
 MSG_HASH(
    MENU_ENUM_SUBLABEL_NETPLAY,
@@ -160,19 +160,19 @@ MSG_HASH(
    "Läs mer om hur programmet fungerar."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESTART_RETROARCH,
-   "Starta om RetroArch"
+   MENU_ENUM_LABEL_VALUE_RESTART_KingStation,
+   "Starta om KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESTART_RETROARCH,
+   MENU_ENUM_SUBLABEL_RESTART_KingStation,
    "Starta om programmet."
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_QUIT_RETROARCH,
-   "Avsluta RetroArch"
+   MENU_ENUM_LABEL_VALUE_QUIT_KingStation,
+   "Avsluta KingStation"
    )
 MSG_HASH(
-   MENU_ENUM_SUBLABEL_QUIT_RETROARCH,
+   MENU_ENUM_SUBLABEL_QUIT_KingStation,
    "Avsluta programmet."
    )
 
@@ -1668,7 +1668,7 @@ MSG_HASH(
 
 MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_MAX_USERS,
-   "Maximalt antal användare som stöds av RetroArch."
+   "Maximalt antal användare som stöds av KingStation."
    )
 #if defined(HAVE_DINPUT) || defined(HAVE_WINRAWINPUT)
 #endif

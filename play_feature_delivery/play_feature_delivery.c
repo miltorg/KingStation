@@ -1,22 +1,22 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2014-2017 - Jean-André Santoni
  *  Copyright (C) 2016-2019 - Brad Parker
  *  Copyright (C) 2019-2020 - James Leaver
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "com_retroarch_browser_retroactivity_RetroActivityCommon.h"
+#include "com_KingStation_browser_retroactivity_RetroActivityCommon.h"
 
 #ifdef HAVE_THREADS
 #include <rthreads/rthreads.h>
@@ -79,11 +79,11 @@ static play_feature_delivery_state_t* play_feature_delivery_get_state(void)
 /**********************/
 
 /*
- * Class:     com_retroarch_browser_retroactivity_RetroActivityCommon
+ * Class:     com_KingStation_browser_retroactivity_RetroActivityCommon
  * Method:    coreInstallInitiated
  * Signature: (Ljava/lang/String;Z)V
  */
-JNIEXPORT void JNICALL Java_com_retroarch_browser_retroactivity_RetroActivityCommon_coreInstallInitiated
+JNIEXPORT void JNICALL Java_com_KingStation_browser_retroactivity_RetroActivityCommon_coreInstallInitiated
       (JNIEnv *env, jobject this_obj, jstring core_name, jboolean successful)
 {
    play_feature_delivery_state_t* state = play_feature_delivery_get_state();
@@ -124,11 +124,11 @@ JNIEXPORT void JNICALL Java_com_retroarch_browser_retroactivity_RetroActivityCom
 }
 
 /*
- * Class:     com_retroarch_browser_retroactivity_RetroActivityCommon
+ * Class:     com_KingStation_browser_retroactivity_RetroActivityCommon
  * Method:    coreInstallStatusChanged
  * Signature: ([Ljava/lang/String;IJJ)V
  */
-JNIEXPORT void JNICALL Java_com_retroarch_browser_retroactivity_RetroActivityCommon_coreInstallStatusChanged
+JNIEXPORT void JNICALL Java_com_KingStation_browser_retroactivity_RetroActivityCommon_coreInstallStatusChanged
       (JNIEnv *env, jobject thisObj, jobjectArray core_names, jint status, jlong bytes_downloaded, jlong total_bytes_to_download)
 {
    play_feature_delivery_state_t* state = play_feature_delivery_get_state();

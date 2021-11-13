@@ -94,7 +94,7 @@ FONT 8, "Ms Shell Dlg"
 // Icon resources
 //
 LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
-1                  ICON           "retroarch.ico"
+1                  ICON           "KingStation.ico"
 
 //
 // Manifest resources

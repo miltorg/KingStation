@@ -1,16 +1,16 @@
-/* RetroArch - A frontend for libretro.
+/* KingStation - A frontend for libretro.
  * Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  * Copyright (C) 2011-2017 - Daniel De Matteis
  *
- * RetroArch is free software: you can redistribute it and/or modify it under the terms
+ * KingStation is free software: you can redistribute it and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Found-
  * ation, either version 3 of the License, or (at your option) any later version.
  *
- * RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  * PURPOSE. See the GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License along with RetroArch.
+ * You should have received a copy of the GNU General Public License along with KingStation.
  * If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -56,7 +56,7 @@
 #include "../../defaults.h"
 #include "../../file_path_special.h"
 #include "../../defines/psp_defines.h"
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 #include "../../paths.h"
 #include "../../verbosity.h"
 
@@ -71,7 +71,7 @@
 #endif
 
 #ifndef VITA
-PSP_MODULE_INFO("RetroArch", 0, 1, 1);
+PSP_MODULE_INFO("KingStation", 0, 1, 1);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER|THREAD_ATTR_VFPU);
 #ifdef BIG_STACK
 PSP_MAIN_THREAD_STACK_SIZE_KB(4*1024);
@@ -99,12 +99,12 @@ static void frontend_psp_get_env_settings(int *argc, char *argv[],
 #ifdef VITA
    strcpy_literal(eboot_path, "app0:/");
    strlcpy(g_defaults.dirs[DEFAULT_DIR_PORT], eboot_path, sizeof(g_defaults.dirs[DEFAULT_DIR_PORT]));
-   strcpy_literal(user_path, "ux0:/data/retroarch/");
+   strcpy_literal(user_path, "ux0:/data/KingStation/");
 #else
    strlcpy(eboot_path, argv[0], sizeof(eboot_path));
    /* for PSP, use uppercase directories, and no trailing slashes
       otherwise mkdir fails */
-   strcpy_literal(user_path, "ms0:/PSP/RETROARCH");
+   strcpy_literal(user_path, "ms0:/PSP/KingStation");
    fill_pathname_basedir(g_defaults.dirs[DEFAULT_DIR_PORT], argv[0], sizeof(g_defaults.dirs[DEFAULT_DIR_PORT]));
 #endif
    RARCH_LOG("port dir: [%s]\n", g_defaults.dirs[DEFAULT_DIR_PORT]);

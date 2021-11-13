@@ -1,15 +1,15 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2016-2017 - Gregor Richards
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -17,14 +17,14 @@
  * AD PACKET FORMAT:
  *
  * Request:
- *    1 word: RANQ (RetroArch Netplay Query)
+ *    1 word: RANQ (KingStation Netplay Query)
  *    1 word: Netplay protocol version
  *
  * Reply:
- *    1 word : RANS (RetroArch Netplay Server)
+ *    1 word : RANS (KingStation Netplay Server)
  *    1 word : Netplay protocol version
  *    1 word : Port
- *    8 words: RetroArch version
+ *    8 words: KingStation version
  *    8 words: Nick
  *    8 words: Core name
  *    8 words: Core version
@@ -43,7 +43,7 @@
 #include <compat/strl.h>
 #include <net/net_compat.h>
 
-#include "../../retroarch.h"
+#include "../../KingStation.h"
 #include "../../version.h"
 #include "../../verbosity.h"
 
@@ -61,7 +61,7 @@ struct ad_packet
    uint32_t protocol_version;
    uint32_t port;
    char address[NETPLAY_HOST_STR_LEN];
-   char retroarch_version[NETPLAY_HOST_STR_LEN];
+   char KingStation_version[NETPLAY_HOST_STR_LEN];
    char nick[NETPLAY_HOST_STR_LEN];
    char frontend[NETPLAY_HOST_STR_LEN];
    char core[NETPLAY_HOST_STR_LEN];
@@ -362,7 +362,7 @@ bool netplay_lan_ad_server(netplay_t *netplay)
                   ad_packet_buffer.protocol_version =
                      htonl(NETPLAY_PROTOCOL_VERSION);
                   ad_packet_buffer.port = htonl(netplay->tcp_port);
-                  strlcpy(ad_packet_buffer.retroarch_version, PACKAGE_VERSION,
+                  strlcpy(ad_packet_buffer.KingStation_version, PACKAGE_VERSION,
                      NETPLAY_HOST_STR_LEN);
                   strlcpy(ad_packet_buffer.nick, netplay->nick, NETPLAY_HOST_STR_LEN);
                   strlcpy(ad_packet_buffer.frontend, frontend, NETPLAY_HOST_STR_LEN);
@@ -529,7 +529,7 @@ static bool netplay_lan_ad_client(void)
          strlcpy(host->address, ad_packet_buffer.address, NETPLAY_HOST_STR_LEN);
          strlcpy(host->nick, ad_packet_buffer.nick, NETPLAY_HOST_STR_LEN);
          strlcpy(host->core, ad_packet_buffer.core, NETPLAY_HOST_STR_LEN);
-         strlcpy(host->retroarch_version, ad_packet_buffer.retroarch_version,
+         strlcpy(host->KingStation_version, ad_packet_buffer.KingStation_version,
             NETPLAY_HOST_STR_LEN);
          strlcpy(host->core_version, ad_packet_buffer.core_version,
             NETPLAY_HOST_STR_LEN);

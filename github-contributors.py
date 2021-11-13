@@ -24,7 +24,7 @@ import json
 # https://help.github.com/articles/creating-an-access-token-for-command-line-use/
 TOKEN = 'Your access token here'
 orgName = 'libretro'
-repoName = 'RetroArch'
+repoName = 'KingStation'
 ### END SETTINGS ###
 
 ######

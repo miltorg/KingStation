@@ -1,17 +1,17 @@
-/*  RetroArch - A frontend for libretro.
+/*  KingStation - A frontend for libretro.
  *  Copyright (C) 2010-2014 - Hans-Kristian Arntzen
  *  Copyright (C) 2011-2017 - Daniel De Matteis
  *  Copyright (C) 2016-2019 - Brad Parker
  *
- *  RetroArch is free software: you can redistribute it and/or modify it under the terms
+ *  KingStation is free software: you can redistribute it and/or modify it under the terms
  *  of the GNU General Public License as published by the Free Software Found-
  *  ation, either version 3 of the License, or (at your option) any later version.
  *
- *  RetroArch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  KingStation is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  *  PURPOSE.  See the GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License along with RetroArch.
+ *  You should have received a copy of the GNU General Public License along with KingStation.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
 
@@ -185,7 +185,7 @@ enum msg_hash_enums
    MSG_NETPLAY_PLAYER_S_LEFT,
    MSG_NETPLAY_S_HAS_JOINED_AS_PLAYER_N,
    MSG_NETPLAY_S_HAS_JOINED_WITH_INPUT_DEVICES_S,
-   MSG_NETPLAY_NOT_RETROARCH,
+   MSG_NETPLAY_NOT_KingStation,
    MSG_NETPLAY_OUT_OF_DATE,
    MSG_NETPLAY_DIFFERENT_VERSIONS,
    MSG_NETPLAY_DIFFERENT_CORES,
@@ -1072,8 +1072,8 @@ enum msg_hash_enums
    MENU_LABEL(MENU_SHOW_INFORMATION),
    MENU_LABEL(MENU_SHOW_CONFIGURATIONS),
    MENU_LABEL(MENU_SHOW_HELP),
-   MENU_LABEL(MENU_SHOW_QUIT_RETROARCH),
-   MENU_LABEL(MENU_SHOW_RESTART_RETROARCH),
+   MENU_LABEL(MENU_SHOW_QUIT_KingStation),
+   MENU_LABEL(MENU_SHOW_RESTART_KingStation),
    MENU_LABEL(MENU_SHOW_REBOOT),
    MENU_LABEL(MENU_SHOW_SHUTDOWN),
    MENU_LABEL(MENU_SHOW_ONLINE_UPDATER),
@@ -1385,7 +1385,7 @@ enum msg_hash_enums
 
    MENU_ENUM_LABEL_VALUE_EXTRACTING_PLEASE_WAIT,
 
-   MENU_ENUM_LABEL_WELCOME_TO_RETROARCH,
+   MENU_ENUM_LABEL_WELCOME_TO_KingStation,
 
    MENU_LABEL(BROWSE_URL),
    MENU_LABEL(BROWSE_START),
@@ -1536,6 +1536,8 @@ enum msg_hash_enums
    MENU_LABEL(FILE_DETECT_CORE_LIST_PUSH_DIR),
    MENU_LABEL(DOWNLOADED_FILE_DETECT_CORE_LIST),
 
+   MENU_ENUM_LABEL_VALUE_INFO,
+   MENU_ENUM_LABEL_VALUE_RESET,
    MENU_ENUM_LABEL_VALUE_SEARCH,
 
    MENU_LABEL(DOWNLOAD_CORE_CONTENT),
@@ -2092,8 +2094,8 @@ enum msg_hash_enums
    MENU_LABEL(CORE_SET_SUPPORTS_NO_CONTENT_ENABLE),
    MENU_LABEL(CLOSE_CONTENT),
    MENU_LABEL(SHOW_WIMP),
-   MENU_LABEL(QUIT_RETROARCH),
-   MENU_LABEL(RESTART_RETROARCH),
+   MENU_LABEL(QUIT_KingStation),
+   MENU_LABEL(RESTART_KingStation),
    MENU_LABEL(SHUTDOWN),
    MENU_LABEL(REBOOT),
    MENU_LABEL(DISK_IMAGE_APPEND),
@@ -2847,9 +2849,9 @@ enum msg_hash_enums
    MENU_ENUM_LABEL_VALUE_QT_MENU_HELP_ABOUT_CONTRIBUTORS,
    MENU_ENUM_LABEL_VALUE_QT_MENU_HELP_DOCUMENTATION,
    MENU_ENUM_LABEL_VALUE_QT_NETWORK_ERROR,
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_NIGHTLY,
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_FINISHED,
-   MENU_ENUM_LABEL_VALUE_QT_UPDATE_RETROARCH_FAILED,
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_NIGHTLY,
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_FINISHED,
+   MENU_ENUM_LABEL_VALUE_QT_UPDATE_KingStation_FAILED,
    MENU_ENUM_LABEL_VALUE_QT_CURRENT_SHADER,
    MENU_ENUM_LABEL_VALUE_QT_MOVE_DOWN,
    MENU_ENUM_LABEL_VALUE_QT_MOVE_UP,

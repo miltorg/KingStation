@@ -5,7 +5,7 @@ extern "C" {
 #endif
 
 #include "../../../../gfx/video_display_server.h"
-#include "../../../../retroarch.h"
+#include "../../../../KingStation.h"
 
 #ifndef CXX_BUILD
 }

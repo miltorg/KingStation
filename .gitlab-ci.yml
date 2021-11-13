@@ -6,7 +6,7 @@ stages:
   - prepare-for-static-cores
   - trigger-static-cores
 
-build-retroarch-windows-x64:
+build-KingStation-windows-x64:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-mxe-win64-cross:gcc10
   stage: build
   variables:
@@ -15,7 +15,7 @@ build-retroarch-windows-x64:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    - retroarch.exe
+    - KingStation.exe
     - ${MEDIA_PATH}
     expire_in: 10 min
   dependencies: []
@@ -32,10 +32,10 @@ build-retroarch-windows-x64:
     - "cd gfx/video_filters && make -j$NUMPROC platform=win compiler=x86_64-w64-mingw32.static-gcc build=release && make -j$NUMPROC platform=win compiler=x86_64-w64-mingw32.static-gcc build=release strip && cd -"
     - "cp -f gfx/video_filters/*.dll ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
     - "cp -f gfx/video_filters/*.filt ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
-    - "cp -f retroarch.cfg ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/retroarch.default.cfg"
+    - "cp -f KingStation.cfg ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/KingStation.default.cfg"
     - "echo -e '[Paths]\nPlugins = ./' > ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/qt.conf"
     - "/bin/bash /usr/lib/mxe/tools/copydlldeps.sh
-        --infile retroarch.exe
+        --infile KingStation.exe
         --destdir ${MEDIA_PATH}/${CI_PROJECT_NAME}/redist/
         --recursivesrcdir /usr/lib/mxe/usr/x86_64-w64-mingw32.shared/
         --enforcedir /usr/lib/mxe/usr/x86_64-w64-mingw32.shared/qt5/plugins/bearer/
@@ -47,7 +47,7 @@ build-retroarch-windows-x64:
         --objdump x86_64-w64-mingw32.shared-objdump"
     - "rm -f ${MEDIA_PATH}/${CI_PROJECT_NAME}/redist/opengl32.dll"
 
-build-retroarch-windows-i686:
+build-KingStation-windows-i686:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-mxe-win32-cross:gcc10
   stage: build
   variables:
@@ -56,7 +56,7 @@ build-retroarch-windows-i686:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    - retroarch.exe
+    - KingStation.exe
     - ${MEDIA_PATH}
     expire_in: 10 min
   dependencies: []
@@ -73,10 +73,10 @@ build-retroarch-windows-i686:
     - "cd gfx/video_filters && make -j$NUMPROC platform=win compiler=i686-w64-mingw32.static-gcc build=release && make -j$NUMPROC platform=win compiler=i686-w64-mingw32.static-gcc build=release strip && cd -"
     - "cp -f gfx/video_filters/*.dll ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
     - "cp -f gfx/video_filters/*.filt ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
-    - "cp -f retroarch.cfg ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/retroarch.default.cfg"
+    - "cp -f KingStation.cfg ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/KingStation.default.cfg"
     - "echo -e '[Paths]\nPlugins = ./' > ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/qt.conf"
     - "/bin/bash /usr/lib/mxe/tools/copydlldeps.sh
-        --infile retroarch.exe
+        --infile KingStation.exe
         --destdir ${MEDIA_PATH}/${CI_PROJECT_NAME}/redist/
         --recursivesrcdir /usr/lib/mxe/usr/i686-w64-mingw32.shared/
         --enforcedir /usr/lib/mxe/usr/i686-w64-mingw32.shared/qt5/plugins/bearer/
@@ -88,7 +88,7 @@ build-retroarch-windows-i686:
         --objdump i686-w64-mingw32.shared-objdump"
     - "rm -f ${MEDIA_PATH}/${CI_PROJECT_NAME}/redist/opengl32.dll"
 
-build-retroarch-linux-x64:
+build-KingStation-linux-x64:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-amd64-ubuntu:xenial-gcc9
   stage: build
   variables:
@@ -97,8 +97,8 @@ build-retroarch-linux-x64:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    - retroarch
-    - retroarch_qt
+    - KingStation
+    - KingStation_qt
     - ${MEDIA_PATH}
     expire_in: 10 min
   dependencies: []
@@ -110,7 +110,7 @@ build-retroarch-linux-x64:
     - "make install DESTDIR=${MEDIA_PATH}/${CI_PROJECT_NAME}/AppDirQt prefix=/usr"
     - "rm -rf ${MEDIA_PATH}/${CI_PROJECT_NAME}/AppDirQt/etc"
     - "cd ${MEDIA_PATH}/${CI_PROJECT_NAME}/ && tar -czf AppDirQt.tar.gz AppDirQt && rm -rf AppDirQt && cd -"
-    - "mv -f retroarch retroarch_qt"
+    - "mv -f KingStation KingStation_qt"
     # Non-Qt build
     - "mkdir -p ${MEDIA_PATH}/${CI_PROJECT_NAME}/AppDir"
     - "make clean"
@@ -129,7 +129,7 @@ build-retroarch-linux-x64:
     - "cp -f gfx/video_filters/*.so ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
     - "cp -f gfx/video_filters/*.filt ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
 
-build-retroarch-linux-i686:
+build-KingStation-linux-i686:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-i386-ubuntu:xenial-gcc9
   stage: build
   variables:
@@ -138,7 +138,7 @@ build-retroarch-linux-i686:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    - retroarch
+    - KingStation
     - ${MEDIA_PATH}
     expire_in: 10 min
   dependencies: []
@@ -150,7 +150,7 @@ build-retroarch-linux-i686:
     - "make install DESTDIR=${MEDIA_PATH}/${CI_PROJECT_NAME}/AppDirQt prefix=/usr"
     - "rm -rf ${MEDIA_PATH}/${CI_PROJECT_NAME}/AppDirQt/etc"
     - "cd ${MEDIA_PATH}/${CI_PROJECT_NAME}/ && tar -czf AppDirQt.tar.gz AppDirQt && rm -rf AppDirQt && cd -"
-    - "mv -f retroarch retroarch_qt"
+    - "mv -f KingStation KingStation_qt"
     # Non-Qt build
     - "mkdir -p ${MEDIA_PATH}/${CI_PROJECT_NAME}/AppDir"
     - "make clean"
@@ -169,7 +169,7 @@ build-retroarch-linux-i686:
     - "cp -f gfx/video_filters/*.so ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
     - "cp -f gfx/video_filters/*.filt ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
 
-build-retroarch-dingux-mips32:
+build-KingStation-dingux-mips32:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-dingux:latest
   stage: build
   variables:
@@ -178,7 +178,7 @@ build-retroarch-dingux-mips32:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    - retroarch_rg350.opk
+    - KingStation_rg350.opk
     - ${MEDIA_PATH}
     expire_in: 10 min
   dependencies: []
@@ -189,92 +189,92 @@ build-retroarch-dingux-mips32:
     - "cp -f libretro-common/audio/dsp_filters/*.dsp ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/audio"
     - "cp -f gfx/video_filters/*.filt ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
 
-build-retroarch-android-normal:
+build-KingStation-android-normal:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-android:latest
   stage: build
   artifacts:
     paths:
-    - retroarch-precompiled/
+    - KingStation-precompiled/
     expire_in: 10 min
   script:
     - "cd pkg/android/phoenix && ./gradlew assembleNormalRelease && cd -"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-retroarch-android-aarch64:
+build-KingStation-android-aarch64:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-android:latest
   stage: build
   artifacts:
     paths:
-    - retroarch-precompiled/
+    - KingStation-precompiled/
     expire_in: 10 min
   script:
     - "cd pkg/android/phoenix && ./gradlew assembleAarch64Release && cd -"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-retroarch-android-ra32:
+build-KingStation-android-ra32:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-android:latest
   stage: build
   artifacts:
     paths:
-    - retroarch-precompiled/
+    - KingStation-precompiled/
     expire_in: 10 min
   script:
     - "cd pkg/android/phoenix && ./gradlew assembleRa32Release && cd -"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-retroarch-android-playstore-normal:
+build-KingStation-android-playstore-normal:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-android:latest
   stage: build
   artifacts:
     paths:
-    - retroarch-precompiled/
+    - KingStation-precompiled/
     expire_in: 10 min
   script:
     - "cd pkg/android/phoenix && ./gradlew bundlePlayStoreNormalRelease && cd -"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-retroarch-android-playstore-plus:
+build-KingStation-android-playstore-plus:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-android:latest
   stage: build
   artifacts:
     paths:
-    - retroarch-precompiled/
+    - KingStation-precompiled/
     expire_in: 10 min
   script:
     - "cd pkg/android/phoenix && ./gradlew bundlePlayStorePlusRelease && cd -"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-static-retroarch-libnx-aarch64:
+build-static-KingStation-libnx-aarch64:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-libnx-devkitpro:latest
   stage: prepare-for-static-cores
   before_script:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    -  retroarch-precompiled/
+    -  KingStation-precompiled/
     expire_in: 10 min
   dependencies: []
   needs:
     # Static dummy builds without a core so its a good check if it properly builds
-    - build-static-retroarch-dummy-libnx-aarch64
+    - build-static-KingStation-dummy-libnx-aarch64
   script:
     # Allow failure since we don't have a core
     - "make -f Makefile.libnx -j$NUMPROC ||:"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-static-retroarch-dummy-libnx-aarch64:
+build-static-KingStation-dummy-libnx-aarch64:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-libnx-devkitpro:latest
   stage: build
   variables:
@@ -283,8 +283,8 @@ build-static-retroarch-dummy-libnx-aarch64:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    - retroarch_switch.nro
-    - retroarch_switch.elf
+    - KingStation_switch.nro
+    - KingStation_switch.elf
     - ${MEDIA_PATH}
     expire_in: 10 min
   dependencies: []
@@ -293,35 +293,35 @@ build-static-retroarch-dummy-libnx-aarch64:
     - "mkdir -p ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
     - "mkdir -p ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
     - "cp -f gfx/video_filters/*.filt ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
-    - "cp -f pkg/libnx/retroarch.jpg ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
+    - "cp -f pkg/libnx/KingStation.jpg ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
 
-build-static-retroarch-vita:
+build-static-KingStation-vita:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-vita:latest
   stage: prepare-for-static-cores
   before_script:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    -  retroarch-precompiled/
-    -  retroarch-precompiled-gl/
+    -  KingStation-precompiled/
+    -  KingStation-precompiled-gl/
     expire_in: 10 min
   dependencies: []
   needs:
     # Dummy build requires no core
-    - build-static-retroarch-dummy-vita
+    - build-static-KingStation-dummy-vita
   script:
     # Allow failure since we don't have a core
     - "make -f Makefile.vita -j$NUMPROC ||:"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
     - "make -f Makefile.vita clean"
     - "HAVE_VITAGLES=1 make -f Makefile.vita -j$NUMPROC ||:"
-    - "mkdir .retroarch-precompiled-gl"
-    - "cp -r ./* .retroarch-precompiled-gl/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
-    - "mv .retroarch-precompiled-gl/ retroarch-precompiled-gl/"
+    - "mkdir .KingStation-precompiled-gl"
+    - "cp -r ./* .KingStation-precompiled-gl/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
+    - "mv .KingStation-precompiled-gl/ KingStation-precompiled-gl/"
 
-build-static-retroarch-dummy-vita:
+build-static-KingStation-dummy-vita:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-vita:latest
   stage: build
   variables:
@@ -342,26 +342,26 @@ build-static-retroarch-dummy-vita:
     - "cp -f gfx/video_filters/*.filt ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
     - "cp -fr pkg/vita/* ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
 
-build-static-retroarch-ps2:
+build-static-KingStation-ps2:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-ps2:latest
   stage: prepare-for-static-cores
   artifacts:
     paths:
-    -  retroarch-precompiled/
+    -  KingStation-precompiled/
     expire_in: 10 min
   dependencies: []
   needs:
     # Dummy build requires no core
-    - build-static-retroarch-dummy-ps2
+    - build-static-KingStation-dummy-ps2
   script:
     # Allow failure since we don't have a core
     # PS2 makefile for now doesn't allow -jX so this is why is hardcoded to -j1
     - "make -f Makefile.ps2 -j1 ||:"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-static-retroarch-dummy-ps2:
+build-static-KingStation-dummy-ps2:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-ps2:latest
   stage: build
   before_script:
@@ -375,29 +375,29 @@ build-static-retroarch-dummy-ps2:
   script:
     - "make -f Makefile.ps2.salamander -j$NUMPROC release"
 
-build-static-retroarch-psp:
+build-static-KingStation-psp:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-psp:latest
   stage: prepare-for-static-cores
   before_script:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    -  retroarch-precompiled/
+    -  KingStation-precompiled/
     expire_in: 10 min
   dependencies: []
   needs:
     # Dummy build requires no core
-    - build-static-retroarch-dummy-psp
+    - build-static-KingStation-dummy-psp
   script:
     # We need to boostrap before compile
     - "(cd bootstrap/psp1/kernel_functions_prx/ && make && cd -)"
     # Allow failure since we don't have a core
     - "make -f Makefile.psp1 -j$NUMPROC ||:"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-static-retroarch-dummy-psp:
+build-static-KingStation-dummy-psp:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-psp:latest
   stage: build
   variables:
@@ -419,27 +419,27 @@ build-static-retroarch-dummy-psp:
     - "cp -f pkg/psp1/ICON0.PNG ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
     - "cp -f pkg/psp1/PIC1.PNG ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
 
-build-static-retroarch-ctr:
+build-static-KingStation-ctr:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-devkitpro:latest
   stage: prepare-for-static-cores
   before_script:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    -  retroarch-precompiled/
+    -  KingStation-precompiled/
     expire_in: 10 min
   dependencies: []
   needs:
     # Dummy build requires no core
-    - build-static-retroarch-dummy-ctr
+    - build-static-KingStation-dummy-ctr
   script:
     # Allow failure since we don't have a core
     - "make -f Makefile.ctr -j$NUMPROC USE_CTRULIB_2=1 ||:"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-static-retroarch-dummy-ctr:
+build-static-KingStation-dummy-ctr:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-devkitpro:latest
   stage: build
   variables:
@@ -448,43 +448,43 @@ build-static-retroarch-dummy-ctr:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    - retroarch_3ds.cia
-    - RetroArch.3dsx
-    - RetroArch.smdh
+    - KingStation_3ds.cia
+    - KingStation.3dsx
+    - KingStation.smdh
     - ${MEDIA_PATH}
     expire_in: 10 min
   dependencies: []
   script:
     - "make -f Makefile.ctr.salamander -j$NUMPROC USE_CTRULIB_2=1"
-    - "mv -f retroarch_3ds_salamander.cia retroarch_3ds.cia"
-    - "mv -f retroarch_3ds_salamander.3dsx RetroArch.3dsx"
-    - "mv -f retroarch_3ds_salamander.smdh RetroArch.smdh"
+    - "mv -f KingStation_3ds_salamander.cia KingStation_3ds.cia"
+    - "mv -f KingStation_3ds_salamander.3dsx KingStation.3dsx"
+    - "mv -f KingStation_3ds_salamander.smdh KingStation.smdh"
     - "mkdir -p ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/audio"
     - "mkdir -p ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
     - "cp -f libretro-common/audio/dsp_filters/*.dsp ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/audio"
     - "cp -f gfx/video_filters/*.filt ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
 
-build-static-retroarch-wiiu:
+build-static-KingStation-wiiu:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-wiiu:latest
   stage: prepare-for-static-cores
   before_script:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    -  retroarch-precompiled/
+    -  KingStation-precompiled/
     expire_in: 10 min
   dependencies: []
   needs:
     # Dummy build requires no core
-    - build-static-retroarch-dummy-wiiu
+    - build-static-KingStation-dummy-wiiu
   script:
     # Allow failure since we don't have a core
     - "make -f Makefile.wiiu -j$NUMPROC ||:"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-static-retroarch-dummy-wiiu:
+build-static-KingStation-dummy-wiiu:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-devkitpro:latest
   stage: build
   variables:
@@ -493,40 +493,40 @@ build-static-retroarch-dummy-wiiu:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    - retroarch.rpx
+    - KingStation.rpx
     - ${MEDIA_PATH}
     expire_in: 10 min
   dependencies: []
   script:
     - "make -f Makefile.wiiu -j$NUMPROC SALAMANDER_BUILD=1"
-    - "mv -f retroarch_wiiu_salamander.rpx retroarch.rpx"
+    - "mv -f KingStation_wiiu_salamander.rpx KingStation.rpx"
     - "mkdir -p ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
     - "mkdir -p ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
     - "cp -f gfx/video_filters/*.filt ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
     - "cp -f pkg/wiiu/icon.png ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
     - "cp -f pkg/wiiu/meta.xml ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
 
-build-static-retroarch-wii:
+build-static-KingStation-wii:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-devkitpro:latest
   stage: prepare-for-static-cores
   before_script:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    -  retroarch-precompiled/
+    -  KingStation-precompiled/
     expire_in: 10 min
   dependencies: []
   needs:
     # Dummy build requires no core
-    - build-static-retroarch-dummy-wii
+    - build-static-KingStation-dummy-wii
   script:
     # Allow failure since we don't have a core
     - "make -f Makefile.wii -j$NUMPROC EXTERNAL_LIBOGC=1 GX_PTHREAD_LEGACY=0 ||:"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-static-retroarch-dummy-wii:
+build-static-KingStation-dummy-wii:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-devkitpro:latest
   stage: build
   variables:
@@ -541,7 +541,7 @@ build-static-retroarch-dummy-wii:
   dependencies: []
   script:
     - "make -f Makefile.wii.salamander -j$NUMPROC EXTERNAL_LIBOGC=1 GX_PTHREAD_LEGACY=0"
-    - "mv -f retroarch-salamander_wii.dol boot.dol"
+    - "mv -f KingStation-salamander_wii.dol boot.dol"
     - "mkdir -p ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/audio"
     - "mkdir -p ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
     - "mkdir -p ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
@@ -550,27 +550,27 @@ build-static-retroarch-dummy-wii:
     - "cp -f pkg/wii/icon.png ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
     - "cp -f pkg/wii/meta.xml ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg"
 
-build-static-retroarch-ngc:
+build-static-KingStation-ngc:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-devkitpro:latest
   stage: prepare-for-static-cores
   before_script:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    -  retroarch-precompiled/
+    -  KingStation-precompiled/
     expire_in: 10 min
   dependencies: []
   needs:
     # Dummy build requires no core
-    - build-static-retroarch-dummy-ngc
+    - build-static-KingStation-dummy-ngc
   script:
     # Allow failure since we don't have a core
     - "make -f Makefile.ngc -j$NUMPROC EXTERNAL_LIBOGC=1 GX_PTHREAD_LEGACY=0 ||:"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-static-retroarch-dummy-ngc:
+build-static-KingStation-dummy-ngc:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-devkitpro:latest
   stage: build
   variables:
@@ -588,27 +588,27 @@ build-static-retroarch-dummy-ngc:
     - "cp -f libretro-common/audio/dsp_filters/*.dsp ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/audio"
     - "cp -f gfx/video_filters/*.filt ${MEDIA_PATH}/${CI_PROJECT_NAME}/filters/video"
 
-build-static-retroarch-emscripten:
+build-static-KingStation-emscripten:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-emscripten:latest
   stage: prepare-for-static-cores
   before_script:
     - export NUMPROC=$(($(nproc)/3))
   artifacts:
     paths:
-    - retroarch-precompiled/
+    - KingStation-precompiled/
     expire_in: 10 min
   dependencies: []
   needs:
     # Dummy build requires no core
-    - build-static-retroarch-dummy-emscripten
+    - build-static-KingStation-dummy-emscripten
   script:
     # Allow failure since we don't have a core
     - "emmake make -f Makefile.emscripten -j$NUMPROC ||:"
-    - "mkdir .retroarch-precompiled"
-    - "cp -r ./* .retroarch-precompiled/"
-    - "mv .retroarch-precompiled/ retroarch-precompiled/"
+    - "mkdir .KingStation-precompiled"
+    - "cp -r ./* .KingStation-precompiled/"
+    - "mv .KingStation-precompiled/ KingStation-precompiled/"
 
-build-static-retroarch-dummy-emscripten:
+build-static-KingStation-dummy-emscripten:
   image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-amd64-ubuntu:latest
   stage: build
   variables:
@@ -633,23 +633,23 @@ build-static-retroarch-dummy-emscripten:
     - "cp -f media/invader_dark.png ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/media"
     - "cp -f media/invader_light.png ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/media"
     - "cp -f media/libretro-logo.png ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/media"
-    - "cp -f media/retroarch-16x16.ico ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/media"
-    - "cp -f media/retroarch-16x16.png ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/media"
-    - "cp -f media/retroarch-96x96.png ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/media"
-    - "cp -f media/retroarch.ico ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/media"
+    - "cp -f media/KingStation-16x16.ico ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/media"
+    - "cp -f media/KingStation-16x16.png ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/media"
+    - "cp -f media/KingStation-96x96.png ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/media"
+    - "cp -f media/KingStation.ico ${MEDIA_PATH}/${CI_PROJECT_NAME}/pkg/media"
 
 trigger_static-cores:
   stage: trigger-static-cores
   needs:
-  - build-static-retroarch-libnx-aarch64
-  - build-static-retroarch-vita
-  - build-static-retroarch-ps2
-  - build-static-retroarch-psp
-  - build-static-retroarch-ctr
-  - build-static-retroarch-wiiu
-  - build-static-retroarch-wii
-  - build-static-retroarch-ngc
-  - build-static-retroarch-emscripten
+  - build-static-KingStation-libnx-aarch64
+  - build-static-KingStation-vita
+  - build-static-KingStation-ps2
+  - build-static-KingStation-psp
+  - build-static-KingStation-ctr
+  - build-static-KingStation-wiiu
+  - build-static-KingStation-wii
+  - build-static-KingStation-ngc
+  - build-static-KingStation-emscripten
   dependencies: []
   script:
     # Dummy for now
