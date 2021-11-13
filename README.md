@@ -1,7 +1,3 @@
-[![Build Status](https://travis-ci.org/libretro/KingStation.svg?branch=master)](https://travis-ci.org/libretro/KingStation)
-[![Coverity Scan Build Status](https://scan.coverity.com/projects/8936/badge.svg)](https://scan.coverity.com/projects/KingStation)
-[![Crowdin](https://badges.crowdin.net/KingStation/localized.svg)](https://crowdin.com/project/KingStation)
-
 # KingStation
 
 KingStation is younger brother of RetroArch with optimized UI and game experience.
@@ -9,15 +5,6 @@ KingStation is younger brother of RetroArch with optimized UI and game experienc
 ![screenshot 2021-11-13 012](https://user-images.githubusercontent.com/74456272/141651462-081a7ae8-cf5d-4e04-81a5-e73fe2ed56d7.png)
 
 
-
-
-![XMB menu driver](docs/XMB-main-menu.jpg "XMB menu driver")
-
-![rgui menu driver](docs/rgui-main-menu.jpg "rgui menu driver")
-
-![glui menu driver](docs/glui-main-menu.jpg "glui menu driver")
-
-![ozone menu driver](docs/ozone-main-menu.jpg "ozone menu driver")
 
 ## libretro
 
@@ -53,22 +40,16 @@ More developer-centric stuff is found [here](https://docs.libretro.com/developme
 
 ## Philosophy
 
-KingStation attempts to be small and lean
-while still having all the useful core features expected from an emulator.
-It is designed to be very portable and features a gamepad-centric and touchscreen UI.
-It also has a full-featured command-line interface.
+KingStation attempts to provide the best game experience, closer to original hardware.
+Less settings, more playing.
+It supports stock GPU video filter with color correction.
 
-In some areas, KingStation goes beyond and emphasizes on not-so-common technical features such as multi-pass shader support,
-real-time rewind (Braid-style), video recording (using FFmpeg), run-ahead input latency removal, etc.
-
-KingStation also emphasizes being easy to integrate into various launcher frontends.
 
 ## Platforms
 
-KingStation has been ported to the following platforms:
+Now, KingStation is available only for Windows, but it's planned to make it available for other platforms:
 
    - DOS
-   - Windows
    - Linux
    - Emscripten (WebAssembly and JavaScript)
    - FreeBSD
@@ -265,20 +246,4 @@ MAME ROMs that run in a vertical aspect like DoDonPachi need to be rotated withi
 
 ## Socials
 
-The links below belong to our official channels. Links other than this may have been created by fans, independent members or followers. We seriously recommend using our original resources.
-
-- [Website](https://www.KingStation.com/)
-- [Blog](https://libretro.com/)
-- [Facebook](https://www.facebook.com/libretro)
-- [Twitter](https://twitter.com/libretro)
-- [Reddit](https://www.reddit.com/r/KingStation/)
-- [YouTube](https://www.youtube.com/Libretro)
-- [Google Post](https://posts.google.com/share/55Nhs2jG)
-- [Steam](https://store.steampowered.com/app/1118310/KingStation/)
-- [YouTube Topic](https://www.youtube.com/channel/UC5q007PYyQPgin0HHbzF0zQ)
-- [Patreon](https://www.patreon.com/libretro)
-- [BOUNTYSOURCE](https://www.bountysource.com/teams/libretro/issues)
-- [Discord](https://discord.gg/27Xxm2h)
-- [Teespring](https://teespring.com/stores/KingStation)
-- [Documentation](https://docs.libretro.com/)
-- [Forum](https://forums.libretro.com/)
+In the future
