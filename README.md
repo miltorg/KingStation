@@ -4,10 +4,12 @@
 
 # KingStation
 
-KingStation is the reference frontend for the libretro API.
-Popular examples of implementations for this API includes video game system emulators and game engines as well as
-more generalized 3D programs.
-These programs are instantiated as dynamic libraries. We refer to these as "libretro cores".
+KingStation is younger brother of RetroArch with optimized UI and game experience.
+![screenshot 2021-11-13 011](https://user-images.githubusercontent.com/74456272/141651439-8bb4c405-6c39-4f26-9991-e15c7dffbf8b.png)
+![screenshot 2021-11-13 012](https://user-images.githubusercontent.com/74456272/141651462-081a7ae8-cf5d-4e04-81a5-e73fe2ed56d7.png)
+
+
+
 
 ![XMB menu driver](docs/XMB-main-menu.jpg "XMB menu driver")
 
