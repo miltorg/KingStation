@@ -4038,20 +4038,6 @@ static int action_ok_load_state(const char *path,
    return 0;
 }
 
-static int action_ok_save_state(const char *path,
-      const char *label, unsigned type, size_t idx, size_t entry_idx)
-{
-   settings_t *settings = config_get_ptr();
-   bool resume          = settings->bools.menu_savestate_resume;
-
-   if (generic_action_ok_command(CMD_EVENT_SAVE_STATE) == -1)
-      return menu_cbs_exit();
-
-   if (resume)
-      return generic_action_ok_command(CMD_EVENT_RESUME);
-
-   return 0;
-}
 
 static int action_ok_close_submenu(const char* path,
    const char* label, unsigned type, size_t idx, size_t entry_idx)
@@ -4067,21 +4053,8 @@ static int action_ok_cheevos_toggle_hardcore_mode(const char *path,
    return generic_action_ok_command(CMD_EVENT_RESUME);
 }
 
-static int action_ok_undo_load_state(const char *path,
-      const char *label, unsigned type, size_t idx, size_t entry_idx)
-{
-   if (generic_action_ok_command(CMD_EVENT_UNDO_LOAD_STATE) == -1)
-      return menu_cbs_exit();
-   return generic_action_ok_command(CMD_EVENT_RESUME);
-}
 
-static int action_ok_undo_save_state(const char *path,
-      const char *label, unsigned type, size_t idx, size_t entry_idx)
-{
-   if (generic_action_ok_command(CMD_EVENT_UNDO_SAVE_STATE) == -1)
-      return menu_cbs_exit();
-   return generic_action_ok_command(CMD_EVENT_RESUME);
-}
+
 
 #ifdef HAVE_NETWORKING
 
@@ -7342,10 +7315,6 @@ static int menu_cbs_init_bind_ok_compare_label(menu_file_list_cbs_t *cbs,
          {MENU_ENUM_LABEL_LOAD_ARCHIVE_DETECT_CORE,            action_ok_load_archive_detect_core},
          {MENU_ENUM_LABEL_LOAD_ARCHIVE,                        action_ok_load_archive},
          {MENU_ENUM_LABEL_CUSTOM_BIND_ALL,                     action_ok_lookup_setting}, 
-         {MENU_ENUM_LABEL_SAVE_STATE,                          action_ok_save_state},
-         {MENU_ENUM_LABEL_LOAD_STATE,                          action_ok_load_state},
-         {MENU_ENUM_LABEL_UNDO_LOAD_STATE,                     action_ok_undo_load_state},
-         {MENU_ENUM_LABEL_UNDO_SAVE_STATE,                     action_ok_undo_save_state},
          {MENU_ENUM_LABEL_RESUME_CONTENT,                      action_ok_resume_content},
          {MENU_ENUM_LABEL_ADD_TO_FAVORITES_PLAYLIST,           action_ok_add_to_favorites_playlist},
          {MENU_ENUM_LABEL_SET_CORE_ASSOCIATION,                action_ok_set_core_association},

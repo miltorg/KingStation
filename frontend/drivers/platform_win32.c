@@ -571,62 +571,62 @@ static void frontend_win32_env_get(int *argc, char *argv[],
    const char *tmp_dir = getenv("TMP");
    if (!string_is_empty(tmp_dir))
       fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_CACHE],
-         tmp_dir, sizeof(g_defaults.dirs[DEFAULT_DIR_CACHE]));
+         ":\\System\\Cache", sizeof(g_defaults.dirs[DEFAULT_DIR_CACHE]));
 
    gfx_set_dwm();
 
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_ASSETS],
-      ":\\assets", sizeof(g_defaults.dirs[DEFAULT_DIR_ASSETS]));
+      ":\\System\\Assets", sizeof(g_defaults.dirs[DEFAULT_DIR_ASSETS]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER],
-      ":\\filters\\audio", sizeof(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER]));
+      ":\\System\\Filters\\Audio", sizeof(g_defaults.dirs[DEFAULT_DIR_AUDIO_FILTER]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER],
-      ":\\filters\\video", sizeof(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER]));
+      ":\\System\\Filters\\Video", sizeof(g_defaults.dirs[DEFAULT_DIR_VIDEO_FILTER]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_CHEATS],
-      ":\\cheats", sizeof(g_defaults.dirs[DEFAULT_DIR_CHEATS]));
+      ":\\System\\Cheats", sizeof(g_defaults.dirs[DEFAULT_DIR_CHEATS]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_DATABASE],
-      ":\\database\\rdb", sizeof(g_defaults.dirs[DEFAULT_DIR_DATABASE]));
+      ":\\System\\Database\\Rdb", sizeof(g_defaults.dirs[DEFAULT_DIR_DATABASE]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_CURSOR],
-      ":\\database\\cursors", sizeof(g_defaults.dirs[DEFAULT_DIR_CURSOR]));
+      ":\\System\\Database\\Cursors", sizeof(g_defaults.dirs[DEFAULT_DIR_CURSOR]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_PLAYLIST],
-      ":\\playlists", sizeof(g_defaults.dirs[DEFAULT_DIR_ASSETS]));
+      ":\\System\\Playlists", sizeof(g_defaults.dirs[DEFAULT_DIR_ASSETS]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_RECORD_CONFIG],
-      ":\\config\\record", sizeof(g_defaults.dirs[DEFAULT_DIR_RECORD_CONFIG]));
+      ":\\System\\Config\\Record", sizeof(g_defaults.dirs[DEFAULT_DIR_RECORD_CONFIG]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_RECORD_OUTPUT],
-      ":\\recordings", sizeof(g_defaults.dirs[DEFAULT_DIR_RECORD_OUTPUT]));
+      ":\\Record", sizeof(g_defaults.dirs[DEFAULT_DIR_RECORD_OUTPUT]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_MENU_CONFIG],
-      ":\\config", sizeof(g_defaults.dirs[DEFAULT_DIR_MENU_CONFIG]));
+      ":\\System\\Config", sizeof(g_defaults.dirs[DEFAULT_DIR_MENU_CONFIG]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_REMAP],
-      ":\\config\\remaps", sizeof(g_defaults.dirs[DEFAULT_DIR_REMAP]));
+      ":\\System\\Config\\Remaps", sizeof(g_defaults.dirs[DEFAULT_DIR_REMAP]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_WALLPAPERS],
-      ":\\assets\\wallpapers", sizeof(g_defaults.dirs[DEFAULT_DIR_WALLPAPERS]));
+      ":\\System\\Assets\\Wallpapers", sizeof(g_defaults.dirs[DEFAULT_DIR_WALLPAPERS]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_THUMBNAILS],
-      ":\\thumbnails", sizeof(g_defaults.dirs[DEFAULT_DIR_THUMBNAILS]));
+      ":\\System\\Thumbnails", sizeof(g_defaults.dirs[DEFAULT_DIR_THUMBNAILS]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_OVERLAY],
-      ":\\overlays", sizeof(g_defaults.dirs[DEFAULT_DIR_OVERLAY]));
+      ":\\System\\Overlays", sizeof(g_defaults.dirs[DEFAULT_DIR_OVERLAY]));
 #ifdef HAVE_VIDEO_LAYOUT
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_VIDEO_LAYOUT],
-      ":\\layouts", sizeof(g_defaults.dirs[DEFAULT_DIR_VIDEO_LAYOUT]));
+      ":\\System\\Layouts", sizeof(g_defaults.dirs[DEFAULT_DIR_VIDEO_LAYOUT]));
 #endif
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_CORE],
-      ":\\cores", sizeof(g_defaults.dirs[DEFAULT_DIR_CORE]));
+      ":\\System\\Cores", sizeof(g_defaults.dirs[DEFAULT_DIR_CORE]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_CORE_INFO],
-      ":\\info", sizeof(g_defaults.dirs[DEFAULT_DIR_CORE_INFO]));
+      ":\\System\\Cores", sizeof(g_defaults.dirs[DEFAULT_DIR_CORE_INFO]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_AUTOCONFIG],
-      ":\\autoconfig", sizeof(g_defaults.dirs[DEFAULT_DIR_AUTOCONFIG]));
+      ":\\System\\Autoconfig", sizeof(g_defaults.dirs[DEFAULT_DIR_AUTOCONFIG]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_SHADER],
-      ":\\shaders", sizeof(g_defaults.dirs[DEFAULT_DIR_SHADER]));
+      ":\\System\\Shaders", sizeof(g_defaults.dirs[DEFAULT_DIR_SHADER]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_CORE_ASSETS],
-      ":\\downloads", sizeof(g_defaults.dirs[DEFAULT_DIR_CORE_ASSETS]));
+      ":\\Download", sizeof(g_defaults.dirs[DEFAULT_DIR_CORE_ASSETS]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_SCREENSHOT],
-      ":\\screenshots", sizeof(g_defaults.dirs[DEFAULT_DIR_SCREENSHOT]));
+      ":\\Screenshots", sizeof(g_defaults.dirs[DEFAULT_DIR_SCREENSHOT]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_SRAM],
-      ":\\saves", sizeof(g_defaults.dirs[DEFAULT_DIR_SRAM]));
+      ":\\System\\Saves", sizeof(g_defaults.dirs[DEFAULT_DIR_SRAM]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_SAVESTATE],
-      ":\\states", sizeof(g_defaults.dirs[DEFAULT_DIR_SAVESTATE]));
+      ":\\System\\Saves", sizeof(g_defaults.dirs[DEFAULT_DIR_SAVESTATE]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_SYSTEM],
-      ":\\system", sizeof(g_defaults.dirs[DEFAULT_DIR_SYSTEM]));
+      ":\\System", sizeof(g_defaults.dirs[DEFAULT_DIR_SYSTEM]));
    fill_pathname_expand_special(g_defaults.dirs[DEFAULT_DIR_LOGS],
-      ":\\logs", sizeof(g_defaults.dirs[DEFAULT_DIR_LOGS]));
+      ":\\System\\Logs", sizeof(g_defaults.dirs[DEFAULT_DIR_LOGS]));
 
 #ifndef IS_SALAMANDER
    dir_check_defaults("custom.ini");

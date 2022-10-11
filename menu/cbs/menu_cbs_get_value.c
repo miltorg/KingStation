@@ -311,9 +311,21 @@ static void menu_action_setting_disp_set_label_shader_parameter_internal(
 
    if (!param)
       return;
+      
+    char e17slider[50] = "..................................................";
 
-   snprintf(s, len, "%.2f [%.2f %.2f]",
-         param->current, param->minimum, param->maximum);
+	float a = param->current/(param->maximum-param->minimum);
+
+    for (i = 0; i < 50; i++) {
+		if (i/50.0<a){
+        e17slider[i] = 'l';
+	}
+	else
+	e17slider[i] = '.';
+    }
+
+   snprintf(s, len,"%.0f %s",
+          param->current, e17slider);
 }
 
 static void menu_action_setting_disp_set_label_shader_parameter(

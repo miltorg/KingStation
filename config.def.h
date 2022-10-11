@@ -249,7 +249,7 @@
 
 /* Forcibly disable composition.
  * Only valid on Windows Vista/7/8 for now. */
-#define DEFAULT_DISABLE_COMPOSITION false
+#define DEFAULT_DISABLE_COMPOSITION true
 
 /* Video VSYNC (recommended) */
 #define DEFAULT_VSYNC true
@@ -327,7 +327,7 @@
 #if defined(_3DS) || defined(GEKKO) || defined(HW_RVL) || defined(PSP) || defined(VITA) || defined(SN_TARGET_PSP2) || defined(PS2) || defined(_XBOX) || defined(DINGUX)
 #define DEFAULT_VIDEO_SMOOTH true
 #else
-#define DEFAULT_VIDEO_SMOOTH false
+#define DEFAULT_VIDEO_SMOOTH true
 #endif
 
 /* Graphics context specific scaling */
@@ -344,7 +344,7 @@
 #ifdef RARCH_CONSOLE
 #define DEFAULT_SHADER_ENABLE true
 #else
-#define DEFAULT_SHADER_ENABLE false
+#define DEFAULT_SHADER_ENABLE true
 #endif
 
 /* When presets are saved they will be saved using the #reference 
@@ -442,7 +442,7 @@
 
 #ifdef HAVE_OZONE
 /* Ozone colour theme: 1 == Basic Black */
-#define DEFAULT_OZONE_COLOR_THEME 1
+#define DEFAULT_OZONE_COLOR_THEME 3
 #define DEFAULT_OZONE_COLLAPSE_SIDEBAR false
 #define DEFAULT_OZONE_TRUNCATE_PLAYLIST_NAME true
 #define DEFAULT_OZONE_SORT_AFTER_TRUNCATE_PLAYLIST_NAME true
@@ -499,11 +499,11 @@
 
 #define DEFAULT_QUICK_MENU_SHOW_CLOSE_CONTENT true
 
-#define DEFAULT_QUICK_MENU_SHOW_TAKE_SCREENSHOT true
+#define DEFAULT_QUICK_MENU_SHOW_TAKE_SCREENSHOT false
 
-#define DEFAULT_QUICK_MENU_SHOW_SAVE_LOAD_STATE true
+#define DEFAULT_QUICK_MENU_SHOW_SAVE_LOAD_STATE false
 
-#define DEFAULT_QUICK_MENU_SHOW_UNDO_SAVE_LOAD_STATE true
+#define DEFAULT_QUICK_MENU_SHOW_UNDO_SAVE_LOAD_STATE false
 
 static const bool quick_menu_show_add_to_favorites            = true;
 static const bool quick_menu_show_start_recording             = true;
@@ -530,16 +530,16 @@ static const bool quick_menu_show_download_thumbnails         = true;
 
 #define DEFAULT_MENU_HORIZONTAL_ANIMATION true
 
-static const bool menu_show_online_updater     = true;
+static const bool menu_show_online_updater     = false;
 static const bool menu_show_load_core          = true;
 static const bool menu_show_load_content       = true;
 #ifdef HAVE_CDROM
 static const bool menu_show_load_disc          = true;
-static const bool menu_show_dump_disc          = true;
+static const bool menu_show_dump_disc          = false;
 #endif
-static const bool menu_show_information        = true;
-static const bool menu_show_configurations     = true;
-static const bool menu_show_help               = true;
+static const bool menu_show_information        = false;
+static const bool menu_show_configurations     = false;
+static const bool menu_show_help               = false;
 static const bool menu_show_quit_KingStation     = true;
 static const bool menu_show_restart_KingStation  = true;
 static const bool menu_show_reboot             = true;
@@ -621,7 +621,7 @@ static const unsigned xmb_theme             = XMB_THEME_ELECTRIC_BLUE;
 #endif
 #endif
 
-static const float menu_framebuffer_opacity = 0.900;
+static const float menu_framebuffer_opacity = 0.680;
 
 static const float menu_wallpaper_opacity = 0.300;
 
@@ -691,7 +691,7 @@ static const bool default_screenshots_in_content_dir = false;
 #elif TARGET_OS_TV
 #define DEFAULT_MENU_TOGGLE_GAMEPAD_COMBO INPUT_TOGGLE_DOWN_Y_L_R
 #else
-#define DEFAULT_MENU_TOGGLE_GAMEPAD_COMBO INPUT_TOGGLE_NONE
+#define DEFAULT_MENU_TOGGLE_GAMEPAD_COMBO INPUT_TOGGLE_DOWN_SELECT
 #endif
 
 #if defined(VITA)
@@ -708,7 +708,7 @@ static const unsigned input_backtouch_toggle       = false;
 #if defined(ANDROID) || defined(_WIN32)
 #define DEFAULT_MENU_SWAP_OK_CANCEL_BUTTONS true
 #else
-#define DEFAULT_MENU_SWAP_OK_CANCEL_BUTTONS false
+#define DEFAULT_MENU_SWAP_OK_CANCEL_BUTTONS true
 #endif
 
 #define DEFAULT_QUIT_PRESS_TWICE true
@@ -755,13 +755,13 @@ static const float message_bgcolor_opacity = 1.0f;
 
 /* Initialise file browser with last used directory
  * when selecting shader presets/passes via the menu */
-#define DEFAULT_VIDEO_SHADER_REMEMBER_LAST_DIR false
+#define DEFAULT_VIDEO_SHADER_REMEMBER_LAST_DIR true
 
 /* Screenshots named automatically. */
 #define DEFAULT_AUTO_SCREENSHOT_FILENAME true
 
 /* Record post-shaded GPU output instead of raw game footage if available. */
-#define DEFAULT_GPU_RECORD false
+#define DEFAULT_GPU_RECORD true
 
 /* OSD-messages. */
 #define DEFAULT_FONT_ENABLE true
@@ -781,7 +781,7 @@ static const float message_bgcolor_opacity = 1.0f;
 #elif defined(RARCH_CONSOLE)
 #define DEFAULT_REFRESH_RATE (60/1.001)
 #else
-#define DEFAULT_REFRESH_RATE (60)
+#define DEFAULT_REFRESH_RATE (59.722885)
 #endif
 #define DEFAULT_CRT_REFRESH_RATE (DEFAULT_REFRESH_RATE)
 
@@ -904,7 +904,7 @@ static const bool audio_enable_menu_bgm    = false;
 #define DEFAULT_MAX_TIMING_SKEW  0.10
 
 /* Default audio volume in dB. (0.0 dB == unity gain). */
-#define DEFAULT_AUDIO_VOLUME 0.0
+#define DEFAULT_AUDIO_VOLUME 100.0
 
 /* Default audio volume of the audio mixer in dB. (0.0 dB == unity gain). */
 #define DEFAULT_AUDIO_MIXER_VOLUME 0.0
@@ -965,7 +965,7 @@ static const bool audio_enable_menu_bgm    = false;
 #ifdef EMSCRIPTEN
 #define DEFAULT_PAUSE_NONACTIVE false
 #else
-#define DEFAULT_PAUSE_NONACTIVE true
+#define DEFAULT_PAUSE_NONACTIVE false
 #endif
 
 /* Saves non-volatile SRAM at a regular interval.
@@ -1222,7 +1222,7 @@ static const bool input_descriptor_hide_unbound = false;
 #if defined(DINGUX)
 static const unsigned input_max_users = 1;
 #else
-static const unsigned input_max_users = 5;
+static const unsigned input_max_users = 2;
 #endif
 
 static const unsigned input_poll_type_behavior = 2;

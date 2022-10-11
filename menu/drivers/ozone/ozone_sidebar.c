@@ -45,13 +45,13 @@ static const enum msg_hash_enums ozone_system_tabs_value[OZONE_SYSTEM_TAB_LAST] 
 #ifdef HAVE_NETWORKING
    MENU_ENUM_LABEL_VALUE_NETPLAY_TAB,
 #endif
+   MENU_ENUM_LABEL_VALUE_SETTINGS_TAB,
 #ifdef HAVE_LIBRETRODB
    MENU_ENUM_LABEL_VALUE_ADD_TAB,
    MENU_ENUM_LABEL_VALUE_EXPLORE_TAB,
 #else
-   MENU_ENUM_LABEL_VALUE_ADD_TAB,
+   MENU_ENUM_LABEL_VALUE_ADD_TAB
 #endif
-   MENU_ENUM_LABEL_VALUE_SETTINGS_TAB
 };
 
 static const enum menu_settings_type ozone_system_tabs_type[OZONE_SYSTEM_TAB_LAST] = {
@@ -67,14 +67,14 @@ static const enum menu_settings_type ozone_system_tabs_type[OZONE_SYSTEM_TAB_LAS
 #ifdef HAVE_NETWORKING
    MENU_NETPLAY_TAB,
 #endif
+   MENU_SETTINGS,
+   MENU_SETTINGS_TAB,
 #ifdef HAVE_LIBRETRODB
    MENU_ADD_TAB,
    MENU_EXPLORE_TAB,
 #else
-   MENU_ADD_TAB,
+   MENU_ADD_TAB
 #endif
-   MENU_SETTINGS,
-   MENU_SETTINGS_TAB
 };
 
 static const enum msg_hash_enums ozone_system_tabs_idx[OZONE_SYSTEM_TAB_LAST] = {
@@ -91,13 +91,13 @@ static const enum msg_hash_enums ozone_system_tabs_idx[OZONE_SYSTEM_TAB_LAST] = 
 #ifdef HAVE_NETWORKING
    MENU_ENUM_LABEL_NETPLAY_TAB,
 #endif
+   MENU_ENUM_LABEL_SETTINGS_TAB,
 #ifdef HAVE_LIBRETRODB
    MENU_ENUM_LABEL_ADD_TAB,
    MENU_ENUM_LABEL_EXPLORE_TAB,
 #else
-   MENU_ENUM_LABEL_ADD_TAB,
+   MENU_ENUM_LABEL_ADD_TAB
 #endif
-   MENU_ENUM_LABEL_SETTINGS_TAB
 };
 
 static const unsigned ozone_system_tabs_icons[OZONE_SYSTEM_TAB_LAST] = {
@@ -114,8 +114,8 @@ static const unsigned ozone_system_tabs_icons[OZONE_SYSTEM_TAB_LAST] = {
 #ifdef HAVE_NETWORKING
    OZONE_TAB_TEXTURE_NETWORK,
 #endif
-   OZONE_TAB_TEXTURE_SCAN_CONTENT,
-   OZONE_TAB_TEXTURE_SETTINGS
+   OZONE_TAB_TEXTURE_SETTINGS,
+   OZONE_TAB_TEXTURE_SCAN_CONTENT
 };
 
 static void ozone_sidebar_collapse_end(void *userdata)

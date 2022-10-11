@@ -1567,21 +1567,7 @@ void gfx_widgets_frame(void *data)
    }
 
    /* Indicators */
-   if (widgets_is_paused)
-      top_right_x_advance -= gfx_widgets_draw_indicator(
-            p_dispwidget,
-            p_disp,
-            dispctx,
-            userdata,
-            video_width,
-            video_height,
-            p_dispwidget->gfx_widgets_icons_textures[
-            MENU_WIDGETS_ICON_PAUSED],
-            (fps_show 
-             ? p_dispwidget->simple_widget_height 
-             : 0),
-            top_right_x_advance,
-            MSG_PAUSED);
+   if (widgets_is_paused);
 
    if (widgets_is_fastforwarding)
       top_right_x_advance -= gfx_widgets_draw_indicator(

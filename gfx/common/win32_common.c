@@ -783,12 +783,6 @@ static LRESULT win32_menu_loop(HWND owner, WPARAM wparam)
       case ID_M_PAUSE_TOGGLE:
          command_event(CMD_EVENT_PAUSE_TOGGLE, NULL);
          break;
-      case ID_M_LOAD_STATE:
-         command_event(CMD_EVENT_LOAD_STATE, NULL);
-         break;
-      case ID_M_SAVE_STATE:
-         command_event(CMD_EVENT_SAVE_STATE, NULL);
-         break;
       case ID_M_DISK_CYCLE:
          command_event(CMD_EVENT_DISK_EJECT_TOGGLE, NULL);
          break;

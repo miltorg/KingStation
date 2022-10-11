@@ -253,6 +253,14 @@ enum midi_driver_enum
 
 #if defined(HAVE_METAL)
 /* iOS supports both the OpenGL and Metal video drivers; default to OpenGL since Metal support is preliminary */
+#elif defined(HAVE_D3D11)
+static const enum video_driver_enum VIDEO_DEFAULT_DRIVER = VIDEO_D3D11;
+#elif defined(HAVE_D3D12)
+/* FIXME/WARNING: DX12 performance on Xbox is horrible for
+ * some reason. For now, we will default to D3D11 when possible. */
+static const enum video_driver_enum VIDEO_DEFAULT_DRIVER = VIDEO_D3D12;
+#elif defined(HAVE_D3D10)
+static const enum video_driver_enum VIDEO_DEFAULT_DRIVER = VIDEO_D3D10;
 #if defined(HAVE_COCOATOUCH) && defined(HAVE_OPENGL)
 static const enum video_driver_enum VIDEO_DEFAULT_DRIVER = VIDEO_GL;
 #else
@@ -272,14 +280,6 @@ static const enum video_driver_enum VIDEO_DEFAULT_DRIVER = VIDEO_WII;
 static const enum video_driver_enum VIDEO_DEFAULT_DRIVER = VIDEO_WIIU;
 #elif defined(XENON)
 static const enum video_driver_enum VIDEO_DEFAULT_DRIVER = VIDEO_XENON360;
-#elif defined(HAVE_D3D11)
-static const enum video_driver_enum VIDEO_DEFAULT_DRIVER = VIDEO_D3D11;
-#elif defined(HAVE_D3D12)
-/* FIXME/WARNING: DX12 performance on Xbox is horrible for
- * some reason. For now, we will default to D3D11 when possible. */
-static const enum video_driver_enum VIDEO_DEFAULT_DRIVER = VIDEO_D3D12;
-#elif defined(HAVE_D3D10)
-static const enum video_driver_enum VIDEO_DEFAULT_DRIVER = VIDEO_D3D10;
 #elif defined(HAVE_D3D9)
 static const enum video_driver_enum VIDEO_DEFAULT_DRIVER = VIDEO_D3D9;
 #elif defined(HAVE_D3D8)
@@ -348,14 +348,14 @@ static const enum audio_driver_enum AUDIO_DEFAULT_DRIVER = AUDIO_JACK;
 static const enum audio_driver_enum AUDIO_DEFAULT_DRIVER = AUDIO_COREAUDIO3;
 #elif defined(HAVE_COREAUDIO)
 static const enum audio_driver_enum AUDIO_DEFAULT_DRIVER = AUDIO_COREAUDIO;
+#elif defined(HAVE_AL)
+static const enum audio_driver_enum AUDIO_DEFAULT_DRIVER = AUDIO_AL;
 #elif defined(HAVE_XAUDIO)
 static const enum audio_driver_enum AUDIO_DEFAULT_DRIVER = AUDIO_XAUDIO;
 #elif defined(HAVE_DSOUND)
 static const enum audio_driver_enum AUDIO_DEFAULT_DRIVER = AUDIO_DSOUND;
 #elif defined(HAVE_WASAPI)
 static const enum audio_driver_enum AUDIO_DEFAULT_DRIVER = AUDIO_WASAPI;
-#elif defined(HAVE_AL)
-static const enum audio_driver_enum AUDIO_DEFAULT_DRIVER = AUDIO_AL;
 #elif defined(HAVE_SL)
 static const enum audio_driver_enum AUDIO_DEFAULT_DRIVER = AUDIO_SL;
 #elif defined(EMSCRIPTEN)
@@ -1490,7 +1490,7 @@ static struct config_bool_setting *populate_settings_bool(
    SETTING_BOOL("video_adaptive_vsync",          &settings->bools.video_adaptive_vsync, true, DEFAULT_ADAPTIVE_VSYNC, false);
    SETTING_BOOL("video_hard_sync",               &settings->bools.video_hard_sync, true, DEFAULT_HARD_SYNC, false);
    SETTING_BOOL("video_disable_composition",     &settings->bools.video_disable_composition, true, DEFAULT_DISABLE_COMPOSITION, false);
-   SETTING_BOOL("pause_nonactive",               &settings->bools.pause_nonactive, true, DEFAULT_PAUSE_NONACTIVE, false);
+   SETTING_BOOL("pause_nonactive",               &settings->bools.pause_nonactive, false, DEFAULT_PAUSE_NONACTIVE, false);
    SETTING_BOOL("video_gpu_screenshot",          &settings->bools.video_gpu_screenshot, true, DEFAULT_GPU_SCREENSHOT, false);
    SETTING_BOOL("video_post_filter_record",      &settings->bools.video_post_filter_record, true, DEFAULT_POST_FILTER_RECORD, false);
    SETTING_BOOL("video_notch_write_over_enable", &settings->bools.video_notch_write_over_enable, true, DEFAULT_NOTCH_WRITE_OVER_ENABLE, false);
@@ -1545,7 +1545,7 @@ static struct config_bool_setting *populate_settings_bool(
    SETTING_BOOL("menu_throttle_framerate",       &settings->bools.menu_throttle_framerate, true, true, false);
    SETTING_BOOL("menu_linear_filter",            &settings->bools.menu_linear_filter, true, DEFAULT_VIDEO_SMOOTH, false);
    SETTING_BOOL("menu_horizontal_animation",     &settings->bools.menu_horizontal_animation, true, DEFAULT_MENU_HORIZONTAL_ANIMATION, false);
-   SETTING_BOOL("menu_pause_libretro",           &settings->bools.menu_pause_libretro, true, true, false);
+   SETTING_BOOL("menu_pause_libretro",           &settings->bools.menu_pause_libretro, false, false, false);
    SETTING_BOOL("menu_savestate_resume",         &settings->bools.menu_savestate_resume, true, menu_savestate_resume, false);
    SETTING_BOOL("menu_insert_disk_resume",       &settings->bools.menu_insert_disk_resume, true, DEFAULT_MENU_INSERT_DISK_RESUME, false);
    SETTING_BOOL("menu_mouse_enable",             &settings->bools.menu_mouse_enable, true, DEFAULT_MOUSE_ENABLE, false);
@@ -1633,7 +1633,7 @@ static struct config_bool_setting *populate_settings_bool(
 #endif
    SETTING_BOOL("menu_show_information",         &settings->bools.menu_show_information, true, menu_show_information, false);
    SETTING_BOOL("menu_show_configurations",      &settings->bools.menu_show_configurations, true, menu_show_configurations, false);
-   SETTING_BOOL("menu_show_latency",             &settings->bools.menu_show_latency, true, true, false);
+   SETTING_BOOL("menu_show_latency",             &settings->bools.menu_show_latency, false, true, false);
    SETTING_BOOL("menu_show_rewind",              &settings->bools.menu_show_rewind, true, true, false);
    SETTING_BOOL("menu_show_overlays",            &settings->bools.menu_show_overlays, true, true, false);
 #ifdef HAVE_VIDEO_LAYOUT
@@ -2318,7 +2318,7 @@ void config_set_defaults(void *data)
 
    settings->uints.audio_latency               = g_defaults.settings_out_latency;
 
-   audio_set_float(AUDIO_ACTION_VOLUME_GAIN, settings->floats.audio_volume);
+   audio_set_float(AUDIO_ACTION_VOLUME_GAIN, 20.0f*log10(settings->floats.audio_volume/100.0f));
 #ifdef HAVE_AUDIOMIXER
    audio_set_float(AUDIO_ACTION_MIXER_VOLUME_GAIN, settings->floats.audio_mixer_volume);
 #endif
@@ -3200,7 +3200,7 @@ static bool config_load_file(global_t *global,
    settings->uints.video_swap_interval = MAX(settings->uints.video_swap_interval, 1);
    settings->uints.video_swap_interval = MIN(settings->uints.video_swap_interval, 4);
 
-   audio_set_float(AUDIO_ACTION_VOLUME_GAIN, settings->floats.audio_volume);
+   audio_set_float(AUDIO_ACTION_VOLUME_GAIN, 20.0f*log10(settings->floats.audio_volume/100.0f));
 #ifdef HAVE_AUDIOMIXER
    audio_set_float(AUDIO_ACTION_MIXER_VOLUME_GAIN, settings->floats.audio_mixer_volume);
 #endif

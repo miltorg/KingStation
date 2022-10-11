@@ -11535,7 +11535,7 @@ static bool setting_append_list(
                general_write_handler,
                general_read_handler);
          (*list)[list_info->index - 1].action_ok = &setting_action_ok_uint;
-         menu_settings_list_current_add_range(list, list_info, -80, 12, 1.0, true, true);
+         menu_settings_list_current_add_range(list, list_info, 0, 300, 1, true, true);
 
 #ifdef HAVE_AUDIOMIXER
          CONFIG_FLOAT(
@@ -13928,23 +13928,6 @@ static bool setting_append_list(
             SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_LAKKA_ADVANCED);
          }
 
-         CONFIG_BOOL(
-               list, list_info,
-               &settings->bools.menu_pause_libretro,
-               MENU_ENUM_LABEL_PAUSE_LIBRETRO,
-               MENU_ENUM_LABEL_VALUE_PAUSE_LIBRETRO,
-               true,
-               MENU_ENUM_LABEL_VALUE_OFF,
-               MENU_ENUM_LABEL_VALUE_ON,
-               &group_info,
-               &subgroup_info,
-               parent_group,
-               general_write_handler,
-               general_read_handler,
-               SD_FLAG_CMD_APPLY_AUTO
-               );
-         MENU_SETTINGS_LIST_CURRENT_ADD_CMD(list, list_info, CMD_EVENT_MENU_PAUSE_LIBRETRO);
-            SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_LAKKA_ADVANCED);
 
          CONFIG_BOOL(
                list, list_info,
@@ -16064,21 +16047,7 @@ static bool setting_append_list(
 
          START_SUB_GROUP(list, list_info, "State", &group_info, &subgroup_info, parent_group);
 
-         CONFIG_BOOL(
-               list, list_info,
-               &settings->bools.pause_nonactive,
-               MENU_ENUM_LABEL_PAUSE_NONACTIVE,
-               MENU_ENUM_LABEL_VALUE_PAUSE_NONACTIVE,
-               DEFAULT_PAUSE_NONACTIVE,
-               MENU_ENUM_LABEL_VALUE_OFF,
-               MENU_ENUM_LABEL_VALUE_ON,
-               &group_info,
-               &subgroup_info,
-               parent_group,
-               general_write_handler,
-               general_read_handler,
-               SD_FLAG_NONE);
-         SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_LAKKA_ADVANCED);
+
 
 #if !defined(RARCH_MOBILE)
          CONFIG_BOOL(

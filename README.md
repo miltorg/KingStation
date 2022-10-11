@@ -246,11 +246,7 @@ MAME ROMs that run in a vertical aspect like DoDonPachi need to be rotated withi
 
 ## Socials
 
-[Discord](https://discord.gg/QAfhGdtHcT)
-
 ## Future
-
-Builds for different platforms
-UI improvements
-Better sound responce
-...
+Fix buttons beaviour
+Better UI
+More platforms

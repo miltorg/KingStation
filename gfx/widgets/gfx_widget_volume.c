@@ -242,11 +242,11 @@ static void gfx_widget_volume_frame(void* data, void *user_data)
                );
 
          /* Text */
-         snprintf(msg, sizeof(msg), (state->db >= 0 ? "+%.1f dB" : "%.1f dB"),
+         snprintf(msg, sizeof(msg), (state->db >= 0 ? "" : ""),
             state->db);
 
          snprintf(percentage_msg, sizeof(percentage_msg), "%d%%",
-            (int)(state->percent * 100.0f));
+            (int)(round(state->percent * 100.0f)));
 
          gfx_widgets_draw_text(font_regular,
                msg,
@@ -294,8 +294,8 @@ void gfx_widget_volume_update_and_show(float new_volume, bool mute)
 
    gfx_animation_kill_by_tag(&state->tag);
 
-   state->db         = new_volume;
-   state->percent    = pow(10, new_volume/20);
+   state->db         = 20.0f*log10(new_volume/100.0f);
+   state->percent    = new_volume*0.01f;
    state->alpha      = DEFAULT_BACKDROP;
    state->text_alpha = 1.0f;
    state->mute       = mute;

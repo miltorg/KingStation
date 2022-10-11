@@ -2139,22 +2139,22 @@ MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_HOTKEY_BLOCK_DELAY,
    "Fügt eine Verzögerung in Frames hinzu, bevor die normale Eingabe nach Drücken (und Halten) der zugewiesenen Taste 'Tastenkürzel aktivieren' blockiert wird. Ermöglicht die normale Eingabe der 'Hotkeys aktivieren'-Taste, wenn sie einer anderen Aktion zugeordnet ist (z.B. RetroPad 'Select')."
    )
-MSG_HASH(
+/* MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_FAST_FORWARD_KEY,
    "Zeitraffer (Umschalten)"
-   )
-MSG_HASH(
+   ) */
+/* MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_META_FAST_FORWARD_KEY,
    "Wechselt zwischen Zeitraffer und Normalgeschwindigkeit."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_FAST_FORWARD_HOLD_KEY,
    "Zeitraffer (Halten)"
-   )
-MSG_HASH(
+   ) */
+/* MSG_HASH(
    MENU_ENUM_SUBLABEL_INPUT_META_FAST_FORWARD_HOLD_KEY,
    "Aktiviert den Zeitraffer, solange gedrückt. Inhalte laufen mit normaler Geschwindigkeit, wenn Taste losgelassen wird."
-   )
+   ) */
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_INPUT_META_SLOWMOTION_KEY,
    "Zeitlupe (Umschalten)"

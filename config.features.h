@@ -315,7 +315,7 @@
 #endif
 
 #ifdef HAVE_QT
-#define SUPPORTS_QT true
+#define SUPPORTS_QT false
 #else
 #define SUPPORTS_QT false
 #endif
