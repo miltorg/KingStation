@@ -312,7 +312,7 @@ static void menu_action_setting_disp_set_label_shader_parameter_internal(
    if (!param)
       return;
       
-    char e17slider[50] = "..................................................";
+    char e17slider[51] = "..................................................";
 
 	float a = param->current/(param->maximum-param->minimum);
 
