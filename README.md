@@ -41,6 +41,6 @@ Now, KingStation is available only for Windows and Linux (AppImage)), but it's p
    - Blackberry
 
 ## Future
-Fix buttons behaviour
-Better UI
-More platforms
+   - Fix buttons behaviour
+   - Better UI
+   - More platforms
