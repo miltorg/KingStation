@@ -6,19 +6,6 @@ KingStation is younger brother of RetroArch with optimized UI and original game 
 
 
 
-## libretro
-
-[libretro](https://www.libretro.com) is an API that exposes generic audio/video/input callbacks.
-A frontend for libretro (such as KingStation) handles video output, audio output, input and application lifecycle.
-A libretro core written in portable C or C++ can run seamlessly on many platforms with very little to no porting effort.
-
-While KingStation is the reference frontend for libretro, several other projects have used the libretro
-interface to include support for emulators and/or game engines. libretro is completely open and free for anyone to use.
-
-[libretro API header](https://github.com/libretro/KingStation/blob/master/libretro-common/include/libretro.h)
-
-
-
 KingStation attempts to provide the best game experience, closer to original hardware.
 Less settings, more playing.
 It supports stock GPU video filter with color correction.
