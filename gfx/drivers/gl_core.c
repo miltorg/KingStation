@@ -2359,7 +2359,7 @@ video_driver_t video_gl_core = {
    gl_core_set_shader,
 
    gl_core_free,
-   "glcore",
+   "Glcore",
 
    gl_core_set_viewport_wrapper,
    gl_core_set_rotation,

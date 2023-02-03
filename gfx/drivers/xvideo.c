@@ -1145,7 +1145,7 @@ video_driver_t video_xvideo = {
    xv_has_windowed,
    xv_set_shader,
    xv_free,
-   "xvideo",
+   "Xvideo",
    NULL, /* set_viewport */
    NULL, /* set_rotation */
    xv_viewport_info,

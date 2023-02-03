@@ -762,7 +762,7 @@ video_driver_t video_sdl2 = {
    sdl2_gfx_has_windowed,
    sdl2_gfx_set_shader,
    sdl2_gfx_free,
-   "sdl2",
+   "Sdl2",
 
    NULL,
    sdl2_gfx_set_rotation,

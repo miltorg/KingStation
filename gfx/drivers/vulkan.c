@@ -3007,7 +3007,7 @@ video_driver_t video_vulkan = {
    vulkan_has_windowed,
    vulkan_set_shader,
    vulkan_free,
-   "vulkan",
+   "Vulkan",
    vulkan_set_viewport,
    vulkan_set_rotation,
    vulkan_viewport_info,

@@ -1611,7 +1611,7 @@ video_driver_t video_gl1 = {
    gl1_has_windowed,
    gl1_gfx_set_shader,
    gl1_gfx_free,
-   "gl1",
+   "Gl1",
    gl1_gfx_set_viewport_wrapper,
    gl1_gfx_set_rotation,
    gl1_gfx_viewport_info,

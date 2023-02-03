@@ -294,7 +294,7 @@ video_driver_t video_caca = {
    caca_gfx_has_windowed,
    caca_gfx_set_shader,
    caca_gfx_free,
-   "caca",
+   "Caca",
    caca_gfx_set_viewport,
    caca_gfx_set_rotation,
    NULL, /* viewport_info  */

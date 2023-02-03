@@ -580,7 +580,7 @@ video_driver_t video_sixel = {
    sixel_gfx_has_windowed,
    sixel_gfx_set_shader,
    sixel_gfx_free,
-   "sixel",
+   "Sixel",
    sixel_gfx_set_viewport,
    sixel_gfx_set_rotation,
    NULL, /* viewport_info */
